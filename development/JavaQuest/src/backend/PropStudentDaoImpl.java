@@ -50,7 +50,7 @@ class PropStudentDaoImpl extends PropDaoImpl implements StudentDao {
  // TODO
  }
     
-    public void delete(String aStudent) {
+    public void delete(Student aStudent) {
     // TODO
     }
     

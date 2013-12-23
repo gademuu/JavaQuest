@@ -18,7 +18,7 @@ import java.util.Properties;
  */
 public class PropStudentStatsDaoImpl extends PropDaoImpl implements StudentStatsDao {
  
-      
+     private static final String FILE_PREFIX =  
      private static final String FILE_SUFFIX = ".properties";
      
     
