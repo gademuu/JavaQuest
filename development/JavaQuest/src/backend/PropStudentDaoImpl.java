@@ -14,18 +14,18 @@ import java.util.*;
 class PropStudentDaoImpl extends PropDaoImpl implements StudentDao {
     
     
-    private static final String STUDENT_FILE_PREFIX = "student_";
-    private static final String STUDENT_FILE_SUFFIX= ".properties";
+  
+    private static final String FILE = "student.properties";
     
     public Student create(Student aStudent){
         
         String id = null;       
         Properties prop = new Properties();
-        prop = load(STUDENT_FILE_PREFIX + aStudent.getName() + STUDENT_FILE_SUFFIX);
+        prop = load(FILE);
           
         
         prop.setProperty(aStudent.getName(), aStudent.getPassword());
-        store(STUDENT_FILE_PREFIX + aStudent.getName() + STUDENT_FILE_SUFFIX, prop, true);
+        store(FILE, prop, true);
         id = aStudent.getName();
            
         return aStudent;
@@ -37,7 +37,7 @@ class PropStudentDaoImpl extends PropDaoImpl implements StudentDao {
         Student s = null;
         Properties prop = new Properties();
         String id = aStudent.getName();
-        prop = load(STUDENT_FILE_PREFIX + aStudent.getName() + STUDENT_FILE_SUFFIX);
+        prop = load(FILE);
         String name = (String)prop.get(id);
         s = new Student(name, aStudent.getName());
         
@@ -57,7 +57,7 @@ class PropStudentDaoImpl extends PropDaoImpl implements StudentDao {
     public Student[] find(Student criteria) {
         
         ArrayList<Student> matches = new ArrayList<>();
-        Properties prop = load(STUDENT_FILE_PREFIX + criteria.getPassword() + STUDENT_FILE_SUFFIX);
+        Properties prop = load(FILE);
         
         Set<Map.Entry<Object, Object>> students;
         students = prop.entrySet();
@@ -68,7 +68,12 @@ class PropStudentDaoImpl extends PropDaoImpl implements StudentDao {
             Student s = new Student((String)e.getKey(), criteria.getPassword());
             matches.add(s);
         }
-        return null;
+        
+         Student[] matchstudents = new Student[students.size()];
+        matchstudents = matches.toArray(matchstudents); 
+        
+        return matchstudents;
+        
     }
     
 }
