@@ -10,7 +10,8 @@ import client.GlossaryView;
 import logic.Common.QuitException;
 
 /**
- * Hanterar ordlistorna
+ * Hanterar ordlistorna, läsa upp glosor för ett språk i taget. Använd find() från dao. 
+ * Ta imot hur många olika frågor. Använda shuffle för att blanda glosorna. Använda create() från dao för att skapa nya glosor. 
  * @author herman
  */
 public class GlossaryManager {

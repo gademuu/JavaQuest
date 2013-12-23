@@ -9,13 +9,16 @@ package logic.Student;
 import client.StudentView;
 
 /**
- *
+ *  (ska använda studentdao, skapa en ny student. Ta imot password och namn.)
  * @author herman
  */
 public class StudentManager {
     
     private StudentView ui;
     
+    /*
+    Hantera commandon från användaren. 
+    */
     public boolean play() {
         
          boolean finished = false;

@@ -16,6 +16,7 @@ import logic.Quiz.QuizManager;
 /**
  *
  * @author herman
+ * 
  */
 public class Game {
     

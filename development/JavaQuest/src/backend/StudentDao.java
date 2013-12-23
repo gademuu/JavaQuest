@@ -8,13 +8,13 @@ package backend;
  */
 public interface StudentDao {
     
-    public String create(Student aStudent);
+    public Student create(Student aStudent);
    
-    public Student read(String id);
+    public Student read(Student aStudent);
     
     public void update(Student aStudent);
     
-    public void delete(String id);
+    public void delete(Student aStudent);
     
     public Student[] find(Student criteria);
     

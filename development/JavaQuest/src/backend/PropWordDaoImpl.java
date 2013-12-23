@@ -52,9 +52,6 @@ class PropWordDaoImpl extends PropDaoImpl implements WordDao {
     
     public Word[] find(Word criteria) {
         
-        // TODO
-        // File to open should depend on criteria.language
-        
         ArrayList<Word> matches = new ArrayList<>();
         
         Properties prop = load(WORD_FILE_PREFIX + criteria.getLanguage() + WORD_FILE_SUFFIX);
@@ -80,7 +77,7 @@ class PropWordDaoImpl extends PropDaoImpl implements WordDao {
         PropWordDaoImpl pwdi = new PropWordDaoImpl();
         Word w1 = new Word("","","english");
         
-        Word w2= new Word("german", "","");
+        Word w2= new Word("","","german");
         Word[]array = pwdi.find(w1);
       
         
