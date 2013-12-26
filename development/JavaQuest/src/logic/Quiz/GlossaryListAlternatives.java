@@ -15,15 +15,18 @@ public class GlossaryListAlternatives extends GlossaryList {
     @Override
    public void initialize(String studentName, String language, int numberOfWords) {
         super.initialize(studentName, language, numberOfWords);
-        // TODO
-       
-        // 6. Subclass decides whether WordAlternative is to be used
-        
-        
-        WordDao wd = WordDaoFactory.create(true);
-        Word[] words = wd.find(new Word("","","english"));
-        glossary = new ArrayList<Word>(Arrays.asList(words));
-        
+             
     }
+   
+   public static void main(String[] args){
+       GlossaryListAlternatives myGLA = new GlossaryListAlternatives();
+       myGLA.initialize("herman", "english", 2);
+       
+       
+        String w = myGLA.nextWord();
+        while(!w.equals("")) {
+            System.out.println(w.toString());
+        }
+   }
     
 }

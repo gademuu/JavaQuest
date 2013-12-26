@@ -5,6 +5,7 @@ import backend.Word;
 import backend.WordDao;
 import backend.WordDaoFactory;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.Iterator;
 
@@ -21,18 +22,20 @@ public abstract class GlossaryList {
     protected int numberOfQuestionsAnswered;
     protected Word currentWord;
     protected StudentStats studentStats;
+    protected ArrayList<Word> quizGlossary = new ArrayList<>();
     
     public void initialize(String studentName, String language, int numberOfWords) {
         
-        // TODO
-        // 1. create WordDao using Factory
-        WordDao wdao = WordDaoFactory.create(true);
-       
-        wdao.find(new Word("","","english"));
-        // 3. shuffle the list using Collections.shuffle()
-        Collections.shuffle(words);
+        WordDao wd = WordDaoFactory.create(true);
+        Word[] words = wd.find(new Word("","",language));
+        glossary = new ArrayList<Word>(Arrays.asList(words));
+        Collections.shuffle(glossary);
+        
+        quizGlossary = (ArrayList<Word>) glossary.subList(0, numberOfWords);
+        
         // 4. Create a studentStats object with todays date and the provided studentName
         // 5. Cut off the list at the desired length
+        
         // 6. Subclass decides whether WordAlternative is to be used
         
     }
@@ -41,7 +44,7 @@ public abstract class GlossaryList {
         String theWord = "";
         
         if(iterator == null) {
-            iterator = glossary.iterator();
+            iterator = quizGlossary.iterator();
         }
         
         if(iterator.hasNext()) {
@@ -77,5 +80,7 @@ public abstract class GlossaryList {
         // TODO
         // Create a StudentStatsDao and use create() to store the stats from this session
     }
+    
+  
     
 }
