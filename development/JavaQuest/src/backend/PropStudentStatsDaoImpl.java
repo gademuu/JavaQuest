@@ -18,8 +18,8 @@ import java.util.Properties;
  */
 public class PropStudentStatsDaoImpl extends PropDaoImpl implements StudentStatsDao {
  
-     private static final String FILE_PREFIX =  
-     private static final String FILE_SUFFIX = ".properties";
+     
+     private static final String FILE = "StudentStats.getName() + \".properties\"";
      
     
     public String create(StudentStats aStudentStats){
@@ -27,12 +27,12 @@ public class PropStudentStatsDaoImpl extends PropDaoImpl implements StudentStats
         String id = null;
         
         Properties prop = new Properties();
-        prop = load(aStudentStats.getName()+FILE_SUFFIX);
+        prop = load(aStudentStats.getName()+FILE);
         //prop.list(System.out);
  
         
         prop.setProperty(aStudentStats.getQuizName(), aStudentStats.getStats());
-        store(aStudentStats.getName()+FILE_SUFFIX, prop, true);
+        store(aStudentStats.getName()+FILE, prop, true);
 
         id = aStudentStats.getName();
             //prop.list(System.out);
@@ -46,7 +46,7 @@ public class PropStudentStatsDaoImpl extends PropDaoImpl implements StudentStats
         StudentStats s = null;
         Properties prop = new Properties();
      
-        prop = load(id+FILE_SUFFIX);
+        prop = load(id+FILE);
         prop.get(quizName);
         s = new StudentStats(id, quizName, prop.getProperty(quizName));        
         return s;

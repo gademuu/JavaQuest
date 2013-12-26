@@ -2,7 +2,10 @@ package logic.Quiz;
 
 import backend.StudentStats;
 import backend.Word;
+import backend.WordDao;
+import backend.WordDaoFactory;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Iterator;
 
 /**
@@ -23,8 +26,11 @@ public abstract class GlossaryList {
         
         // TODO
         // 1. create WordDao using Factory
-        // 2. Use find(word.language = language) to retrieve the total glossary for the language
+        WordDao wdao = WordDaoFactory.create(true);
+       
+        wdao.find(new Word("","","english"));
         // 3. shuffle the list using Collections.shuffle()
+        Collections.shuffle(words);
         // 4. Create a studentStats object with todays date and the provided studentName
         // 5. Cut off the list at the desired length
         // 6. Subclass decides whether WordAlternative is to be used
@@ -59,11 +65,12 @@ public abstract class GlossaryList {
         return correct;    
     }
     
-    public float getPercentage() {
-        float p = 0;
-    // TODO calculate percentage of correct answers
-    
-        return p;
+    /**
+     * @return the percentage as a string with 1 decimal followed by the % sign
+     */
+    public String getPercentage(int n, int total) {
+        float proportion = ((float) n) / ((float) total);
+        return String.format("%.1f", new Float(proportion * 100)) + "%";
     }
     
     public void saveStats() {
