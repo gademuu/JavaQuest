@@ -19,7 +19,7 @@ import java.util.Properties;
 public class PropStudentStatsDaoImpl extends PropDaoImpl implements StudentStatsDao {
  
      
-     private static final String FILE = "StudentStats.getName() + \".properties\"";
+     private static final String FILE = ".properties";
      
     
     public String create(StudentStats aStudentStats){

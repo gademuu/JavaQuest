@@ -6,6 +6,7 @@
 
 package logic.Glossary;
 
+import backend.WordDao;
 import client.GlossaryView;
 import logic.Common.QuitException;
 
@@ -16,6 +17,11 @@ import logic.Common.QuitException;
 public class GlossaryManager {
     
     private GlossaryView ui;
+    
+    WordDao sd;
+    
+    
+    
     
     public boolean play() throws QuitException {
         

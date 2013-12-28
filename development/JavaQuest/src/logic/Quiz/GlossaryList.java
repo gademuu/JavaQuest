@@ -1,6 +1,8 @@
 package logic.Quiz;
 
 import backend.StudentStats;
+import backend.StudentStatsDao;
+import backend.StudentStatsDaoFactory;
 import backend.Word;
 import backend.WordDao;
 import backend.WordDaoFactory;
@@ -30,11 +32,18 @@ public abstract class GlossaryList {
         Word[] words = wd.find(new Word("","",language));
         glossary = new ArrayList<Word>(Arrays.asList(words));
         Collections.shuffle(glossary);
+        for(int i = 0 ; i < numberOfWords; i++) {
+            glossary.get(i);
+            quizGlossary.add(glossary.get(i));
+            
+        }
         
-        quizGlossary = (ArrayList<Word>) glossary.subList(0, numberOfWords);
+        
+        
+       // quizGlossary = (ArrayList<Word>) glossary.subList(0, numberOfWords);
         
         // 4. Create a studentStats object with todays date and the provided studentName
-        // 5. Cut off the list at the desired length
+        
         
         // 6. Subclass decides whether WordAlternative is to be used
         
@@ -77,8 +86,12 @@ public abstract class GlossaryList {
     }
     
     public void saveStats() {
-        // TODO
-        // Create a StudentStatsDao and use create() to store the stats from this session
+       studentStats.setStats(getPercentage(numberOfCorrectAnswers, numberOfWords));
+       StudentStatsDaoFactory.create(true);
+       
+       StudentStatsDao ssDao = StudentStatsDaoFactory.create(true);
+
+        ssDao.create(studentStats);
     }
     
   
