@@ -19,6 +19,12 @@ public class QuizManager implements QuizViewListener{
     private QuizView ui;
     private QuizSession quizSession;
     private boolean threeAlternativesButtonActive = false; 
+    private String language1;
+    private String language2;
+    private String studentName;
+    private int numberOfWordsSelected;
+    private String threeAlternativesButtonToggled;
+    private String startQuizButton;
     
     
     
@@ -30,15 +36,10 @@ public class QuizManager implements QuizViewListener{
     
     public boolean play() throws QuitException {
         
-        boolean finished = false;
-        
-        while (!finished) {
-        
-            
-        }
-        
-        return finished;
-        
+        GlossaryListAlternatives glossaryList = new GlossaryListAlternatives();
+        glossaryList.initialize(studentName,language2, numberOfWords);
+         
+        return true;
     }
     
      private boolean processCommand(String command) throws QuitException {
@@ -53,10 +54,10 @@ public class QuizManager implements QuizViewListener{
         return isHandled;
     }
      
-     private boolean handleRunQuiz() throws QuitException{
+   private boolean handleRunQuiz() throws QuitException{
          if(threeAlternativesButtonActive) {
-            quizSession = new QuizSessionAlternatives();
-        }else{
+            quizSession = new QuizSessionAlternatives(language1, language2, studentName,  numberOfWordsSelected);
+         }else{
              quizSession = new QuizSessionTextfield();
          }
           return quizSession.play();
@@ -75,9 +76,38 @@ public class QuizManager implements QuizViewListener{
         }
     }
     
+      
+    public void language2Selected(String language){
+         language2 = language;
+    }
+    public void language1Selected(String language){
+         language1 = language;
+    }
+    public void studentName(String name){
+        
+        studentName = name;
+    
+    }
+    public void numberOfWordsSelected(int numberOfWords){
+        numberOfWordsSelected = numberOfWords;
+    }
+   
+    
     public static void main(String[] args){
         
-          
+        QuizManager qm = new QuizManager();
+        
+        qm.numberOfWordsSelected(4);
+        qm.studentName("Herman");
+        qm.threeAlternativesButtonToggled();
+        qm.language1Selected("Sv");
+        qm.language2Selected("english");
+        qm.startQuizButton();
+      
+        
+        
+        
+       
     try {
         new QuizManager().play();
     } catch(QuitException qe) {

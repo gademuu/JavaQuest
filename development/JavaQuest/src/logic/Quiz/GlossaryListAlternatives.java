@@ -88,9 +88,6 @@ public class GlossaryListAlternatives extends GlossaryList {
        GlossaryListAlternatives myGLA = new GlossaryListAlternatives();
        myGLA.initialize("herman", "english",5);
      
-       
-       
-       
        WordAlternative w = myGLA.nextWordAlternative();
         while(w != null) {
             System.out.println(w.toString());
@@ -99,7 +96,14 @@ public class GlossaryListAlternatives extends GlossaryList {
         myGLA.saveStats();
          StudentStatsDao ssDao = StudentStatsDaoFactory.create(true);
         
-        System.out.println(ssDao.read("Herman","Quizet"));
+         StudentStats ss = ssDao.create(new StudentStats("herman", new Date().toString(), "0"));
+         StudentStats ss1 = ssDao.read(ss);
+         System.out.println(ss1.toString());
+         
+    
+
+            
+        
                  }
         
       

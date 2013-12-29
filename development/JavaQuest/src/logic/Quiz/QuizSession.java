@@ -13,6 +13,20 @@ public abstract class QuizSession {
     private QuizSessionView ui;
     private GlossaryList glossaryList;
     private QuizTimer timer;
+    private String language1;
+    private String language2;
+    private String studentName;
+    private int numberOfWordsSelected;
+    
+   
+    
+      public QuizSession(String studentName, String language1, String language2, int numberOfWordsSelected){
+          this.studentName = studentName;
+          this.language1 = language1;
+          this.language2 = language2;
+          this.numberOfWordsSelected = numberOfWordsSelected;
+      
+      }
     
     
     public boolean play() throws QuitException {

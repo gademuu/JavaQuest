@@ -22,34 +22,33 @@ public class PropStudentStatsDaoImpl extends PropDaoImpl implements StudentStats
      private static final String FILE = ".properties";
      
     
-    public String create(StudentStats aStudentStats){
+    public StudentStats create(StudentStats aStudentStats){
         
-        String id = null;
+       
         
         Properties prop = new Properties();
         prop = load(aStudentStats.getName()+FILE);
-        //prop.list(System.out);
+       
  
         
         prop.setProperty(aStudentStats.getQuizName(), aStudentStats.getStats());
         store(aStudentStats.getName()+FILE, prop, true);
 
-        id = aStudentStats.getName();
-            //prop.list(System.out);
        
-        return id;
+           
+       
+        return aStudentStats ;
     
     }
 
-    public StudentStats read(String id, String quizName){
-    
+    public StudentStats read(StudentStats aStudentStats){
+    Properties prop = new Properties();
+        prop = load(aStudentStats.getName()+FILE);
         StudentStats s = null;
-        Properties prop = new Properties();
-     
-        prop = load(id+FILE);
-        prop.get(quizName);
-        s = new StudentStats(id, quizName, prop.getProperty(quizName));        
-        return s;
+        
+        s = new StudentStats(aStudentStats.getName(), aStudentStats.getQuizName(), prop.getProperty(aStudentStats.getQuizName()));
+    
+    return s;
     }
 
     
@@ -57,7 +56,7 @@ public class PropStudentStatsDaoImpl extends PropDaoImpl implements StudentStats
  // TODO
  }
     
-    public void delete(String id, String quizName) {
+    public void delete(StudentStats aStudentStats) {
     // TODO
     }
     

@@ -9,6 +9,11 @@ import logic.Common.QuitException;
  */
 public class QuizSessionAlternatives extends QuizSession {
     
+    public QuizSessionAlternatives(String studentName, String language1, String language2, int numberOfWordsSelected){
+        super(studentName, language1, language2,  numberOfWordsSelected);
+    
+    }
+    
      @Override
     public boolean play() throws QuitException {
         

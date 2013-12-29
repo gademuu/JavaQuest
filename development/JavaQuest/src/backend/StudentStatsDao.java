@@ -12,13 +12,13 @@ package backend;
  */
 public interface StudentStatsDao {
     
-     public String create(StudentStats aStudentStats);
+     public StudentStats create(StudentStats aStudentStats);
    
-    public StudentStats read(String id, String quizName);
+    public StudentStats read(StudentStats aStudentStats);
     
     public void update(StudentStats aStudentStats);
     
-    public void delete(String id, String quizName);
+    public void delete(StudentStats aStudentStats);
     
     public StudentStats[] find(StudentStats criteria);
     
