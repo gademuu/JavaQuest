@@ -20,30 +20,30 @@
               <EmptySpace max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                   <Component id="jTextField3" alignment="0" max="32767" attributes="0"/>
-                  <Component id="jTextField2" alignment="0" max="32767" attributes="0"/>
-                  <Component id="language1" alignment="0" max="32767" attributes="0"/>
+                  <Component id="txtfield_word1" alignment="0" max="32767" attributes="0"/>
+                  <Component id="cBox_languageOne" alignment="0" max="32767" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="language2" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="cBox_languageTwo" alignment="0" min="-2" max="-2" attributes="0"/>
                   <Group type="103" alignment="0" groupAlignment="1" attributes="0">
                       <Group type="102" alignment="1" attributes="0">
-                          <Component id="jButton2" min="-2" max="-2" attributes="0"/>
+                          <Component id="btn_done" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+                          <Component id="btn_cancel" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="103" alignment="1" groupAlignment="1" max="-2" attributes="0">
                           <Group type="102" alignment="1" attributes="0">
                               <Component id="jTextField4" min="-2" pref="150" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="editBtn" min="-2" pref="40" max="-2" attributes="0"/>
+                              <Component id="btn_edit" min="-2" pref="40" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
-                              <Component id="deleteWordBtn" min="-2" pref="40" max="-2" attributes="0"/>
+                              <Component id="btn_delete" min="-2" pref="40" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
-                              <Component id="jTextField1" min="-2" pref="150" max="-2" attributes="0"/>
+                              <Component id="txtfield_word2" min="-2" pref="150" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="addWordBtn" max="32767" attributes="0"/>
+                              <Component id="btn_addWord" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -57,26 +57,26 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="language1" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="language2" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="cBox_languageOne" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="cBox_languageTwo" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jTextField1" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jTextField2" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="addWordBtn" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtfield_word2" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtfield_word1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btn_addWord" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jTextField4" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jTextField3" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="editBtn" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="deleteWordBtn" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btn_edit" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btn_delete" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace pref="85" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jButton1" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jButton2" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btn_cancel" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btn_done" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
@@ -84,17 +84,17 @@
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="javax.swing.JButton" name="jButton1">
+    <Component class="javax.swing.JButton" name="btn_cancel">
       <Properties>
         <Property name="text" type="java.lang.String" value="Avbryt"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton2">
+    <Component class="javax.swing.JButton" name="btn_done">
       <Properties>
         <Property name="text" type="java.lang.String" value="Klar"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="deleteWordBtn">
+    <Component class="javax.swing.JButton" name="btn_delete">
       <Properties>
         <Property name="text" type="java.lang.String" value="X"/>
         <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
@@ -106,12 +106,9 @@
         <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
           <Dimension value="[40, 29]"/>
         </Property>
-        <Property name="size" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-          <Dimension value="[40, 29]"/>
-        </Property>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="editBtn">
+    <Component class="javax.swing.JButton" name="btn_edit">
       <Properties>
         <Property name="text" type="java.lang.String" value="E"/>
         <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
@@ -123,12 +120,9 @@
         <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
           <Dimension value="[40, 29]"/>
         </Property>
-        <Property name="size" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-          <Dimension value="[40, 29]"/>
-        </Property>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="addWordBtn">
+    <Component class="javax.swing.JButton" name="btn_addWord">
       <Properties>
         <Property name="text" type="java.lang.String" value="L&#xe4;gg till"/>
         <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
@@ -142,9 +136,9 @@
         </Property>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextField1">
+    <Component class="javax.swing.JTextField" name="txtfield_word2">
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextField2">
+    <Component class="javax.swing.JTextField" name="txtfield_word1">
     </Component>
     <Component class="javax.swing.JTextField" name="jTextField3">
       <Properties>
@@ -158,7 +152,7 @@
         <Property name="text" type="java.lang.String" value="Hi"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JComboBox" name="language2">
+    <Component class="javax.swing.JComboBox" name="cBox_languageTwo">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
           <StringArray count="3">
@@ -173,12 +167,9 @@
         <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
           <Dimension value="[150, 27]"/>
         </Property>
-        <Property name="size" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-          <Dimension value="[150, 27]"/>
-        </Property>
       </Properties>
     </Component>
-    <Component class="javax.swing.JComboBox" name="language1">
+    <Component class="javax.swing.JComboBox" name="cBox_languageOne">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
           <StringArray count="3">
@@ -191,9 +182,6 @@
           <Dimension value="[150, 27]"/>
         </Property>
         <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-          <Dimension value="[150, 27]"/>
-        </Property>
-        <Property name="size" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
           <Dimension value="[150, 27]"/>
         </Property>
       </Properties>

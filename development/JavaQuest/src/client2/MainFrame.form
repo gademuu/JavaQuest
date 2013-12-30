@@ -68,13 +68,13 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
                   <EmptySpace pref="117" max="32767" attributes="0"/>
-                  <Component id="menu_tBtn1" min="-2" max="-2" attributes="0"/>
+                  <Component id="toggleBtn_menu1" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
-                  <Component id="menu_tBtn2" min="-2" max="-2" attributes="0"/>
+                  <Component id="toggleBtn_menu2" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
-                  <Component id="menu_tBtn3" min="-2" max="-2" attributes="0"/>
+                  <Component id="toggleBtn_menu3" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
-                  <Component id="menu_tBtn4" min="-2" max="-2" attributes="0"/>
+                  <Component id="toggleBtn_menu4" min="-2" max="-2" attributes="0"/>
                   <EmptySpace pref="118" max="32767" attributes="0"/>
               </Group>
           </Group>
@@ -84,11 +84,11 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="1" attributes="0">
-                      <Component id="menu_tBtn4" min="-2" max="-2" attributes="0"/>
+                      <Component id="toggleBtn_menu4" min="-2" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="menu_tBtn2" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="menu_tBtn1" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="menu_tBtn3" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="toggleBtn_menu2" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="toggleBtn_menu1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="toggleBtn_menu3" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace max="32767" attributes="0"/>
@@ -97,7 +97,7 @@
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JToggleButton" name="menu_tBtn1">
+        <Component class="javax.swing.JToggleButton" name="toggleBtn_menu1">
           <Properties>
             <Property name="text" type="java.lang.String" value="Quiz"/>
             <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
@@ -111,10 +111,10 @@
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="menu_tBtn1ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="toggleBtn_menu1ActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JToggleButton" name="menu_tBtn2">
+        <Component class="javax.swing.JToggleButton" name="toggleBtn_menu2">
           <Properties>
             <Property name="text" type="java.lang.String" value="Ny Gloslista"/>
             <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
@@ -128,10 +128,10 @@
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="menu_tBtn2ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="toggleBtn_menu2ActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JToggleButton" name="menu_tBtn3">
+        <Component class="javax.swing.JToggleButton" name="toggleBtn_menu3">
           <Properties>
             <Property name="text" type="java.lang.String" value="Statistik"/>
             <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
@@ -145,10 +145,10 @@
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="menu_tBtn3ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="toggleBtn_menu3ActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JToggleButton" name="menu_tBtn4">
+        <Component class="javax.swing.JToggleButton" name="toggleBtn_menu4">
           <Properties>
             <Property name="text" type="java.lang.String" value="Inst&#xe4;llningar"/>
             <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
@@ -162,7 +162,7 @@
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="menu_tBtn4ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="toggleBtn_menu4ActionPerformed"/>
           </Events>
         </Component>
       </SubComponents>
