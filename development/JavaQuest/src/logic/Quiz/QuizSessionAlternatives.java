@@ -19,7 +19,7 @@ public class QuizSessionAlternatives extends QuizSession implements QuizAlternat
         
         gla.initialize(studentName, language2, numberOfWordsSelected);
     
-    }
+    }//blablalbalba så jag kan commita
     
     /* @Override
     public boolean play() throws QuitException {
