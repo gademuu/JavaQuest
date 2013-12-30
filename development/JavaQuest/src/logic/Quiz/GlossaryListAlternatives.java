@@ -48,7 +48,7 @@ public class GlossaryListAlternatives extends GlossaryList {
             for(int j = 0; !finished && j < glossary.size(); j++) {
                 alt2 = glossary.get(j);
                 
-            }
+            
                    
             if(!finished) {
                 alt2 = new Word("","",w.getLanguage());
@@ -60,13 +60,11 @@ public class GlossaryListAlternatives extends GlossaryList {
             if(!finished) {
                 alt2 = new Word("","",w.getLanguage());
 }
+            }
          
         WordAlternative wa = new WordAlternative(alt1.getTranslation(), alt2.getTranslation(),w.getOrginal(),w.getTranslation(),w.getLanguage());
          quizGlossary.set(i, wa);
         }
-        studentStats = new StudentStats(studentName, new Date().toString(), "");
-       
-        
              
    }
   
@@ -93,16 +91,14 @@ public class GlossaryListAlternatives extends GlossaryList {
             System.out.println(w.toString());
              w = myGLA.nextWordAlternative();
         }
-        myGLA.saveStats();
+         myGLA.saveStats();
          StudentStatsDao ssDao = StudentStatsDaoFactory.create(true);
         
          StudentStats ss = ssDao.create(new StudentStats("herman", new Date().toString(), "0"));
          StudentStats ss1 = ssDao.read(ss);
          System.out.println(ss1.toString());
          
-    
-
-            
+         
         
                  }
         

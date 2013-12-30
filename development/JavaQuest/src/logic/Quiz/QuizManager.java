@@ -27,38 +27,18 @@ public class QuizManager implements QuizViewListener{
     private String startQuizButton;
     
     
-    
+    //Hur ska vi instanciera startviewn 
     public QuizManager(){
          ui = new QuizView(this);
          ui.initialize();
         
-    }
-    
-    public boolean play() throws QuitException {
-        
-        GlossaryListAlternatives glossaryList = new GlossaryListAlternatives();
-        glossaryList.initialize(studentName,language2, numberOfWords);
-         
-        return true;
-    }
-    
-     private boolean processCommand(String command) throws QuitException {
-        
-        boolean isHandled = false;
-        
-        
-        if(command.equals(RUN_QUIZ)){
-            isHandled = handleRunQuiz();
-        }
-            
-        return isHandled;
     }
      
    private boolean handleRunQuiz() throws QuitException{
          if(threeAlternativesButtonActive) {
             quizSession = new QuizSessionAlternatives(language1, language2, studentName,  numberOfWordsSelected);
          }else{
-             quizSession = new QuizSessionTextfield();
+             quizSession = new QuizSessionTextfield(language1, language2, studentName,  numberOfWordsSelected);
          }
           return quizSession.play();
      }
@@ -100,19 +80,11 @@ public class QuizManager implements QuizViewListener{
         qm.numberOfWordsSelected(4);
         qm.studentName("Herman");
         qm.threeAlternativesButtonToggled();
-        qm.language1Selected("Sv");
+        qm.language1Selected("swedish");
         qm.language2Selected("english");
         qm.startQuizButton();
       
-        
-        
-        
-       
-    try {
-        new QuizManager().play();
-    } catch(QuitException qe) {
-        qe.printStackTrace();
-    }
+      
     
     }
     

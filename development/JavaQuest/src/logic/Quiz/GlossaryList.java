@@ -9,10 +9,11 @@ import backend.WordDaoFactory;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.Date;
 import java.util.Iterator;
 
 /**
- *
+ * Hanterar ordlistan. 
  * @author herman
  */
 public abstract class GlossaryList {
@@ -42,7 +43,7 @@ public abstract class GlossaryList {
         
        // quizGlossary = (ArrayList<Word>) glossary.subList(0, numberOfWords);
         
-        // 4. Create a studentStats object with todays date and the provided studentName
+        studentStats = new StudentStats(studentName, new Date().toString(), "");
         
         
         // 6. Subclass decides whether WordAlternative is to be used
@@ -80,7 +81,7 @@ public abstract class GlossaryList {
     /**
      * @return the percentage as a string with 1 decimal followed by the % sign
      */
-    public String getPercentage(int n, int total) {
+    private String getPercentage(int n, int total) {
         float proportion = ((float) n) / ((float) total);
         return String.format("%.1f", new Float(proportion * 100)) + "%";
     }

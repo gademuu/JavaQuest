@@ -197,6 +197,9 @@ public class QuizView extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
+   /*
+    Här ska väl listernern anropas för att ta in två parametrar lang1 och lang2
+    */
     private void toggleBtn_languageOneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_toggleBtn_languageOneActionPerformed
         toggleBtn_languageMix.setSelected(false);
         toggleBtn_languageTwo.setSelected(false);

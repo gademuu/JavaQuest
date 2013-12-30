@@ -75,7 +75,7 @@ public class Game {
     
     private boolean handleQuiz() throws QuitException {
         
-        return quiz.play();
+        return true;
         
     }
     
