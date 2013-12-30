@@ -33,38 +33,36 @@ public class GlossaryView extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        deleteWordBtn = new javax.swing.JButton();
-        editBtn = new javax.swing.JButton();
-        addWordBtn = new javax.swing.JButton();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
+        btn_cancel = new javax.swing.JButton();
+        btn_done = new javax.swing.JButton();
+        btn_delete = new javax.swing.JButton();
+        btn_edit = new javax.swing.JButton();
+        btn_addWord = new javax.swing.JButton();
+        txtfield_word2 = new javax.swing.JTextField();
+        txtfield_word1 = new javax.swing.JTextField();
         jTextField3 = new javax.swing.JTextField();
         jTextField4 = new javax.swing.JTextField();
-        language2 = new javax.swing.JComboBox();
-        language1 = new javax.swing.JComboBox();
+        cBox_languageTwo = new javax.swing.JComboBox();
+        cBox_languageOne = new javax.swing.JComboBox();
 
-        jButton1.setText("Avbryt");
+        btn_cancel.setText("Avbryt");
 
-        jButton2.setText("Klar");
+        btn_done.setText("Klar");
 
-        deleteWordBtn.setText("X");
-        deleteWordBtn.setMaximumSize(new java.awt.Dimension(40, 29));
-        deleteWordBtn.setMinimumSize(new java.awt.Dimension(40, 29));
-        deleteWordBtn.setPreferredSize(new java.awt.Dimension(40, 29));
-        deleteWordBtn.setSize(new java.awt.Dimension(40, 29));
+        btn_delete.setText("X");
+        btn_delete.setMaximumSize(new java.awt.Dimension(40, 29));
+        btn_delete.setMinimumSize(new java.awt.Dimension(40, 29));
+        btn_delete.setPreferredSize(new java.awt.Dimension(40, 29));
 
-        editBtn.setText("E");
-        editBtn.setMaximumSize(new java.awt.Dimension(40, 29));
-        editBtn.setMinimumSize(new java.awt.Dimension(40, 29));
-        editBtn.setPreferredSize(new java.awt.Dimension(40, 29));
-        editBtn.setSize(new java.awt.Dimension(40, 29));
+        btn_edit.setText("E");
+        btn_edit.setMaximumSize(new java.awt.Dimension(40, 29));
+        btn_edit.setMinimumSize(new java.awt.Dimension(40, 29));
+        btn_edit.setPreferredSize(new java.awt.Dimension(40, 29));
 
-        addWordBtn.setText("Lägg till");
-        addWordBtn.setMaximumSize(new java.awt.Dimension(100, 29));
-        addWordBtn.setMinimumSize(new java.awt.Dimension(100, 29));
-        addWordBtn.setPreferredSize(new java.awt.Dimension(100, 29));
+        btn_addWord.setText("Lägg till");
+        btn_addWord.setMaximumSize(new java.awt.Dimension(100, 29));
+        btn_addWord.setMinimumSize(new java.awt.Dimension(100, 29));
+        btn_addWord.setPreferredSize(new java.awt.Dimension(100, 29));
 
         jTextField3.setEditable(false);
         jTextField3.setText("Hej");
@@ -72,15 +70,13 @@ public class GlossaryView extends javax.swing.JPanel {
         jTextField4.setEditable(false);
         jTextField4.setText("Hi");
 
-        language2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "-Språk 2-", "Svenska", "Engelska" }));
-        language2.setMinimumSize(new java.awt.Dimension(150, 27));
-        language2.setPreferredSize(new java.awt.Dimension(150, 27));
-        language2.setSize(new java.awt.Dimension(150, 27));
+        cBox_languageTwo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "-Språk 2-", "Svenska", "Engelska" }));
+        cBox_languageTwo.setMinimumSize(new java.awt.Dimension(150, 27));
+        cBox_languageTwo.setPreferredSize(new java.awt.Dimension(150, 27));
 
-        language1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "-Språk 1-", "Svenska", "Engelska" }));
-        language1.setMinimumSize(new java.awt.Dimension(150, 27));
-        language1.setPreferredSize(new java.awt.Dimension(150, 27));
-        language1.setSize(new java.awt.Dimension(150, 27));
+        cBox_languageOne.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "-Språk 1-", "Svenska", "Engelska" }));
+        cBox_languageOne.setMinimumSize(new java.awt.Dimension(150, 27));
+        cBox_languageOne.setPreferredSize(new java.awt.Dimension(150, 27));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -90,27 +86,27 @@ public class GlossaryView extends javax.swing.JPanel {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jTextField3)
-                    .addComponent(jTextField2)
-                    .addComponent(language1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(txtfield_word1)
+                    .addComponent(cBox_languageOne, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(51, 51, 51)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(language2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cBox_languageTwo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                         .addGroup(layout.createSequentialGroup()
-                            .addComponent(jButton2)
+                            .addComponent(btn_done)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(jButton1))
+                            .addComponent(btn_cancel))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(editBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(btn_edit, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(26, 26, 26)
-                                .addComponent(deleteWordBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(btn_delete, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(txtfield_word2, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(addWordBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
+                                .addComponent(btn_addWord, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -118,39 +114,39 @@ public class GlossaryView extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGap(32, 32, 32)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(language1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(language2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cBox_languageOne, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cBox_languageTwo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(27, 27, 27)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(addWordBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtfield_word2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtfield_word1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_addWord, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(34, 34, 34)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(editBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(deleteWordBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btn_edit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_delete, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 85, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2))
+                    .addComponent(btn_cancel)
+                    .addComponent(btn_done))
                 .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton addWordBtn;
-    private javax.swing.JButton deleteWordBtn;
-    private javax.swing.JButton editBtn;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
+    private javax.swing.JButton btn_addWord;
+    private javax.swing.JButton btn_cancel;
+    private javax.swing.JButton btn_delete;
+    private javax.swing.JButton btn_done;
+    private javax.swing.JButton btn_edit;
+    private javax.swing.JComboBox cBox_languageOne;
+    private javax.swing.JComboBox cBox_languageTwo;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
-    private javax.swing.JComboBox language1;
-    private javax.swing.JComboBox language2;
+    private javax.swing.JTextField txtfield_word1;
+    private javax.swing.JTextField txtfield_word2;
     // End of variables declaration//GEN-END:variables
 }
