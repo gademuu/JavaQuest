@@ -33,8 +33,8 @@ public class GlossaryView extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        scrollPane = new javax.swing.JScrollPane();
+        table_glossaryList = new javax.swing.JTable();
         btn_cancel = new javax.swing.JButton();
         btn_done = new javax.swing.JButton();
         btn_addWord = new javax.swing.JButton();
@@ -44,7 +44,7 @@ public class GlossaryView extends javax.swing.JPanel {
         cBox_languageTwo = new javax.swing.JComboBox();
         cBox_languageOne = new javax.swing.JComboBox();
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        table_glossaryList.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null},
                 {null, null},
@@ -71,10 +71,10 @@ public class GlossaryView extends javax.swing.JPanel {
                 "Svenska", "Språk 2"
             }
         ));
-        jTable1.setColumnSelectionAllowed(true);
-        jTable1.getTableHeader().setReorderingAllowed(false);
-        jScrollPane1.setViewportView(jTable1);
-        jTable1.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        table_glossaryList.setColumnSelectionAllowed(true);
+        table_glossaryList.getTableHeader().setReorderingAllowed(false);
+        scrollPane.setViewportView(table_glossaryList);
+        table_glossaryList.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
 
         btn_cancel.setText("Avbryt");
 
@@ -105,7 +105,7 @@ public class GlossaryView extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 351, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(scrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 351, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(txtfield_word1)
@@ -141,7 +141,7 @@ public class GlossaryView extends javax.swing.JPanel {
                     .addComponent(txtfield_word1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btn_addWord, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(scrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 13, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btn_cancel)
@@ -158,8 +158,8 @@ public class GlossaryView extends javax.swing.JPanel {
     private javax.swing.JButton btn_done;
     private javax.swing.JComboBox cBox_languageOne;
     private javax.swing.JComboBox cBox_languageTwo;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JScrollPane scrollPane;
+    private javax.swing.JTable table_glossaryList;
     private javax.swing.JTextField txtfield_word1;
     private javax.swing.JTextField txtfield_word2;
     // End of variables declaration//GEN-END:variables
