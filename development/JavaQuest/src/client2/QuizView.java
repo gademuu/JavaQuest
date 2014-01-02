@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 
 package client2;
 
@@ -10,7 +5,7 @@ package client2;
  *
  * @author pierrezarebski
  */
-public class QuizView extends javax.swing.JPanel {
+public class QuizViewSetter extends javax.swing.JPanel implements QuizView{
 
     private QuizViewListener listener;
     /**
@@ -18,12 +13,64 @@ public class QuizView extends javax.swing.JPanel {
      */
     public QuizView() {
         initComponents();
+        
     }
+    
+    public void setQuizViewListener(QuizViewListener qvl){}
     
     public QuizView(QuizViewListener listener){
         initComponents();
         this.listener = listener;
     }
+    
+    
+    public void setLanguages(String[] languages){
+        if(languages != null) {
+            for(String s : languages){
+                cBox_language.addItem(s);
+                
+            }
+                    
+        }
+        
+        
+    }
+    
+    public void setGlossaryLists(String[] lists){}
+        
+         public  void initialize(){
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(client.QuizView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(client.QuizView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(client.QuizView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(client.QuizView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                setVisible(true);
+            }
+        });
+    }
+        
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -60,10 +107,20 @@ public class QuizView extends javax.swing.JPanel {
         cBox_userLists.setToolTipText("");
         cBox_userLists.setMinimumSize(new java.awt.Dimension(150, 27));
         cBox_userLists.setPreferredSize(new java.awt.Dimension(150, 27));
+        cBox_userLists.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cBox_userListsActionPerformed(evt);
+            }
+        });
 
         cBox_language.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "-Språk-", "Engelska" }));
         cBox_language.setMinimumSize(new java.awt.Dimension(150, 27));
         cBox_language.setPreferredSize(new java.awt.Dimension(150, 27));
+        cBox_language.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cBox_languageActionPerformed(evt);
+            }
+        });
 
         toggleBtn_language1.setText("Språk 1");
         toggleBtn_language1.setMaximumSize(new java.awt.Dimension(100, 29));
@@ -187,23 +244,25 @@ public class QuizView extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-   /*
-    Här ska väl listernern anropas för att ta in två parametrar lang1 och lang2
-    */
+  
     private void toggleBtn_language1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_toggleBtn_language1ActionPerformed
-        toggleBtn_language2.setSelected(false);
+        toggleBtn_language2.setSelected(true);
+        listener.language1("");
     }//GEN-LAST:event_toggleBtn_language1ActionPerformed
 
     private void toggleBtn_language2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_toggleBtn_language2ActionPerformed
-        toggleBtn_language1.setSelected(false);
+        toggleBtn_language1.setSelected(true);
+        listener.language2((String) cBox_language.getSelectedItem());
     }//GEN-LAST:event_toggleBtn_language2ActionPerformed
 
     private void toggleBtn_textQuizActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_toggleBtn_textQuizActionPerformed
         toggleBtn_alternativesQuiz.setSelected(false);
+        listener.textQuizToggled();
     }//GEN-LAST:event_toggleBtn_textQuizActionPerformed
 
     private void toggleBtn_alternativesQuizActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_toggleBtn_alternativesQuizActionPerformed
         toggleBtn_textQuiz.setSelected(false);
+        listener.alternativesQuizToggled();
     }//GEN-LAST:event_toggleBtn_alternativesQuizActionPerformed
 
     private void btn_startQuizActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_startQuizActionPerformed
@@ -212,11 +271,21 @@ public class QuizView extends javax.swing.JPanel {
         } else if (quiz_tBtn_freetext.isSelected()){
             changePanel(panel_quiz_freetext);
         }*/
+        listener.startQuizButton();
     }//GEN-LAST:event_btn_startQuizActionPerformed
 
     private void toggleBtn_3triesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_toggleBtn_3triesActionPerformed
-        // TODO add your handling code here:
+        listener.threeAttemptsBtnToggle();
     }//GEN-LAST:event_toggleBtn_3triesActionPerformed
+
+    private void cBox_userListsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cBox_userListsActionPerformed
+        listener.listMenu();
+    }//GEN-LAST:event_cBox_userListsActionPerformed
+
+    private void cBox_languageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cBox_languageActionPerformed
+        listener.languageMenu();
+        System.out.println(cBox_language.getSelectedItem());
+    }//GEN-LAST:event_cBox_languageActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_startQuiz;

@@ -6,7 +6,7 @@
 
 package logic.Student;
 
-import client.StudentView;
+
 
 /**
  *  (ska använda studentdao, skapa en ny student. Ta imot password och namn.)
@@ -14,7 +14,7 @@ import client.StudentView;
  */
 public class StudentManager {
     
-    private StudentView ui;
+    
     
     /*
     Hantera commandon från användaren. 

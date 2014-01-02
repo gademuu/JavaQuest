@@ -7,13 +7,14 @@ package client;
  */
 public interface QuizViewListener {
     
+    public void languageMenu();
+    public void listMenu();
+    public void language1(String language);
+    public void language2(String language);
+    public void threeAttemptsBtnToggle();
+    public void alternativesQuizToggled();
+    public void textQuizToggled();
+    public void startQuizButton();
     
-    public void language2Selected(String language);
-    public void language1Selected(String language);
-    public void studentName(String name);
-    public void numberOfWordsSelected(int numberOfWords);
-     public void threeAlternativesButtonToggled();
-     public void startQuizButton();
-    
-    
+  
 }

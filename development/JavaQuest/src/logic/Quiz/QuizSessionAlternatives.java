@@ -1,7 +1,7 @@
 package logic.Quiz;
 
 import client.QuizAlternativesView;
-import client2.QuizAlternativesListener;
+import client2.*;
 import logic.Common.QuitException;
 
 /**
@@ -13,13 +13,13 @@ public class QuizSessionAlternatives extends QuizSession implements QuizAlternat
         
        private GlossaryListAlternatives gla;
         
-    public QuizSessionAlternatives(String studentName, String language1, String language2, int numberOfWordsSelected){
-        super(studentName, language1, language2,  numberOfWordsSelected);
+    public QuizSessionAlternatives(String studentName, String language1, String language2, int numberOfWordsSelected, boolean threeAttemptsButton ){
+        super(studentName, language1, language2,  numberOfWordsSelected, threeAttemptsButton );
         gla = new GlossaryListAlternatives();
         
         gla.initialize(studentName, language2, numberOfWordsSelected);
     
-    }//blablalbalba så jag kan commita
+    }
     
     /* @Override
     public boolean play() throws QuitException {
@@ -39,24 +39,21 @@ public class QuizSessionAlternatives extends QuizSession implements QuizAlternat
   */  
     
     public void wordOneBtnPressed(String answer){
+        isCorrect(answer);
         
-    
-        if(gla.isCorrect(answer)) {
-            System.out.println("correct!");
-
-        }else 
-        System.out.println("wrong");
         }
        
-    public void wordTwoBtnPressed(){
-        
+       
+    public void wordTwoBtnPressed(String answer){
+        isCorrect(answer);
     }
-    public void wordThreeBtnPressed(){
-        
+    public void wordThreeBtnPressed(String answer){
+        isCorrect(answer);
     }
     
     public void nextWord(){
         WordAlternative wa = gla.nextWordAlternative();
+        numberOfattemptsCounter = 0;
         
         if(wa!=null){
             System.out.println(wa);
@@ -68,16 +65,13 @@ public class QuizSessionAlternatives extends QuizSession implements QuizAlternat
     
     public static void main(String[] args){
        
-        QuizSessionAlternatives qsa = new QuizSessionAlternatives("herman","swedish","english",5);
+        QuizSessionAlternatives qsa = new QuizSessionAlternatives("herman","swedish","english",11,true);
         String []s ={"car","hello","smoke","girl","boy","floor"};
-        for(int i=0; i<=5;i++){
+        for(int i=0; i<=10;i++){
             
             qsa.nextWord();
             qsa.wordOneBtnPressed(s[i]);
-             
-        
-        
-        
+              
         }
         
     }

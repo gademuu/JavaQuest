@@ -8,8 +8,8 @@ package client2;
 public interface QuizAlternativesListener {
     
     public void wordOneBtnPressed(String answer);
-    public void wordTwoBtnPressed();
-    public void wordThreeBtnPressed();
+    public void wordTwoBtnPressed(String answer);
+    public void wordThreeBtnPressed(String answer);
     public void nextWord();
     
 }

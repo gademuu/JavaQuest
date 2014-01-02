@@ -1,7 +1,7 @@
 package logic.Quiz;
 
 import client.QuizSessionView;
-import client.QuizView;
+import client2.QuizView;
 import logic.Common.QuitException;
 
 /**
@@ -10,22 +10,44 @@ import logic.Common.QuitException;
  */
 public abstract class QuizSession {
     
-    private QuizSessionView ui;
-    private GlossaryList glossaryList;
-    private QuizTimer timer;
-    private String language1;
-    private String language2;
-    private String studentName;
-    private int numberOfWordsSelected;
+    protected static final int MAX_NUMBER_OF_ATTEMPTS = 3;
+    
+    protected QuizSessionView ui;
+    protected GlossaryList glossaryList;
+    protected QuizTimer timer;
+    protected String language1;
+    protected String language2;
+    protected String studentName;
+    protected int numberOfWordsSelected;
+    protected boolean threeAttemptsButton;
+    protected int numberOfattemptsCounter = 0; 
     
    
     
-      public QuizSession(String studentName, String language1, String language2, int numberOfWordsSelected){
+      public QuizSession(String studentName, String language1, String language2, int numberOfWordsSelected, boolean threeAttemptsButton ){
           this.studentName = studentName;
           this.language1 = language1;
           this.language2 = language2;
           this.numberOfWordsSelected = numberOfWordsSelected;
+          this.threeAttemptsButton  = threeAttemptsButton ;
       
+      }
+      
+      protected void isCorrect(String answer){
+           if(numberOfattemptsCounter == MAX_NUMBER_OF_ATTEMPTS){
+                 System.out.println("no more attempts");   
+            }
+    
+        if(glossaryList.isCorrect(answer)) {
+            System.out.println("correct!");
+        }else {
+        System.out.println("wrong");
+            if(threeAttemptsButton){
+                 numberOfattemptsCounter++;
+                 System.out.println(numberOfattemptsCounter);
+                  
+                 }
+            }      
       }
     
     

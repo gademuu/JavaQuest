@@ -15,6 +15,10 @@ public class MainFrame extends javax.swing.JFrame {
         initComponents();
     }
     
+    public QuizView getQuizView(){
+        return quizPanel;
+    }
+    
     /*public MainFrame(MainFrameListener listener){
         initComponents();
         this.listener = listener;

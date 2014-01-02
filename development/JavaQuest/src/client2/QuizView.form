@@ -126,6 +126,9 @@
           <Dimension value="[150, 27]"/>
         </Property>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cBox_userListsActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JComboBox" name="cBox_language">
       <Properties>
@@ -142,6 +145,9 @@
           <Dimension value="[150, 27]"/>
         </Property>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cBox_languageActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JToggleButton" name="toggleBtn_language1">
       <Properties>

@@ -38,12 +38,12 @@ public class WordAlternative extends Word {
     public void setIncorrectAlternative2(String incorrectAlternative2) {
         this.incorrectAlternative2 = incorrectAlternative2;
     }
-//Fixa bättre output anropa super to string inccorectalt1, incorrectalt2 string s = super.tostring + : inc1 + inc2
-    @Override
-    public String toString() {
-        return null;
-                }
 
+     @Override
+    public String toString() {
+        return "WordAlternative{" + super.toString() + "[" + incorrectAlternative1 + "] [" + incorrectAlternative2 + "]}";
+    }
+ 
     
     
     public String[] getAlternativesInRandomOrder() {

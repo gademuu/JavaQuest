@@ -11,6 +11,7 @@ import logic.Student.StudentManager;
 import logic.Glossary.GlossaryManager;
 import logic.Quiz.QuizSession;
 import client.GameView;
+import client2.*;
 import logic.Quiz.QuizManager;
 
 /**
@@ -24,12 +25,19 @@ public class Game {
     
     private static final String CREATE_QUIZ = "create_quiz";
     
-    private GameView ui;
+    private MainFrame ui;
     private QuizManager quiz;
     private StudentManager studentManager;
     private GlossaryManager glossaryManager;
     
-    public void play() {
+    public Game(){
+        ui = new MainFrame();
+        ui.initialize();
+        QuizManager qm = new QuizManager(ui.getQuizView());
+        
+}
+    
+    /*public void play() {
         
         boolean finished = false;
         
@@ -89,5 +97,10 @@ public class Game {
     
     private boolean handleQuit(){
         return true;
+    }
+    */
+    public static void main(String[]args){
+        Game g = new Game();
+        
     }
 }
