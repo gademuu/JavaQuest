@@ -16,12 +16,11 @@ public class QuizView extends javax.swing.JPanel implements QuizViewSetter {
         
     }
     
-    public void setQuizViewListener(QuizViewListener qvl){}
-    
-    public QuizView(QuizViewListener listener){
-        initComponents();
-        this.listener = listener;
-    }
+    public void setQuizViewListener(QuizViewListener qvl){
+
+        this.listener = qvl;
+
+}
     
     
     public void setLanguages(String[] languages){
