@@ -5,7 +5,7 @@ package client2;
  *
  * @author pierrezarebski
  */
-public class QuizViewSetter extends javax.swing.JPanel implements QuizView{
+public class QuizView extends javax.swing.JPanel implements QuizViewSetter {
 
     private QuizViewListener listener;
     /**
