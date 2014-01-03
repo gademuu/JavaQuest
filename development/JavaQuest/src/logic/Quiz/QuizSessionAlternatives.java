@@ -12,9 +12,10 @@ public class QuizSessionAlternatives extends QuizSession implements QuizAlternat
     
         
        private GlossaryListAlternatives gla;
+       private QuizAlternativesViewSetter qavs;
         
-    public QuizSessionAlternatives(String studentName, String language1, String language2, int numberOfWordsSelected, boolean threeAttemptsButton ){
-        super(studentName, language1, language2,  numberOfWordsSelected, threeAttemptsButton );
+    public QuizSessionAlternatives(String studentName, String language1, String language2, int numberOfWordsSelected, boolean threeAttemptsButton, QuizSessionSetter setter ){
+        super(studentName, language1, language2,  numberOfWordsSelected, threeAttemptsButton, setter );
         gla = new GlossaryListAlternatives();
         
         gla.initialize(studentName, language2, numberOfWordsSelected);
@@ -63,7 +64,7 @@ public class QuizSessionAlternatives extends QuizSession implements QuizAlternat
         }
      }
     
-    public static void main(String[] args){
+  /*  public static void main(String[] args){
        
         QuizSessionAlternatives qsa = new QuizSessionAlternatives("herman","swedish","english",11,true);
         String []s ={"car","hello","smoke","girl","boy","floor"};
@@ -74,7 +75,7 @@ public class QuizSessionAlternatives extends QuizSession implements QuizAlternat
               
         }
         
-    }
+    }*/
     
     
 }

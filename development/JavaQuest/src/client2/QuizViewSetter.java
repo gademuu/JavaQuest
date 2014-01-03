@@ -14,6 +14,10 @@ public interface QuizViewSetter {
     
     public void setGlossaryLists(String[] lists);
     
+    public QuizAlternativesViewSetter getQuizAlternativesViewSetter();
+            
+    public QuizTextViewSetter getQuizTextViewSetter();        
+    
     
     
 }

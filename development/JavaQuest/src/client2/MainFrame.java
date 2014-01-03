@@ -243,4 +243,12 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JToggleButton toggleBtn_menu3;
     private javax.swing.JToggleButton toggleBtn_menu4;
     // End of variables declaration//GEN-END:variables
+
+    public QuizAlternativesView getQuizAlternativesPanel() {
+        return quizAlternativesPanel;
+    }
+
+    public QuizTextView getQuizTextPanel() {
+        return quizTextPanel;
+    }
 }

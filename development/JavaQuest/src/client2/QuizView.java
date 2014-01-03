@@ -8,13 +8,33 @@ package client2;
 public class QuizView extends javax.swing.JPanel implements QuizViewSetter {
 
     private QuizViewListener listener;
-    /**
-     * Creates new form QuizView
-     */
-    public QuizView() {
+    private QuizAlternativesViewSetter alternativesSetter;
+
+     public QuizView() {
         initComponents();
         
     }
+    
+    public void setAlternativesSetter(QuizAlternativesViewSetter alternativesSetter) {
+        this.alternativesSetter = alternativesSetter;
+    }
+
+    public void setTextSetter(QuizTextViewSetter textSetter) {
+        this.textSetter = textSetter;
+    }
+    private QuizTextViewSetter  textSetter;       
+    /**
+     * Creates new form QuizView
+     */
+   
+    
+    public QuizAlternativesViewSetter getQuizAlternativesViewSetter(){
+        return alternativesSetter;
+    }
+            
+    public QuizTextViewSetter getQuizTextViewSetter(){
+        return textSetter;
+    }    
     
     public void setQuizViewListener(QuizViewListener qvl){
 

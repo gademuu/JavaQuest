@@ -10,7 +10,7 @@ package client2;
  *
  * @author pierrezarebski
  */
-public class QuizTextView extends javax.swing.JPanel {
+public class QuizTextView extends javax.swing.JPanel implements QuizTextViewSetter {
     
     private QuizTextListener listener;
     /**
@@ -23,6 +23,18 @@ public class QuizTextView extends javax.swing.JPanel {
     public QuizTextView(QuizTextListener listener) {
         initComponents();
         this.listener = listener;
+    }
+    
+    public void setIsCorrect(int numberOfCorrectAnswers){
+        
+        progressBar.setValue(progressBar.getValue() + 1);
+        System.out.println("Correct!");
+        label_correctAnswers.setText("" + numberOfCorrectAnswers);
+    }
+    
+    public void setIsInCorrect(){
+        
+        System.out.println("Incorrect");
     }
     /**
      * This method is called from within the constructor to initialize the form.

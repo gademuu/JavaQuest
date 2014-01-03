@@ -10,7 +10,7 @@ package client2;
  *
  * @author pierrezarebski
  */
-public class QuizAlternativesView extends javax.swing.JPanel {
+public class QuizAlternativesView extends javax.swing.JPanel implements QuizAlternativesViewSetter {
 
     private QuizAlternativesListener listener;
     /**
@@ -20,10 +20,26 @@ public class QuizAlternativesView extends javax.swing.JPanel {
         initComponents();
     }
     
-    public QuizAlternativesView(QuizAlternativesListener listener) {
-        initComponents();
-        this.listener = listener;
+    public void setQuizAlternativesViewListener(){
+           this.listener = listener;
     }
+    
+    public void setIsCorrect(int numberOfCorrectAnswers){
+        
+        progressBar.setValue(progressBar.getValue() + 1);
+        System.out.println("Correct!");
+        label_correctAnswers.setText("" + numberOfCorrectAnswers);
+    }
+    
+    public void setIsInCorrect(){
+        
+        System.out.println("Incorrect");
+        
+        
+    
+    }
+    
+   
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
