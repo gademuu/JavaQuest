@@ -38,9 +38,13 @@ public abstract class QuizSession {
       
       
       
-      protected void isCorrect(String answer){
+       protected void isCorrect(String answer){
            if(numberOfattemptsCounter == MAX_NUMBER_OF_ATTEMPTS){
                  System.out.println("no more attempts");   
+                 
+                 return;
+           }
+                 
                  if(glossaryList.isCorrect(answer)) {
                      ui.setIsCorrect(numberOfCorrectAnswers);
                      numberOfCorrectAnswers++;
@@ -49,17 +53,11 @@ public abstract class QuizSession {
                     ui.setIsInCorrect();
                      if(threeAttemptsButton){
                  numberOfattemptsCounter++;
-                 System.out.println(numberOfattemptsCounter);     
-            }
-    
-        if(glossaryList.isCorrect(answer)) {
-            System.out.println("correct!");
-        }else {
-        System.out.println("wrong");
-          
-                 }
-            }  
-           }
+                 System.out.println(numberOfattemptsCounter);  
+                     }
+            
+                }  
+           
       }
       
     

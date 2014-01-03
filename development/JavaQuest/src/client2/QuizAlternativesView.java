@@ -81,10 +81,25 @@ public class QuizAlternativesView extends javax.swing.JPanel implements QuizAlte
         label_correctAnswers.setText("Antal rätt:");
 
         toggleBtn_wordOne.setText("Ord1");
+        toggleBtn_wordOne.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                toggleBtn_wordOneActionPerformed(evt);
+            }
+        });
 
         toggleBtn_wordTwo.setText("Ord2");
+        toggleBtn_wordTwo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                toggleBtn_wordTwoActionPerformed(evt);
+            }
+        });
 
         toggleBtn_wordThree.setText("Ord3");
+        toggleBtn_wordThree.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                toggleBtn_wordThreeActionPerformed(evt);
+            }
+        });
 
         jButton1.setText("Nästa ");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -138,6 +153,18 @@ public class QuizAlternativesView extends javax.swing.JPanel implements QuizAlte
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         listener.nextWord();
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void toggleBtn_wordOneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_toggleBtn_wordOneActionPerformed
+        listener.wordOneBtnPressed(toggleBtn_wordOne.getText());
+    }//GEN-LAST:event_toggleBtn_wordOneActionPerformed
+
+    private void toggleBtn_wordTwoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_toggleBtn_wordTwoActionPerformed
+         listener.wordTwoBtnPressed(toggleBtn_wordTwo.getText());
+    }//GEN-LAST:event_toggleBtn_wordTwoActionPerformed
+
+    private void toggleBtn_wordThreeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_toggleBtn_wordThreeActionPerformed
+         listener.wordThreeBtnPressed(toggleBtn_wordThree.getText());
+    }//GEN-LAST:event_toggleBtn_wordThreeActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

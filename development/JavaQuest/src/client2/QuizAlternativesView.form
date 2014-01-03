@@ -94,16 +94,25 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Ord1"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="toggleBtn_wordOneActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JToggleButton" name="toggleBtn_wordTwo">
       <Properties>
         <Property name="text" type="java.lang.String" value="Ord2"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="toggleBtn_wordTwoActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JToggleButton" name="toggleBtn_wordThree">
       <Properties>
         <Property name="text" type="java.lang.String" value="Ord3"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="toggleBtn_wordThreeActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="jButton1">
       <Properties>

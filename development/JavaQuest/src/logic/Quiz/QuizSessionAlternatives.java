@@ -11,14 +11,14 @@ import logic.Common.QuitException;
 public class QuizSessionAlternatives extends QuizSession implements QuizAlternativesListener{
     
         
-       private GlossaryListAlternatives gla;
+      
        private QuizAlternativesViewSetter qavs;
         
     public QuizSessionAlternatives(String studentName, String language1, String language2, int numberOfWordsSelected, boolean threeAttemptsButton, QuizSessionSetter setter ){
         super(studentName, language1, language2,  numberOfWordsSelected, threeAttemptsButton, setter );
         ((QuizAlternativesViewSetter)setter).setQuizAlternativesViewListener(this);
-        gla = new GlossaryListAlternatives();
-        gla.initialize(studentName, language2, numberOfWordsSelected);
+        glossaryList = new GlossaryListAlternatives();
+        glossaryList.initialize(studentName, language2, numberOfWordsSelected);
     
     }
     
@@ -53,7 +53,8 @@ public class QuizSessionAlternatives extends QuizSession implements QuizAlternat
     }
     
     public void nextWord(){
-        WordAlternative wa = gla.nextWordAlternative();
+        WordAlternative wa = ((GlossaryListAlternatives)glossaryList).nextWordAlternative();
+      
         numberOfattemptsCounter = 0;
         
         if(wa!=null){
@@ -70,7 +71,8 @@ public class QuizSessionAlternatives extends QuizSession implements QuizAlternat
             ((QuizAlternativesViewSetter)ui).setAlt3(ord[2]);
     
         }else {
-            gla.saveStats();
+            ((GlossaryListAlternatives)glossaryList).saveStats();
+         
 
         }
      }
