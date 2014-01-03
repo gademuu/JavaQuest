@@ -34,6 +34,7 @@ public class Game {
         ui = new MainFrame();
         ui.initialize();
         QuizView qv =  ui.getQuizView();
+        qv.setMainFrame(ui);
         qv.setAlternativesSetter(ui.getQuizAlternativesPanel());
         qv.setTextSetter(ui.getQuizTextPanel());
         QuizManager qm = new QuizManager(qv);

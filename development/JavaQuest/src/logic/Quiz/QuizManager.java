@@ -18,7 +18,7 @@ public class QuizManager implements QuizViewListener{
     //variables
     private QuizViewSetter ui;
     private QuizSession quizSession;
-    private String studentName;
+    private String studentName = "herman";
     private String language1 = "swedish";
     private String language2;
     private String threeAlternativesToggled;
@@ -27,7 +27,7 @@ public class QuizManager implements QuizViewListener{
     private String startQuizButton;
     
     
-    //Hur ska vi instanciera startviewn 
+    
     public QuizManager(QuizViewSetter ui){
         
         this.ui = ui;  
@@ -42,11 +42,12 @@ public class QuizManager implements QuizViewListener{
     }
    private boolean handleRunQuiz() throws QuitException{
          if(threeAlternativesActive) {
-            quizSession = new QuizSessionAlternatives(language1, language2, studentName,  NUMBER_OF_WORDS,true,ui.getQuizAlternativesViewSetter() );
+            quizSession = new QuizSessionAlternatives(studentName,language1, language2, NUMBER_OF_WORDS,true,ui.getQuizAlternativesViewSetter() );
+             
          }else{
-             quizSession = new QuizSessionTextfield(language1, language2, studentName, NUMBER_OF_WORDS,true,ui.getQuizTextViewSetter() );
+             quizSession = new QuizSessionTextfield(studentName,language1, language2, NUMBER_OF_WORDS,true,ui.getQuizTextViewSetter() );
          }
-          return quizSession.play();
+          return true;
      }
      
    
@@ -77,6 +78,7 @@ public class QuizManager implements QuizViewListener{
     
      public void language2(String language){
          language2 = language;
+         System.out.println(language);
     }
     public void language1(String language){
          language1 = language;

@@ -1,5 +1,7 @@
 package client2;
 
+import javax.swing.JPanel;
+
 /**
  *
  * @author pierrezarebski
@@ -188,7 +190,7 @@ public class MainFrame extends javax.swing.JFrame {
         toggleBtn_menu3.setSelected(false);
     }//GEN-LAST:event_toggleBtn_menu4ActionPerformed
 
-    private void changePanel(javax.swing.JPanel panel) {
+    public void changePanel(javax.swing.JPanel panel) {
         cardLayoutPanel.removeAll();
         cardLayoutPanel.add(panel);
         cardLayoutPanel.repaint();
@@ -244,6 +246,10 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JToggleButton toggleBtn_menu4;
     // End of variables declaration//GEN-END:variables
 
+    public JPanel getCardLayoutPanel() {
+        return cardLayoutPanel;
+    }
+
     public QuizAlternativesView getQuizAlternativesPanel() {
         return quizAlternativesPanel;
     }
@@ -252,3 +258,4 @@ public class MainFrame extends javax.swing.JFrame {
         return quizTextPanel;
     }
 }
+

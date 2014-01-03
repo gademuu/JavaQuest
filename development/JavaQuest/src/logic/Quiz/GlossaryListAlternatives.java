@@ -24,6 +24,8 @@ public class GlossaryListAlternatives extends GlossaryList {
         Word alt1 = null;
         Word alt2 = null;
         
+        System.out.println(language);
+        
         Collections.shuffle(glossary);
         for(int i = 0 ; i < quizGlossary.size(); i++) {
             Word w = quizGlossary.get(i);

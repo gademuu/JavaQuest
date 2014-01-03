@@ -1,6 +1,6 @@
 package logic.Quiz;
 
-import client.QuizAlternativesView;
+import client2.QuizAlternativesView;
 import client2.*;
 import logic.Common.QuitException;
 
@@ -16,8 +16,8 @@ public class QuizSessionAlternatives extends QuizSession implements QuizAlternat
         
     public QuizSessionAlternatives(String studentName, String language1, String language2, int numberOfWordsSelected, boolean threeAttemptsButton, QuizSessionSetter setter ){
         super(studentName, language1, language2,  numberOfWordsSelected, threeAttemptsButton, setter );
+        ((QuizAlternativesViewSetter)setter).setQuizAlternativesViewListener(this);
         gla = new GlossaryListAlternatives();
-        
         gla.initialize(studentName, language2, numberOfWordsSelected);
     
     }
@@ -58,6 +58,17 @@ public class QuizSessionAlternatives extends QuizSession implements QuizAlternat
         
         if(wa!=null){
             System.out.println(wa);
+            
+            ((QuizAlternativesViewSetter)ui).setWord(wa.getOrginal());
+            
+             String []ord =  wa.getAlternativesInRandomOrder();
+   
+            ((QuizAlternativesViewSetter)ui).setAlt1(ord[0]);
+    
+            ((QuizAlternativesViewSetter)ui).setAlt2(ord[1]);
+    
+            ((QuizAlternativesViewSetter)ui).setAlt3(ord[2]);
+    
         }else {
             gla.saveStats();
 

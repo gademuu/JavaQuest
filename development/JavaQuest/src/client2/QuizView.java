@@ -1,6 +1,7 @@
 
 package client2;
 
+
 /**
  *
  * @author pierrezarebski
@@ -9,6 +10,15 @@ public class QuizView extends javax.swing.JPanel implements QuizViewSetter {
 
     private QuizViewListener listener;
     private QuizAlternativesViewSetter alternativesSetter;
+    private MainFrame mf;
+
+    public MainFrame getMainFrame() {
+        return mf;
+    }
+
+    public void setMainFrame(MainFrame mf) {
+        this.mf = mf;
+    }
 
      public QuizView() {
         initComponents();
@@ -37,23 +47,19 @@ public class QuizView extends javax.swing.JPanel implements QuizViewSetter {
     }    
     
     public void setQuizViewListener(QuizViewListener qvl){
-
-        this.listener = qvl;
-
+         this.listener = qvl;
 }
     
     
     public void setLanguages(String[] languages){
         if(languages != null) {
             for(String s : languages){
-                cBox_language.addItem(s);
-                
-            }
-                    
-        }
-        
-        
+                cBox_language.addItem(s);    
+            }          
+        } 
     }
+    
+    
     
     public void setGlossaryLists(String[] lists){}
         
@@ -272,6 +278,7 @@ public class QuizView extends javax.swing.JPanel implements QuizViewSetter {
     private void toggleBtn_language2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_toggleBtn_language2ActionPerformed
         toggleBtn_language1.setSelected(true);
         listener.language2((String) cBox_language.getSelectedItem());
+        
     }//GEN-LAST:event_toggleBtn_language2ActionPerformed
 
     private void toggleBtn_textQuizActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_toggleBtn_textQuizActionPerformed
@@ -285,11 +292,11 @@ public class QuizView extends javax.swing.JPanel implements QuizViewSetter {
     }//GEN-LAST:event_toggleBtn_alternativesQuizActionPerformed
 
     private void btn_startQuizActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_startQuizActionPerformed
-        /*if (quiz_tBtn_3alt.isSelected()) {
-            changePanel(mainFrame.panel_quiz_3alt);
-        } else if (quiz_tBtn_freetext.isSelected()){
-            changePanel(panel_quiz_freetext);
-        }*/
+       if(toggleBtn_alternativesQuiz.isSelected()) {
+            changePanel(mf.getQuizAlternativesPanel());
+        } else if (toggleBtn_textQuiz.isSelected()){
+            changePanel(mf.getQuizTextPanel());
+        }
         listener.startQuizButton();
     }//GEN-LAST:event_btn_startQuizActionPerformed
 
@@ -306,6 +313,12 @@ public class QuizView extends javax.swing.JPanel implements QuizViewSetter {
         System.out.println(cBox_language.getSelectedItem());
     }//GEN-LAST:event_cBox_languageActionPerformed
 
+    public void changePanel(javax.swing.JPanel panel) {
+        mf.getCardLayoutPanel().removeAll();
+        mf.getCardLayoutPanel().add(panel);
+        mf.getCardLayoutPanel().repaint();
+        mf.getCardLayoutPanel().revalidate();
+    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_startQuiz;
     private javax.swing.JComboBox cBox_language;
@@ -322,3 +335,5 @@ public class QuizView extends javax.swing.JPanel implements QuizViewSetter {
     private javax.swing.JToggleButton toggleBtn_textQuiz;
     // End of variables declaration//GEN-END:variables
 }
+
+

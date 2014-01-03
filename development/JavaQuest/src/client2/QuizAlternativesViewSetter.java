@@ -7,6 +7,16 @@ package client2;
  */
 public interface QuizAlternativesViewSetter extends QuizSessionSetter {
     
-    public void setQuizAlternativesViewListener();  
+    public void setQuizAlternativesViewListener(QuizAlternativesListener listener);  
+    
+    public void setWord(String word);
+    
+    public void setAlt1(String word);
+    
+    public void setAlt2(String word);
+    
+    public void setAlt3(String word);
+    
+    
     
 }
