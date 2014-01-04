@@ -10,9 +10,11 @@ import logic.Common.QuitException;
  * @author herman
  */
 public abstract class QuizSession {
-    
+    //Constants
     protected static final int MAX_NUMBER_OF_ATTEMPTS = 3;
+    //End of constants
     
+    //Variables
     protected QuizSessionSetter ui;
     protected GlossaryList glossaryList;
     protected QuizTimer timer;
@@ -20,9 +22,12 @@ public abstract class QuizSession {
     protected String language2;
     protected String studentName;
     protected int numberOfWordsSelected;
-    protected boolean threeAttemptsButton;
+    protected boolean threeAttemptsButton =false;
     protected int numberOfattemptsCounter = 0; 
     protected int numberOfCorrectAnswers = 0;
+    protected boolean finished = false;
+    protected boolean attemptInProgress = false;
+    //End of variables
     
    
     
@@ -39,24 +44,31 @@ public abstract class QuizSession {
       
       
        protected void isCorrect(String answer){
+            if(finished)
+                     return;
            if(numberOfattemptsCounter == MAX_NUMBER_OF_ATTEMPTS){
-                 System.out.println("no more attempts");   
-                 
-                 return;
+                 System.out.println("no more attempts"); 
+                 attemptInProgress = false;
+                    return;
            }
                  
                  if(glossaryList.isCorrect(answer)) {
                      ui.setIsCorrect(numberOfCorrectAnswers);
                      numberOfCorrectAnswers++;
+                     attemptInProgress = false;
                  }else {
                     System.out.println("wrong");
                     ui.setIsInCorrect();
                      if(threeAttemptsButton){
-                 numberOfattemptsCounter++;
+                     numberOfattemptsCounter++;
+                    attemptInProgress = true;
                  System.out.println(numberOfattemptsCounter);  
+                     }else{
+                         glossaryList.repeatWord();
                      }
             
                 }  
+                
            
       }
       

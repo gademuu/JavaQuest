@@ -7,4 +7,8 @@ package client2;
  */
 public interface QuizTextListener {
     
+            
+            public void okButton(String word);
+            public void nextWord();
+    
 }

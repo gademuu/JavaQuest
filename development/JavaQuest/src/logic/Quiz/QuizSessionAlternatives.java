@@ -53,6 +53,8 @@ public class QuizSessionAlternatives extends QuizSession implements QuizAlternat
     }
     
     public void nextWord(){
+        if(attemptInProgress)
+            return;
         WordAlternative wa = ((GlossaryListAlternatives)glossaryList).nextWordAlternative();
       
         numberOfattemptsCounter = 0;
@@ -72,6 +74,7 @@ public class QuizSessionAlternatives extends QuizSession implements QuizAlternat
     
         }else {
             ((GlossaryListAlternatives)glossaryList).saveStats();
+            finished = true;
          
 
         }

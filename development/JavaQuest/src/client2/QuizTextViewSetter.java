@@ -7,4 +7,8 @@ package client2;
  */
 public interface QuizTextViewSetter extends QuizSessionSetter {
     
+    public void setQuizTextViewListener(QuizTextListener listener);  
+   
+    public void setWord(String word);
+    
 }

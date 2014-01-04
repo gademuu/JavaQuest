@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Date;
-import java.util.Iterator;
+import java.util.ListIterator;
 
 /**
  * Hanterar ordlistan. 
@@ -19,7 +19,7 @@ import java.util.Iterator;
 public abstract class GlossaryList {
     
     protected ArrayList<Word> glossary = new ArrayList<>();
-    protected Iterator iterator;
+    protected ListIterator iterator;
     protected int numberOfWords;
     protected int numberOfCorrectAnswers;
     protected int numberOfQuestionsAnswered;
@@ -50,11 +50,19 @@ public abstract class GlossaryList {
         
     }
     
+   
+    
+    public void repeatWord(){
+        int a = 0;
+        iterator.add(currentWord);
+         
+        }
+    
     public String nextWord() {
         String theWord = "";
         
         if(iterator == null) {
-            iterator = quizGlossary.iterator();
+            iterator = quizGlossary.listIterator();
         }
         
         if(iterator.hasNext()) {

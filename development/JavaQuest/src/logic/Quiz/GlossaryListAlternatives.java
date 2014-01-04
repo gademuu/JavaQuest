@@ -70,7 +70,7 @@ public class GlossaryListAlternatives extends GlossaryList {
    public WordAlternative nextWordAlternative(){
        WordAlternative theWordAlternative = null;
         if(iterator == null) {
-            iterator = quizGlossary.iterator();
+            iterator = quizGlossary.listIterator();
         }
         
         if(iterator.hasNext()) {
@@ -81,22 +81,17 @@ public class GlossaryListAlternatives extends GlossaryList {
    
    }
    
-   public static void main(String[] args){
+   
+       public static void main(String[] args){
        GlossaryListAlternatives myGLA = new GlossaryListAlternatives();
        myGLA.initialize("herman", "english",5);
      
        WordAlternative w = myGLA.nextWordAlternative();
+myGLA.repeatWord();
         while(w != null) {
             System.out.println(w.toString());
              w = myGLA.nextWordAlternative();
         }
-         myGLA.saveStats();
-         StudentStatsDao ssDao = StudentStatsDaoFactory.create(true);
-        
-         StudentStats ss = ssDao.create(new StudentStats("herman", new Date().toString(), "0"));
-         StudentStats ss1 = ssDao.read(ss);
-         System.out.println(ss1.toString()); 
-        
          
          
         

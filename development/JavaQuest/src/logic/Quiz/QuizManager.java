@@ -42,10 +42,10 @@ public class QuizManager implements QuizViewListener{
     }
    private boolean handleRunQuiz() throws QuitException{
          if(threeAlternativesActive) {
-            quizSession = new QuizSessionAlternatives(studentName,language1, language2, NUMBER_OF_WORDS,true,ui.getQuizAlternativesViewSetter() );
+            quizSession = new QuizSessionAlternatives(studentName,language1, language2, NUMBER_OF_WORDS,false,ui.getQuizAlternativesViewSetter() );
              
          }else{
-             quizSession = new QuizSessionTextfield(studentName,language1, language2, NUMBER_OF_WORDS,true,ui.getQuizTextViewSetter() );
+             quizSession = new QuizSessionTextfield(studentName,language1, language2, NUMBER_OF_WORDS,false,ui.getQuizTextViewSetter() );
          }
           return true;
      }

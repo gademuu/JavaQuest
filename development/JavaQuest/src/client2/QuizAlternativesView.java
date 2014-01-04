@@ -27,12 +27,14 @@ public class QuizAlternativesView extends javax.swing.JPanel implements QuizAlte
     public void setIsCorrect(int numberOfCorrectAnswers){
         
         progressBar.setValue(progressBar.getValue() + 1);
-        System.out.println("Correct!");
-        label_correctAnswers.setText("" + numberOfCorrectAnswers);
+        
+        label_correctAnswers.setText("Correct!");
+        
     }
     
     public void setIsInCorrect(){
-        System.out.println("Incorrect");
+        label_correctAnswers.setText("Incorrect");
+       
     }
     
     public void setWord(String word){
@@ -50,6 +52,8 @@ public class QuizAlternativesView extends javax.swing.JPanel implements QuizAlte
     public void setAlt3(String word){
         toggleBtn_wordThree.setText(word);
     }
+    
+    
     
    
     /**
@@ -78,7 +82,6 @@ public class QuizAlternativesView extends javax.swing.JPanel implements QuizAlte
 
         label_correctAnswers.setFont(new java.awt.Font("Myriad Pro", 0, 24)); // NOI18N
         label_correctAnswers.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        label_correctAnswers.setText("Antal rätt:");
 
         toggleBtn_wordOne.setText("Ord1");
         toggleBtn_wordOne.addActionListener(new java.awt.event.ActionListener() {
@@ -146,12 +149,13 @@ public class QuizAlternativesView extends javax.swing.JPanel implements QuizAlte
                 .addComponent(label_correctAnswers)
                 .addGap(18, 18, 18)
                 .addComponent(jButton1)
-                .addContainerGap(25, Short.MAX_VALUE))
+                .addContainerGap(50, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         listener.nextWord();
+        label_correctAnswers.setText("");
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void toggleBtn_wordOneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_toggleBtn_wordOneActionPerformed
