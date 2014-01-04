@@ -27,6 +27,7 @@ public abstract class GlossaryList {
     protected StudentStats studentStats;
     protected ArrayList<Word> quizGlossary = new ArrayList<>();
     
+    
     public void initialize(String studentName, String language, int numberOfWords) {
         
         WordDao wd = WordDaoFactory.create(true);
@@ -53,8 +54,10 @@ public abstract class GlossaryList {
    
     
     public void repeatWord(){
-        int a = 0;
+        int i;
+        for(i = 0; iterator.hasNext(); i++) iterator.next();
         iterator.add(currentWord);
+        for(int j = i; j>= 0; j--) iterator.previous();
          
         }
     
