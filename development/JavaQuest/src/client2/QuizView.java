@@ -271,14 +271,13 @@ public class QuizView extends javax.swing.JPanel implements QuizViewSetter {
 
   
     private void toggleBtn_language1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_toggleBtn_language1ActionPerformed
-        toggleBtn_language2.setSelected(true);
+        toggleBtn_language2.setSelected(false);
         listener.language1("");
     }//GEN-LAST:event_toggleBtn_language1ActionPerformed
 
     private void toggleBtn_language2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_toggleBtn_language2ActionPerformed
-        toggleBtn_language1.setSelected(true);
-        listener.language2((String) cBox_language.getSelectedItem());
-        
+        toggleBtn_language1.setSelected(false);
+        listener.language2((String) cBox_language.getSelectedItem());    
     }//GEN-LAST:event_toggleBtn_language2ActionPerformed
 
     private void toggleBtn_textQuizActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_toggleBtn_textQuizActionPerformed
