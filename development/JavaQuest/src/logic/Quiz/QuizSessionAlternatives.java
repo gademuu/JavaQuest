@@ -16,6 +16,7 @@ public class QuizSessionAlternatives extends QuizSession implements QuizAlternat
         
       
        private QuizAlternativesViewSetter qavs;
+       
         
     public QuizSessionAlternatives(String studentName, String language1, String language2, int numberOfWordsSelected, boolean threeAttemptsButton, QuizSessionSetter setter ){
         super(studentName, language1, language2,  numberOfWordsSelected, threeAttemptsButton, setter );
@@ -55,6 +56,14 @@ public class QuizSessionAlternatives extends QuizSession implements QuizAlternat
         isCorrect(answer);
     }
     
+    @Override
+      public void timerEvent(String event){
+          super.timerEvent(event);
+          if(event.equals("0")) {
+              nextWord();
+          }
+      }
+    
     public void nextWord(){
         if(attemptInProgress)
             return;
@@ -63,6 +72,9 @@ public class QuizSessionAlternatives extends QuizSession implements QuizAlternat
         numberOfattemptsCounter = 0;
         
         if(wa!=null){
+            timer.cancel();
+            timer = new QuizTimer();
+            timer.initialize(this, TIMER_INTERVAL, TIMER_DURATION);
             System.out.println(wa);
             
             ((QuizAlternativesViewSetter)ui).setWord(wa.getOrginal());

@@ -19,6 +19,8 @@ public interface QuizAlternativesViewSetter extends QuizSessionSetter {
     
     public void setAlt3(String word);
     
+  
+    
     
     
 }

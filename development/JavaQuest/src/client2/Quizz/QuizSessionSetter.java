@@ -10,6 +10,7 @@ public interface QuizSessionSetter {
     
     public void setIsInCorrect();
     public void setStatsDialog(String message);
+    public void setTime(String time);
 
   
     

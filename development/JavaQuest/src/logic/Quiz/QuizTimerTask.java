@@ -31,14 +31,9 @@ public class QuizTimerTask extends TimerTask {
     }
     
     public void run() {
-     
         timeRemaining -= interval; 
-        
-        // TODO
-        // decrement timeRemaining with interval x
-        // listener.timerEvent(timeRemaining)
-		// if (timeRemaining <= 0) {timer.cancel();}
-        
+        if (timeRemaining <= 0) timer.cancel();
+        listener.timerEvent(""+timeRemaining/1000);
     }
 
 }

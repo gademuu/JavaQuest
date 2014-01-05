@@ -24,12 +24,25 @@ public class QuizSessionTextfield extends QuizSession implements  QuizTextListen
                 isCorrect(answer);
             
             }
+            
+            
+      @Override
+      public void timerEvent(String event){
+          super.timerEvent(event);
+          if(event.equals("0")) {
+              nextWord();
+          }
+      }
+            
             public void nextWord(){
                 if(attemptInProgress)
             return;
                  numberOfattemptsCounter = 0;
                 String w = glossaryList.nextWord();    
                 if(!w.equals("")){
+                     timer.cancel();
+                     timer = new QuizTimer();
+                     timer.initialize(this, TIMER_INTERVAL, TIMER_DURATION);
                     System.out.println(w);
                      ((QuizTextViewSetter)ui).setWord(w);
                }else{

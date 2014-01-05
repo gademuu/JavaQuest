@@ -2,6 +2,7 @@ package logic.Quiz;
 
 
 import client2.Quizz.QuizSessionSetter;
+import client2.Quizz.QuizTimerListener;
 import client2.Quizz.QuizView;
 import logic.Common.QuitException;
 
@@ -9,9 +10,11 @@ import logic.Common.QuitException;
  *
  * @author herman
  */
-public abstract class QuizSession {
+public abstract class QuizSession implements QuizTimerListener{
     //Constants
     protected static final int MAX_NUMBER_OF_ATTEMPTS = 3;
+    protected static final long TIMER_INTERVAL = 1000;
+    protected static final long TIMER_DURATION = 10000;
     //End of constants
     
     //Variables
@@ -38,10 +41,14 @@ public abstract class QuizSession {
           this.numberOfWordsSelected = numberOfWordsSelected;
           this.threeAttemptsButton  = threeAttemptsButton ;
           this.ui = setter;
+          timer = new QuizTimer();
       
       }
       
-      
+      public void timerEvent(String event){
+          ui.setTime(event);
+         
+      }
       
        protected void isCorrect(String answer){
             if(finished)
