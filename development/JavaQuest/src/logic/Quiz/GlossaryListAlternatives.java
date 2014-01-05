@@ -84,13 +84,15 @@ public class GlossaryListAlternatives extends GlossaryList {
    
        public static void main(String[] args){
        GlossaryListAlternatives myGLA = new GlossaryListAlternatives();
-       myGLA.initialize("herman", "english",5);
+       /*myGLA.initialize("herman", "english",5);
      
        WordAlternative w = myGLA.nextWordAlternative();
 myGLA.repeatWord();
         while(w != null) {
             System.out.println(w.toString());
-             w = myGLA.nextWordAlternative();
+             w = myGLA.nextWordAlternative();*/
+            
+             
         }
          
          
@@ -98,6 +100,6 @@ myGLA.repeatWord();
                  }
         
       
-            }
+            
     
 

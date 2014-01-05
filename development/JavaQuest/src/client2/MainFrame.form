@@ -178,21 +178,21 @@
             </Constraint>
           </Constraints>
         </Component>
-        <Component class="client2.QuizView" name="quizPanel">
+        <Component class="client2.Quizz.QuizView" name="quizPanel">
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
               <CardConstraints cardName="card7"/>
             </Constraint>
           </Constraints>
         </Component>
-        <Component class="client2.QuizAlternativesView" name="quizAlternativesPanel">
+        <Component class="client2.Quizz.QuizAlternativesView" name="quizAlternativesPanel">
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
               <CardConstraints cardName="card7"/>
             </Constraint>
           </Constraints>
         </Component>
-        <Component class="client2.QuizTextView" name="quizTextPanel">
+        <Component class="client2.Quizz.QuizTextView" name="quizTextPanel">
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
               <CardConstraints cardName="card8"/>

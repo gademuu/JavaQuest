@@ -1,6 +1,9 @@
 package logic.Quiz;
 
-import client2.QuizAlternativesView;
+import client2.Quizz.QuizSessionSetter;
+import client2.Quizz.QuizAlternativesViewSetter;
+import client2.Quizz.QuizAlternativesListener;
+import client2.Quizz.QuizAlternativesView;
 import client2.*;
 import logic.Common.QuitException;
 
@@ -75,8 +78,7 @@ public class QuizSessionAlternatives extends QuizSession implements QuizAlternat
         }else {
             ((GlossaryListAlternatives)glossaryList).saveStats();
             finished = true;
-         
-
+            ui.setStatsDialog("Du är nu klar med quizzen! Du klarade " + glossaryList.getStats());
         }
      }
     

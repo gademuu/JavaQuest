@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package client2;
+package client2.Quizz;
 
 /**
  *
@@ -23,6 +23,11 @@ public class QuizTextView extends javax.swing.JPanel implements QuizTextViewSett
     public QuizTextView(QuizTextListener listener) {
         initComponents();
         this.listener = listener;
+    }
+    
+      public void setStatsDialog(String message) {
+        
+        javax.swing.JOptionPane.showMessageDialog(this, message);
     }
     
     public void setIsCorrect(int numberOfCorrectAnswers){

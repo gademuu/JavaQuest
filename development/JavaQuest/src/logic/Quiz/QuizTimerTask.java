@@ -6,7 +6,7 @@
 
 package logic.Quiz;
 
-import client.QuizTimerListener;
+import client2.Quizz.QuizTimerListener;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -32,8 +32,10 @@ public class QuizTimerTask extends TimerTask {
     
     public void run() {
      
+        timeRemaining -= interval; 
+        
         // TODO
-        // decrement timeRemaining with interval
+        // decrement timeRemaining with interval x
         // listener.timerEvent(timeRemaining)
 		// if (timeRemaining <= 0) {timer.cancel();}
         

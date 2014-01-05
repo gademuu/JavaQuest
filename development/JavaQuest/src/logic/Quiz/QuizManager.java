@@ -2,8 +2,9 @@
 package logic.Quiz;
 
 
+import client2.Quizz.QuizViewListener;
 import client2.*;
-import client2.QuizViewSetter;
+import client2.Quizz.QuizViewSetter;
 import logic.Common.QuitException;
 
 /**

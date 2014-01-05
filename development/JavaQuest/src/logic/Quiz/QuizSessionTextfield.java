@@ -1,8 +1,8 @@
 package logic.Quiz;
 
-import client2.QuizAlternativesViewSetter;
-import client2.QuizTextListener;
-import client2.QuizTextViewSetter;
+import client2.Quizz.QuizAlternativesViewSetter;
+import client2.Quizz.QuizTextListener;
+import client2.Quizz.QuizTextViewSetter;
 
 /**
  *
@@ -32,10 +32,11 @@ public class QuizSessionTextfield extends QuizSession implements  QuizTextListen
                 if(!w.equals("")){
                     System.out.println(w);
                      ((QuizTextViewSetter)ui).setWord(w);
-                }else{
+               }else{
                      ((GlossaryListTextfield)glossaryList).saveStats();
                         finished = true;
-                }  
+                        ui.setStatsDialog("Du är nu klar med quizzen! Du klarade " + glossaryList.getStats());
+                }   
             }
     
     

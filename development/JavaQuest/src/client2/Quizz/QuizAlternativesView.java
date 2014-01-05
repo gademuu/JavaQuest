@@ -4,7 +4,9 @@
  * and open the template in the editor.
  */
 
-package client2;
+package client2.Quizz;
+
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -19,6 +21,11 @@ public class QuizAlternativesView extends javax.swing.JPanel implements QuizAlte
     public QuizAlternativesView() {
         initComponents();
     }
+    
+     public void setStatsDialog(String message) {
+        javax.swing.JOptionPane.showMessageDialog(this, message);
+    }
+    
     
     public void setQuizAlternativesViewListener(QuizAlternativesListener listener){
            this.listener = listener;
@@ -65,6 +72,7 @@ public class QuizAlternativesView extends javax.swing.JPanel implements QuizAlte
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jDialog4 = new javax.swing.JDialog();
         progressBar = new javax.swing.JProgressBar();
         label_activeWord = new javax.swing.JLabel();
         label_correctAnswers = new javax.swing.JLabel();
@@ -72,6 +80,18 @@ public class QuizAlternativesView extends javax.swing.JPanel implements QuizAlte
         toggleBtn_wordTwo = new javax.swing.JToggleButton();
         toggleBtn_wordThree = new javax.swing.JToggleButton();
         jButton1 = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+
+        javax.swing.GroupLayout jDialog4Layout = new javax.swing.GroupLayout(jDialog4.getContentPane());
+        jDialog4.getContentPane().setLayout(jDialog4Layout);
+        jDialog4Layout.setHorizontalGroup(
+            jDialog4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 400, Short.MAX_VALUE)
+        );
+        jDialog4Layout.setVerticalGroup(
+            jDialog4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 300, Short.MAX_VALUE)
+        );
 
         progressBar.setMinimumSize(new java.awt.Dimension(300, 20));
         progressBar.setPreferredSize(new java.awt.Dimension(300, 20));
@@ -111,12 +131,15 @@ public class QuizAlternativesView extends javax.swing.JPanel implements QuizAlte
             }
         });
 
+        jLabel1.setText("jLabel1");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(50, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(toggleBtn_wordOne)
@@ -138,8 +161,13 @@ public class QuizAlternativesView extends javax.swing.JPanel implements QuizAlte
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(progressBar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(41, 41, 41)
-                .addComponent(label_activeWord)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(41, 41, 41)
+                        .addComponent(label_activeWord))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(33, 33, 33)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(toggleBtn_wordOne)
@@ -170,9 +198,11 @@ public class QuizAlternativesView extends javax.swing.JPanel implements QuizAlte
          listener.wordThreeBtnPressed(toggleBtn_wordThree.getText());
     }//GEN-LAST:event_toggleBtn_wordThreeActionPerformed
 
-
+    private javax.swing.JOptionPane statsDialog;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
+    private javax.swing.JDialog jDialog4;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel label_activeWord;
     private javax.swing.JLabel label_correctAnswers;
     private javax.swing.JProgressBar progressBar;

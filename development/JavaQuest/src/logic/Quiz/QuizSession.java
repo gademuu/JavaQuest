@@ -1,8 +1,8 @@
 package logic.Quiz;
 
 
-import client2.QuizSessionSetter;
-import client2.QuizView;
+import client2.Quizz.QuizSessionSetter;
+import client2.Quizz.QuizView;
 import logic.Common.QuitException;
 
 /**

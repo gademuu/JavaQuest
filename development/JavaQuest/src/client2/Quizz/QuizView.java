@@ -1,5 +1,7 @@
 
-package client2;
+package client2.Quizz;
+
+import client2.MainFrame;
 
 
 /**

@@ -6,6 +6,7 @@
 
 package logic;
 
+import client2.Quizz.QuizView;
 import logic.Common.QuitException;
 import logic.Student.StudentManager;
 import logic.Glossary.GlossaryManager;

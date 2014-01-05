@@ -29,7 +29,7 @@ public abstract class GlossaryList {
     
     
     public void initialize(String studentName, String language, int numberOfWords) {
-        
+        this.numberOfWords = numberOfWords;
         WordDao wd = WordDaoFactory.create(true);
         Word[] words = wd.find(new Word("","",language));
         glossary = new ArrayList<Word>(Arrays.asList(words));
@@ -58,7 +58,7 @@ public abstract class GlossaryList {
         for(i = 0; iterator.hasNext(); i++) iterator.next();
         iterator.add(currentWord);
         for(int j = i; j>= 0; j--) iterator.previous();
-         
+        numberOfWords++;
         }
     
     public String nextWord() {
@@ -95,6 +95,7 @@ public abstract class GlossaryList {
     private String getPercentage(int n, int total) {
         float proportion = ((float) n) / ((float) total);
         return String.format("%.1f", new Float(proportion * 100)) + "%";
+        
     }
     
     public void saveStats() {
@@ -105,6 +106,11 @@ public abstract class GlossaryList {
 
         ssDao.create(studentStats);
     }
+    
+     public String getStats() {
+      return getPercentage(numberOfCorrectAnswers, numberOfWords);
+  }
+     
     
   
     

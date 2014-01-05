@@ -1,5 +1,5 @@
 
-package client2;
+package client2.Quizz;
 
 /**
  *
@@ -8,6 +8,8 @@ package client2;
 public interface QuizAlternativesViewSetter extends QuizSessionSetter {
     
     public void setQuizAlternativesViewListener(QuizAlternativesListener listener);  
+    
+    
    
     public void setWord(String word);
     

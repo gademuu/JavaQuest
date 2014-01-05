@@ -2,6 +2,8 @@
 
 package client;
 
+import client2.Quizz.QuizTimerListener;
+
 /**
  *
  * @author herman

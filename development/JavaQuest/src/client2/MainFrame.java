@@ -1,5 +1,8 @@
 package client2;
 
+import client2.Quizz.QuizTextView;
+import client2.Quizz.QuizView;
+import client2.Quizz.QuizAlternativesView;
 import javax.swing.JPanel;
 
 /**
@@ -42,9 +45,9 @@ public class MainFrame extends javax.swing.JFrame {
         toggleBtn_menu4 = new javax.swing.JToggleButton();
         cardLayoutPanel = new javax.swing.JPanel();
         startPanel = new client2.StartView();
-        quizPanel = new client2.QuizView();
-        quizAlternativesPanel = new client2.QuizAlternativesView();
-        quizTextPanel = new client2.QuizTextView();
+        quizPanel = new client2.Quizz.QuizView();
+        quizAlternativesPanel = new client2.Quizz.QuizAlternativesView();
+        quizTextPanel = new client2.Quizz.QuizTextView();
         glossaryPanel = new client2.GlossaryView();
         statisticsPanel = new client2.StatisticsView();
         settingsPanel = new client2.SettingsView();
@@ -234,9 +237,9 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JPanel cardLayoutPanel;
     private client2.GlossaryView glossaryPanel;
     private javax.swing.JPanel menuPanel;
-    private client2.QuizAlternativesView quizAlternativesPanel;
-    private client2.QuizView quizPanel;
-    private client2.QuizTextView quizTextPanel;
+    private client2.Quizz.QuizAlternativesView quizAlternativesPanel;
+    private client2.Quizz.QuizView quizPanel;
+    private client2.Quizz.QuizTextView quizTextPanel;
     private client2.SettingsView settingsPanel;
     private client2.StartView startPanel;
     private client2.StatisticsView statisticsPanel;
