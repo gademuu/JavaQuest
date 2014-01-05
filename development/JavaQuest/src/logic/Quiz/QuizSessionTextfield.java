@@ -17,6 +17,7 @@ public class QuizSessionTextfield extends QuizSession implements  QuizTextListen
         ((QuizTextViewSetter)setter).setQuizTextViewListener((QuizTextListener) this);
         glossaryList = new GlossaryListTextfield();
         glossaryList.initialize(studentName, language2, numberOfWordsSelected);
+        nextWord();
     }
     
            

@@ -23,6 +23,7 @@ public class QuizSessionAlternatives extends QuizSession implements QuizAlternat
         ((QuizAlternativesViewSetter)setter).setQuizAlternativesViewListener(this);
         glossaryList = new GlossaryListAlternatives();
         glossaryList.initialize(studentName, language2, numberOfWordsSelected);
+        nextWord();
     
     }
     
