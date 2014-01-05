@@ -44,7 +44,7 @@ public class QuizView extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        cBox_language.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "-Språk-", "Engelska" }));
+        cBox_language.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "-Språk-" }));
         cBox_language.setMinimumSize(new java.awt.Dimension(150, 27));
         cBox_language.setPreferredSize(new java.awt.Dimension(150, 27));
         cBox_language.addActionListener(new java.awt.event.ActionListener() {

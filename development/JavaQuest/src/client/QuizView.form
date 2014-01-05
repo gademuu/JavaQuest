@@ -81,9 +81,8 @@
     <Component class="javax.swing.JComboBox" name="cBox_language">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="2">
+          <StringArray count="1">
             <StringItem index="0" value="-Spr&#xe5;k-"/>
-            <StringItem index="1" value="Engelska"/>
           </StringArray>
         </Property>
         <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
