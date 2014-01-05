@@ -1,6 +1,8 @@
 
 package client2;
 
+import client2.Quizz.*;
+
 
 /**
  *
