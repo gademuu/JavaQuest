@@ -1,10 +1,17 @@
-package client2;
+package client2.login;
+
+import client2.MainFrame;
+import client2.MainFrameListener;
+import client2.student.NewUserFrame;
 
 /**
  *
  * @author pierrezarebski
  */
-public class LoginFrame extends javax.swing.JFrame {
+public class LoginFrame extends javax.swing.JFrame implements LoginFrameSetter {
+    
+    LoginListener listener;
+     MainFrameListener mfListener;
 
     /**
      * Creates new form LoginFrame
@@ -12,6 +19,29 @@ public class LoginFrame extends javax.swing.JFrame {
     public LoginFrame() {
         initComponents();
     }
+    
+    public void setLoginOk(){
+          mfListener.mainFrameCreate();
+         setVisible(false);
+         
+        // TODO skicka mainframe till game via setter
+    }
+    
+        public void wrongUser(String message){
+               javax.swing.JOptionPane.showMessageDialog(this, message);
+        
+          }
+            public void setLoginListener(LoginListener listener){
+                this.listener = listener;
+            }
+            
+            public void setMainFrameListener(MainFrameListener mfListener) {
+                    this.mfListener = mfListener;
+    }
+            
+            
+        //TODO handle duplicate user, Show message dialog
+        
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -33,10 +63,20 @@ public class LoginFrame extends javax.swing.JFrame {
         txtfield_username.setForeground(new java.awt.Color(153, 153, 153));
         txtfield_username.setText("Username...");
         txtfield_username.setPreferredSize(new java.awt.Dimension(200, 28));
+        txtfield_username.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtfield_usernameActionPerformed(evt);
+            }
+        });
 
         txtfield_password.setForeground(new java.awt.Color(153, 153, 153));
         txtfield_password.setText("Password...");
         txtfield_password.setPreferredSize(new java.awt.Dimension(200, 28));
+        txtfield_password.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtfield_passwordActionPerformed(evt);
+            }
+        });
 
         btn_login.setText("Login");
         btn_login.addActionListener(new java.awt.event.ActionListener() {
@@ -93,19 +133,29 @@ public class LoginFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn_loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_loginActionPerformed
-        new MainFrame().initialize();
+      
+        listener.loginBtnPressed(txtfield_username.getText(),txtfield_password.getText());
+               
         setVisible(false);
     }//GEN-LAST:event_btn_loginActionPerformed
 
     private void btn_newUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_newUserActionPerformed
-        new NewUserFrame().initialize();
-        setVisible(false);
+       mfListener.newUserFrameCreate();
+       setVisible(false);
     }//GEN-LAST:event_btn_newUserActionPerformed
+
+    private void txtfield_usernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtfield_usernameActionPerformed
+        
+    }//GEN-LAST:event_txtfield_usernameActionPerformed
+
+    private void txtfield_passwordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtfield_passwordActionPerformed
+       
+    }//GEN-LAST:event_txtfield_passwordActionPerformed
 
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
+    public  void initialize() {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -132,7 +182,7 @@ public class LoginFrame extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new LoginFrame().setVisible(true);
+                setVisible(true);
             }
         });
     }

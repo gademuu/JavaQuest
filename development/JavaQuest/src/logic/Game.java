@@ -13,6 +13,9 @@ import logic.Glossary.GlossaryManager;
 import logic.Quiz.QuizSession;
 import client.GameView;
 import client2.*;
+import client2.login.LoginFrame;
+import client2.student.NewUserFrame;
+import logic.Login.LoginManager;
 import logic.Quiz.QuizManager;
 
 /**
@@ -20,28 +23,45 @@ import logic.Quiz.QuizManager;
  * @author herman
  * 
  */
-public class Game {
+public class Game implements MainFrameListener {
     
     //constants
-    
     private static final String CREATE_QUIZ = "create_quiz";
+    //end of constants
     
+    //variables
     private MainFrame ui;
     private QuizManager quiz;
     private StudentManager studentManager;
     private GlossaryManager glossaryManager;
+    private LoginFrame loginUi;
+    private LoginManager lm;
+    private NewUserFrame nuf;
+    //end of variables
     
     public Game(){
+        
+        loginUi = new LoginFrame();
+        loginUi.setMainFrameListener(this);
+        loginUi.initialize();
+        lm = new LoginManager(loginUi);
         ui = new MainFrame();
-        ui.initialize();
+        nuf = new NewUserFrame();
+        nuf.setMainFrameListener(this);
+        StudentManager sm = new StudentManager(nuf);
         QuizView qv =  ui.getQuizView();
         qv.setMainFrame(ui);
         qv.setAlternativesSetter(ui.getQuizAlternativesPanel());
         qv.setTextSetter(ui.getQuizTextPanel());
-        QuizManager qm = new QuizManager(qv);
-        
-        
+        QuizManager qm = new QuizManager(qv);    
 }
+    public void newUserFrameCreate(){
+        nuf.initialize();
+    }
+    
+      public void mainFrameCreate(){
+          ui.initialize();
+      }
     
     /*public void play() {
         

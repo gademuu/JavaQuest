@@ -38,8 +38,9 @@ class PropStudentDaoImpl extends PropDaoImpl implements StudentDao {
         Properties prop = new Properties();
         String id = aStudent.getName();
         prop = load(FILE);
-        String name = (String)prop.get(id);
-        s = new Student(name, aStudent.getName());
+        String password = (String)prop.get(id);
+        System.out.println(password);
+        s = new Student(id, password);
         
         return s;
     

@@ -1,50 +1,30 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 
 package logic.Student;
 
-
+import backend.*;
+import client2.student.NewUserFrameListener;
+import client2.student.NewUserFrameSetter;
 
 /**
  *  (ska använda studentdao, skapa en ny student. Ta imot password och namn.)
  * @author herman
  */
-public class StudentManager {
+public class StudentManager implements NewUserFrameListener{
     
+    NewUserFrameSetter ui;
     
-    
-    /*
-    Hantera commandon från användaren. 
-    */
-    public boolean play() {
-        
-         boolean finished = false;
-        
-        while(!finished) {
-            
-            // TODO
-            // 1. Display student management view with student info
-            // 2. receive commands
-            
-            
-        }
-        
-        return finished;
-        
+    public StudentManager(NewUserFrameSetter setter){
+       this.ui = setter;
+       ui.setUserFrameListener(this);
+       
     }
     
-     private boolean processCommand(String command) {
-        
-        boolean isHandled = false;
-        // TODO
-        // switch on command
-        // call appropriate handle methods
-        // isHandled = handleXXX();
-        
-        return isHandled;
-    }
+     public void newUser(String name, String password){
+         Student s = new Student(name,password);
+         StudentDao sd = StudentDaoFactory.create(true);
+         sd.create(s);
+         ui.setRegisterOk();
+     }
     
+  
 }

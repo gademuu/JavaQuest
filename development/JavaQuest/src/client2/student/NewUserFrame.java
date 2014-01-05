@@ -4,20 +4,40 @@
  * and open the template in the editor.
  */
 
-package client2;
+package client2.student;
+
+import client2.MainFrame;
+import client2.MainFrameListener;
 
 /**
  *
  * @author Pierre
  */
-public class NewUserFrame extends javax.swing.JFrame {
-
+public class NewUserFrame extends javax.swing.JFrame implements NewUserFrameSetter{
+    
+    NewUserFrameListener listener;
+    MainFrameListener mfListener;
+    NewUserFrameListener newListener;
     /**
      * Creates new form NewUserFrame
      */
     public NewUserFrame() {
         initComponents();
     }
+    
+    public void  setRegisterOk(){
+        mfListener.mainFrameCreate();
+        setVisible(false);
+    }
+    
+     public void setMainFrameListener(MainFrameListener mfListener){
+         this.mfListener = mfListener;
+         
+     }
+     
+     public void setUserFrameListener(NewUserFrameListener newListener){
+         this.newListener = newListener;
+     }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -34,9 +54,7 @@ public class NewUserFrame extends javax.swing.JFrame {
         btn_registerUser = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMaximumSize(new java.awt.Dimension(320, 240));
         setMinimumSize(new java.awt.Dimension(320, 240));
-        setPreferredSize(new java.awt.Dimension(320, 240));
         setResizable(false);
 
         txtfield_newUsername.setFont(new java.awt.Font("Myriad Pro", 0, 11)); // NOI18N
@@ -90,13 +108,13 @@ public class NewUserFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn_registerUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_registerUserActionPerformed
-        new MainFrame().initialize();
+        newListener.newUser(txtfield_newUsername.getText(), txtfield_newPassword.getText());
+        
         setVisible(false);
+        //TODO if password != repeate password, show dialog else{listener.newUser(.getText(), getText())
     }//GEN-LAST:event_btn_registerUserActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
+    
     public void initialize() {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
