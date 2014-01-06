@@ -79,7 +79,7 @@ public class QuizSessionAlternatives extends QuizSession implements QuizAlternat
             
             ((QuizAlternativesViewSetter)ui).setWord(wa.getOrginal());
             
-             String []ord =  wa.getAlternativesInRandomOrder();
+            String []ord =  wa.getAlternativesInRandomOrder();
    
             ((QuizAlternativesViewSetter)ui).setAlt1(ord[0]);
     

@@ -13,8 +13,8 @@ import logic.Common.QuitException;
 public abstract class QuizSession implements QuizTimerListener{
     //Constants
     protected static final int MAX_NUMBER_OF_ATTEMPTS = 3;
-    protected static final long TIMER_INTERVAL = 1000;
-    protected static final long TIMER_DURATION = 10000;
+    protected static final long TIMER_INTERVAL = 100;
+    protected static final long TIMER_DURATION = 20000;
     //End of constants
     
     //Variables
@@ -47,7 +47,6 @@ public abstract class QuizSession implements QuizTimerListener{
       
       public void timerEvent(String event){
           ui.setTime(event);
-         
       }
       
        protected void isCorrect(String answer){

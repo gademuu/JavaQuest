@@ -59,6 +59,7 @@ public class QuizAlternativesView extends javax.swing.JPanel implements QuizAlte
     
     public void setTime(String time){
         jLabel1.setText(time);
+        progressBar1.setValue(progressBar1.getValue() - 1);
     }
     
     /**
@@ -78,6 +79,7 @@ public class QuizAlternativesView extends javax.swing.JPanel implements QuizAlte
         toggleBtn_wordThree = new javax.swing.JToggleButton();
         jLabel1 = new javax.swing.JLabel();
         btn_nextWord = new javax.swing.JButton();
+        progressBar1 = new javax.swing.JProgressBar();
 
         javax.swing.GroupLayout jDialog4Layout = new javax.swing.GroupLayout(jDialog4.getContentPane());
         jDialog4.getContentPane().setLayout(jDialog4Layout);
@@ -144,6 +146,11 @@ public class QuizAlternativesView extends javax.swing.JPanel implements QuizAlte
             }
         });
 
+        progressBar1.setMaximum(200);
+        progressBar1.setToolTipText("");
+        progressBar1.setMinimumSize(new java.awt.Dimension(300, 20));
+        progressBar1.setPreferredSize(new java.awt.Dimension(300, 20));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -168,6 +175,10 @@ public class QuizAlternativesView extends javax.swing.JPanel implements QuizAlte
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel1)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(progressBar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -185,7 +196,9 @@ public class QuizAlternativesView extends javax.swing.JPanel implements QuizAlte
                 .addComponent(btn_nextWord, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel1)
-                .addContainerGap(41, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(progressBar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -241,6 +254,7 @@ public class QuizAlternativesView extends javax.swing.JPanel implements QuizAlte
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel label_activeWord;
     private javax.swing.JProgressBar progressBar;
+    private javax.swing.JProgressBar progressBar1;
     private javax.swing.JToggleButton toggleBtn_wordOne;
     private javax.swing.JToggleButton toggleBtn_wordThree;
     private javax.swing.JToggleButton toggleBtn_wordTwo;
