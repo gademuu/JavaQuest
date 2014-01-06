@@ -61,7 +61,7 @@ public class QuizAlternativesView extends javax.swing.JPanel implements QuizAlte
         jLabel1.setText(time);
         progressBar1.setValue(progressBar1.getValue() - 1);
         if(time.equals("0")){
-            progressBar1.setValue(200);
+            progressBar1.setValue(190);
         }
     }
     
@@ -205,6 +205,7 @@ public class QuizAlternativesView extends javax.swing.JPanel implements QuizAlte
     private void btn_nextWordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_nextWordActionPerformed
         listener.nextWord();
 
+        progressBar1.setValue(190);
         btn_nextWord.setEnabled(false);
         toggleBtn_wordOne.setSelected(false);
         toggleBtn_wordOne.setEnabled(true);  
