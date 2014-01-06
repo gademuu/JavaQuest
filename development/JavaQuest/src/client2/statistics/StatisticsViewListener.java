@@ -9,6 +9,6 @@ import backend.StudentStats;
  */
 public interface StatisticsViewListener {
     
-    public void statsButtonSelected();
+    public void statsButtonSelected(String studentName);
     
 }

@@ -1,6 +1,8 @@
 
 package logic.statistics;
 
+import backend.Student;
+import backend.StudentDaoFactory;
 import backend.StudentStats;
 import backend.StudentStatsDao;
 import backend.StudentStatsDaoFactory;
@@ -20,16 +22,17 @@ public class StatisticsManager implements  StatisticsViewListener{
     
     public StatisticsManager(LoginManager lm,StatisticsViewSetter setter){
         this.ui = setter;
+        
         ui.setStatisticsViewListener(this);
-         this.studentName = studentName;
-         this.lm = lm;
+        this.studentName = studentName;
+        this.lm = lm;
+        ui.setStudentNames(StudentDaoFactory.create(true).find(new Student("","")));
          
         
     }
     
-      public void statsButtonSelected(){
-          this.studentName = lm.getStudentName();
-          System.out.println("StatisticsManager.statsButtonSelected [" + studentName +"]");
+      public void statsButtonSelected(String studentName){
+         System.out.println("StatisticsManager.statsButtonSelected [" + studentName +"]");
          ui.setStatisticsList(StudentStatsDaoFactory.create(true).find(new StudentStats(studentName,null,null)));
          
      }
