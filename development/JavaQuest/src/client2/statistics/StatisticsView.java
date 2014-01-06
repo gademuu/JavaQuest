@@ -138,7 +138,7 @@ public class StatisticsView extends javax.swing.JPanel implements StatisticsView
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void cBox_studentNamesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cBox_studentNamesActionPerformed
-      
+     //   listener.studentNameListSelected();
     }//GEN-LAST:event_cBox_studentNamesActionPerformed
 
 

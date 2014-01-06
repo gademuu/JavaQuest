@@ -6,6 +6,7 @@ import client2.Quizz.QuizViewListener;
 import client2.*;
 import client2.Quizz.QuizViewSetter;
 import logic.Common.QuitException;
+import logic.Login.LoginManager;
 
 /**
  * 
@@ -19,18 +20,18 @@ public class QuizManager implements QuizViewListener{
     //variables
     private QuizViewSetter ui;
     private QuizSession quizSession;
-    private String studentName = "herman";
     private String language1 = "swedish";
     private String language2;
     private String threeAlternativesToggled;
     private boolean threeAttemptsButton = false;
     private boolean threeAlternativesActive = false;
     private String startQuizButton;
+    private  LoginManager lm;
     
     
     
-    public QuizManager(QuizViewSetter ui){
-        
+    public QuizManager(QuizViewSetter ui, LoginManager lm){
+        this.lm = lm;
         this.ui = ui;  
         String []lang ={"english","german","french"};
         ui.setLanguages(lang);
@@ -39,14 +40,14 @@ public class QuizManager implements QuizViewListener{
      
     
     public void initialize( String studentName){
-        this.studentName = studentName;
+        //this.studentName = studentName;
     }
    private boolean handleRunQuiz() throws QuitException{
          if(threeAlternativesActive) {
-            quizSession = new QuizSessionAlternatives(studentName,language1, language2, NUMBER_OF_WORDS,false,ui.getQuizAlternativesViewSetter() );
+            quizSession = new QuizSessionAlternatives(lm.getStudentName(),language1, language2, NUMBER_OF_WORDS,false,ui.getQuizAlternativesViewSetter() );
              
          }else{
-             quizSession = new QuizSessionTextfield(studentName,language1, language2, NUMBER_OF_WORDS,false,ui.getQuizTextViewSetter() );
+             quizSession = new QuizSessionTextfield(lm.getStudentName(),language1, language2, NUMBER_OF_WORDS,false,ui.getQuizTextViewSetter() );
          }
           return true;
      }

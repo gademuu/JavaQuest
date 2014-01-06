@@ -17,26 +17,27 @@ import logic.Login.LoginManager;
 public class StatisticsManager implements  StatisticsViewListener{
     
     private StatisticsViewSetter ui;
-     String studentName;
+     //String studentName;
      LoginManager lm;
     
     public StatisticsManager(LoginManager lm,StatisticsViewSetter setter){
         this.ui = setter;
-        
         ui.setStatisticsViewListener(this);
-        this.studentName = studentName;
-        this.lm = lm;
-        ui.setStudentNames(StudentDaoFactory.create(true).find(new Student("","")));
+         //this.studentName = studentName;
+         this.lm = lm;
          
         
     }
     
       public void statsButtonSelected(String studentName){
-         System.out.println("StatisticsManager.statsButtonSelected [" + studentName +"]");
+          //this.studentName = lm.getStudentName();
+          System.out.println("StatisticsManager.statsButtonSelected [" + studentName +"]");
          ui.setStatisticsList(StudentStatsDaoFactory.create(true).find(new StudentStats(studentName,null,null)));
          
      }
 
-    
+    public void studentNameListSelected() {
+        ui.setStudentNames(StudentDaoFactory.create(true).find(new Student("","")));
+    }
     
 }

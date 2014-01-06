@@ -2,20 +2,31 @@ package client2;
 
 
 
+import backend.Student;
+import backend.StudentStats;
 import client2.statistics.StatisticsView;
 import client2.Quizz.QuizTextView;
 import client2.Quizz.QuizView;
 import client2.Quizz.QuizAlternativesView;
 import client2.glossary.GlossaryView;
+import client2.statistics.StatisticsViewListener;
+import client2.statistics.StatisticsViewSetter;
 import javax.swing.JPanel;
 
 /**
  *
  * @author pierrezarebski
  */
-public class MainFrame extends javax.swing.JFrame {
+public class MainFrame extends javax.swing.JFrame implements StatisticsViewSetter {
 
-    //private MainFrameListener listener;
+    private StatisticsViewListener svListener;
+    
+    public void setStatisticsViewListener(StatisticsViewListener svListener) {
+        this.svListener = svListener;
+    }
+    
+     public void setStatisticsList(StudentStats[] ss) {}
+    public void setStudentNames(Student[] students) {}
     
     /**
      * Creates new form MainFrame
@@ -179,6 +190,9 @@ public class MainFrame extends javax.swing.JFrame {
         toggleBtn_menu1.setSelected(false);
         toggleBtn_menu3.setSelected(false);
         toggleBtn_menu4.setSelected(false);
+        
+         
+     
     }//GEN-LAST:event_toggleBtn_menu2ActionPerformed
 
     private void toggleBtn_menu1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_toggleBtn_menu1ActionPerformed
@@ -195,6 +209,8 @@ public class MainFrame extends javax.swing.JFrame {
         toggleBtn_menu1.setSelected(false);
         toggleBtn_menu2.setSelected(false);
         toggleBtn_menu4.setSelected(false);
+        
+           svListener.studentNameListSelected();
     }//GEN-LAST:event_toggleBtn_menu3ActionPerformed
 
     private void toggleBtn_menu4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_toggleBtn_menu4ActionPerformed

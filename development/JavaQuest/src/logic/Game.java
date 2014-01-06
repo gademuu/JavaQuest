@@ -56,10 +56,10 @@ public class Game implements MainFrameListener {
         qv.setMainFrame(ui);
         qv.setAlternativesSetter(ui.getQuizAlternativesPanel());
         qv.setTextSetter(ui.getQuizTextPanel());
-        QuizManager qm = new QuizManager(qv); 
+        QuizManager qm = new QuizManager(qv,lm); 
         GlossaryManager gm = new GlossaryManager( ui.getGlossaryView());
         statisticsManager = new StatisticsManager(lm, ui.getStatisticsView());
-       
+        ui.setStatisticsViewListener(statisticsManager);
         
 }
     public void newUserFrameCreate(){
