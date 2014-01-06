@@ -36,6 +36,10 @@ public class LoginManager implements LoginListener {
     }
     public void registerBtnPressed(){}
     
+    public String getStudentName(){
+        return student.getName();
+    } 
+    
     
     
 }

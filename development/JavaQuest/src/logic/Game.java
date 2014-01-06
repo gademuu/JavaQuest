@@ -17,6 +17,7 @@ import client2.login.LoginFrame;
 import client2.student.NewUserFrame;
 import logic.Login.LoginManager;
 import logic.Quiz.QuizManager;
+import logic.statistics.StatisticsManager;
 
 /**
  *
@@ -37,6 +38,7 @@ public class Game implements MainFrameListener {
     private LoginFrame loginUi;
     private LoginManager lm;
     private NewUserFrame nuf;
+    private StatisticsManager statisticsManager;
     
     //end of variables
     
@@ -56,6 +58,7 @@ public class Game implements MainFrameListener {
         qv.setTextSetter(ui.getQuizTextPanel());
         QuizManager qm = new QuizManager(qv); 
         GlossaryManager gm = new GlossaryManager( ui.getGlossaryView());
+        statisticsManager = new StatisticsManager(lm, ui.getStatisticsView());
        
         
 }

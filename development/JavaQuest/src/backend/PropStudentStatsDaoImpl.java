@@ -9,7 +9,11 @@ package backend;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.Map;
 import java.util.Properties;
+import java.util.Set;
 
 
 /**
@@ -61,9 +65,34 @@ public class PropStudentStatsDaoImpl extends PropDaoImpl implements StudentStats
     }
     
     public StudentStats[] find(StudentStats criteria) {
+         ArrayList<StudentStats> matches = new ArrayList<>();
         
-    // TODO    
-        return null;
+        Properties prop = load(criteria.getName() + FILE);
+        
+        Set<Map.Entry<Object, Object>> statistics;
+         statistics = prop.entrySet();
+        Iterator iter =  statistics.iterator();
+        
+        while(iter.hasNext()) {
+            Map.Entry<Object, Object> e = (Map.Entry<Object, Object>) iter.next();
+            StudentStats ss = new StudentStats(criteria.getName(), (String)e.getKey(),(String)e.getValue());
+            matches.add(ss);
+        }
+        
+        StudentStats[] matchstats = new StudentStats[matches.size()];
+        matchstats = matches.toArray(matchstats); 
+        return matchstats;
+        
+       
+        
+   
+    }
+    
+    public static void main(String[] args){
+          StudentStats[] ss = new PropStudentStatsDaoImpl().find(new StudentStats("herman","",""));
+        for(StudentStats s : ss) {
+            System.out.println(s.toString());
+        }
     }
     
 }

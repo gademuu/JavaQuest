@@ -12,10 +12,13 @@ import client2.student.NewUserFrameSetter;
 public class StudentManager implements NewUserFrameListener{
     
     NewUserFrameSetter ui;
+   
+    
     
     public StudentManager(NewUserFrameSetter setter){
        this.ui = setter;
        ui.setUserFrameListener(this);
+      
        
     }
     

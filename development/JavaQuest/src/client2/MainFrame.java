@@ -2,6 +2,7 @@ package client2;
 
 
 
+import client2.statistics.StatisticsView;
 import client2.Quizz.QuizTextView;
 import client2.Quizz.QuizView;
 import client2.Quizz.QuizAlternativesView;
@@ -60,7 +61,7 @@ public class MainFrame extends javax.swing.JFrame {
         quizAlternativesPanel = new client2.Quizz.QuizAlternativesView();
         quizTextPanel = new client2.Quizz.QuizTextView();
         glossaryPanel = new client2.glossary.GlossaryView();
-        statisticsPanel = new client2.StatisticsView();
+        statisticsPanel = new client2.statistics.StatisticsView();
         settingsPanel = new client2.SettingsView();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -253,7 +254,7 @@ public class MainFrame extends javax.swing.JFrame {
     private client2.Quizz.QuizTextView quizTextPanel;
     private client2.SettingsView settingsPanel;
     private client2.StartView startPanel;
-    private client2.StatisticsView statisticsPanel;
+    private client2.statistics.StatisticsView statisticsPanel;
     private javax.swing.JToggleButton toggleBtn_menu1;
     private javax.swing.JToggleButton toggleBtn_menu2;
     private javax.swing.JToggleButton toggleBtn_menu3;
