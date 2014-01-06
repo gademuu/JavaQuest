@@ -149,7 +149,7 @@ public class QuizView extends javax.swing.JPanel implements QuizViewSetter {
             }
         });
 
-        toggleBtn_language1.setText("Språk 1");
+        toggleBtn_language1.setText("Svenska");
         toggleBtn_language1.setMaximumSize(new java.awt.Dimension(100, 29));
         toggleBtn_language1.setMinimumSize(new java.awt.Dimension(100, 29));
         toggleBtn_language1.setPreferredSize(new java.awt.Dimension(100, 29));
@@ -279,7 +279,6 @@ public class QuizView extends javax.swing.JPanel implements QuizViewSetter {
 
     private void toggleBtn_language2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_toggleBtn_language2ActionPerformed
         listener.language2((String) cBox_language.getSelectedItem());
-        
         toggleBtn_language1.setSelected(false);
     }//GEN-LAST:event_toggleBtn_language2ActionPerformed
 
@@ -312,6 +311,7 @@ public class QuizView extends javax.swing.JPanel implements QuizViewSetter {
 
     private void cBox_languageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cBox_languageActionPerformed
         listener.languageMenu();
+        toggleBtn_language2.setText((String) cBox_language.getSelectedItem());
         System.out.println(cBox_language.getSelectedItem());
     }//GEN-LAST:event_cBox_languageActionPerformed
 
