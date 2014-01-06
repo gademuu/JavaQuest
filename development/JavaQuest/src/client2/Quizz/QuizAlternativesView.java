@@ -30,10 +30,8 @@ public class QuizAlternativesView extends javax.swing.JPanel implements QuizAlte
            this.listener = listener;
     }
     
-    public void setIsCorrect(int numberOfCorrectAnswers){
-        
+    public void setIsCorrect(int numberOfCorrectAnswers){    
         progressBar.setValue(progressBar.getValue() + 10);
-        
         label_activeWord.setForeground(new java.awt.Color(0, 200, 0)); 
     }
     
@@ -185,9 +183,9 @@ public class QuizAlternativesView extends javax.swing.JPanel implements QuizAlte
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(progressBar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(39, 39, 39)
+                .addGap(30, 30, 30)
                 .addComponent(label_activeWord)
-                .addGap(33, 33, 33)
+                .addGap(30, 30, 30)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(toggleBtn_wordOne, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(toggleBtn_wordTwo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
