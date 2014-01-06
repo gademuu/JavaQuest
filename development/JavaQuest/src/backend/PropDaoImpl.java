@@ -29,7 +29,7 @@ public abstract class PropDaoImpl {
             
             
         } catch(IOException ex){
-            ex.printStackTrace();
+          //  ex.printStackTrace();
             // TODO throw exception
         } 
         

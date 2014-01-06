@@ -4,26 +4,44 @@
  * and open the template in the editor.
  */
 
-package client2;
+package client2.glossary;
+
+import backend.Word;
+import javax.swing.JTable;
 
 /**
  *
  * @author pierrezarebski
  */
-public class GlossaryView extends javax.swing.JPanel {
+public class GlossaryView extends javax.swing.JPanel implements  GlossaryViewSetter {
 
-    private GlossaryListener listener;
+    private GlossaryViewListener listener;
     /**
      * Creates new panel GlossaryView
      */
     public GlossaryView() {
         initComponents();
+        cBox_languageTwo.addItem("english");
+        cBox_languageTwo.addItem("german");
     }
+    
+    public void  setGlossaryList(Word[] list){
+        String[][] tableData = new String[list.length][2];
+        for(int i = 0 ; i < list.length; i++) {
 
-    public GlossaryView(GlossaryListener listener){
-        initComponents();
+            tableData[i][0] = list[i].getOrginal();
+
+            tableData[i][1] = list[i].getTranslation();
+        }
+        String lang = list[0].getLanguage();
+
+        table_glossaryList.setModel(new javax.swing.table.DefaultTableModel(tableData, new String[]{"Svenska", lang}));
+    }
+    
+    public void setGlossaryViewListener(GlossaryViewListener listener){
         this.listener = listener;
     }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -84,11 +102,21 @@ public class GlossaryView extends javax.swing.JPanel {
         btn_addWord.setMaximumSize(new java.awt.Dimension(100, 29));
         btn_addWord.setMinimumSize(new java.awt.Dimension(100, 29));
         btn_addWord.setPreferredSize(new java.awt.Dimension(100, 29));
+        btn_addWord.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_addWordActionPerformed(evt);
+            }
+        });
 
         btn_addLang.setText("Lägg till");
         btn_addLang.setMaximumSize(new java.awt.Dimension(100, 29));
         btn_addLang.setMinimumSize(new java.awt.Dimension(100, 29));
         btn_addLang.setPreferredSize(new java.awt.Dimension(100, 29));
+        btn_addLang.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_addLangActionPerformed(evt);
+            }
+        });
 
         cBox_languageTwo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "-Språk 2-", "Engelska" }));
         cBox_languageTwo.setMinimumSize(new java.awt.Dimension(150, 27));
@@ -149,6 +177,14 @@ public class GlossaryView extends javax.swing.JPanel {
                 .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btn_addWordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_addWordActionPerformed
+        listener.newWord(txtfield_word1.getText(), txtfield_word2.getText(), (String) cBox_languageTwo.getSelectedItem());
+    }//GEN-LAST:event_btn_addWordActionPerformed
+
+    private void btn_addLangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_addLangActionPerformed
+        listener.langSelected((String) cBox_languageTwo.getSelectedItem());
+    }//GEN-LAST:event_btn_addLangActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

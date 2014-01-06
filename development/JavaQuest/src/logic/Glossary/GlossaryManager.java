@@ -1,55 +1,49 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 
 package logic.Glossary;
 
+import backend.Word;
 import backend.WordDao;
-import client.GlossaryView;
+import backend.WordDaoFactory;
+import client2.glossary.GlossaryViewListener;
+import client2.glossary.GlossaryViewSetter;
 import logic.Common.QuitException;
 
 /**
  * Ska skapa nya ord och lägga in i propertiesfilen. Använd Create() från sitt DAO.
  * @author herman
  */
-public class GlossaryManager {
+public class GlossaryManager implements GlossaryViewListener  {
     
-    private GlossaryView ui;
+    private GlossaryViewSetter ui;
     
-    WordDao sd;
-    
-    
-    
-    
-    public boolean play() throws QuitException {
-        
-         boolean finished = false;
-        
-        while(!finished) {
-            
-            // TODO
-            // 1. Display glossary management view 
-            // 2. receive commands
-			// 3. Quit = throw exception
-            
-            
-        }
-        
-        return finished;
+    public GlossaryManager(GlossaryViewSetter setter){
+        this.ui = setter;
+        ui.setGlossaryViewListener(this);
         
     }
     
-     private boolean processCommand(String command) throws QuitException {
-        
-        boolean isHandled = false;
-        // TODO
-        // switch on command
-        // call appropriate handle methods
-        // isHandled = handleXXX();
-        
-        return isHandled;
+   
+    
+    
+    public void langSelected(String lang){
+        WordDao wd = WordDaoFactory.create(true); 
+        Word[] wlist = wd.find(new Word("","",lang));
+        ui.setGlossaryList(wlist);
     }
+    
+    public void newWord(String original, String translation, String language){
+         WordDao wd = WordDaoFactory.create(true); 
+         wd.create(new Word(original, translation, language));
+         Word[] wlist2 = wd.find(new Word("","",language));
+         ui.setGlossaryList(wlist2);
+        
+    }
+    
+    
+    
+    
+    
+    
     
 }

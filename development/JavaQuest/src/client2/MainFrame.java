@@ -1,8 +1,11 @@
 package client2;
 
+
+
 import client2.Quizz.QuizTextView;
 import client2.Quizz.QuizView;
 import client2.Quizz.QuizAlternativesView;
+import client2.glossary.GlossaryView;
 import javax.swing.JPanel;
 
 /**
@@ -22,6 +25,14 @@ public class MainFrame extends javax.swing.JFrame {
     
     public QuizView getQuizView(){
         return quizPanel;
+    }
+    
+    public GlossaryView getGlossaryView(){
+         return glossaryPanel;
+    }
+    
+    public StatisticsView getStatisticsView(){
+        return statisticsPanel;
     }
     
     /*public MainFrame(MainFrameListener listener){
@@ -48,7 +59,7 @@ public class MainFrame extends javax.swing.JFrame {
         quizPanel = new client2.Quizz.QuizView();
         quizAlternativesPanel = new client2.Quizz.QuizAlternativesView();
         quizTextPanel = new client2.Quizz.QuizTextView();
-        glossaryPanel = new client2.GlossaryView();
+        glossaryPanel = new client2.glossary.GlossaryView();
         statisticsPanel = new client2.StatisticsView();
         settingsPanel = new client2.SettingsView();
 
@@ -235,7 +246,7 @@ public class MainFrame extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel cardLayoutPanel;
-    private client2.GlossaryView glossaryPanel;
+    private client2.glossary.GlossaryView glossaryPanel;
     private javax.swing.JPanel menuPanel;
     private client2.Quizz.QuizAlternativesView quizAlternativesPanel;
     private client2.Quizz.QuizView quizPanel;

@@ -4,15 +4,17 @@
  * and open the template in the editor.
  */
 
-package client;
+package client2.glossary;
+
+import backend.Word;
 
 /**
  *
  * @author herman
  */
-public class GlossariesView extends View {
+public interface GlossaryViewSetter {
     
-    // TODO
-    // View for managing glossaries
+    public void  setGlossaryList(Word[] list);
+    public void setGlossaryViewListener(GlossaryViewListener listener);
     
 }

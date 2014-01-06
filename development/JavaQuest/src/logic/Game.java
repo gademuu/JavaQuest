@@ -6,13 +6,13 @@
 
 package logic;
 
-import client2.Quizz.QuizView;
+
 import logic.Common.QuitException;
 import logic.Student.StudentManager;
 import logic.Glossary.GlossaryManager;
 import logic.Quiz.QuizSession;
-import client.GameView;
 import client2.*;
+import client2.Quizz.QuizView;
 import client2.login.LoginFrame;
 import client2.student.NewUserFrame;
 import logic.Login.LoginManager;
@@ -37,6 +37,7 @@ public class Game implements MainFrameListener {
     private LoginFrame loginUi;
     private LoginManager lm;
     private NewUserFrame nuf;
+    
     //end of variables
     
     public Game(){
@@ -53,7 +54,10 @@ public class Game implements MainFrameListener {
         qv.setMainFrame(ui);
         qv.setAlternativesSetter(ui.getQuizAlternativesPanel());
         qv.setTextSetter(ui.getQuizTextPanel());
-        QuizManager qm = new QuizManager(qv);    
+        QuizManager qm = new QuizManager(qv); 
+        GlossaryManager gm = new GlossaryManager( ui.getGlossaryView());
+       
+        
 }
     public void newUserFrameCreate(){
         nuf.initialize();
@@ -62,6 +66,7 @@ public class Game implements MainFrameListener {
       public void mainFrameCreate(){
           ui.initialize();
       }
+      
     
     /*public void play() {
         
