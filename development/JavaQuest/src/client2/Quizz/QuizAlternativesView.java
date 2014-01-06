@@ -26,22 +26,19 @@ public class QuizAlternativesView extends javax.swing.JPanel implements QuizAlte
         javax.swing.JOptionPane.showMessageDialog(this, message);
     }
     
-    
     public void setQuizAlternativesViewListener(QuizAlternativesListener listener){
            this.listener = listener;
     }
     
     public void setIsCorrect(int numberOfCorrectAnswers){
         
-        progressBar.setValue(progressBar.getValue() + 1);
+        progressBar.setValue(progressBar.getValue() + 10);
         
-        label_correctAnswers.setText("Correct!");
-        
+        //label_correctAnswers.setText("Correct!"); 
     }
     
     public void setIsInCorrect(){
-        label_correctAnswers.setText("Incorrect");
-       
+        //label_correctAnswers.setText("Incorrect");   
     }
     
     public void setWord(String word){
@@ -64,9 +61,6 @@ public class QuizAlternativesView extends javax.swing.JPanel implements QuizAlte
         jLabel1.setText(time);
     }
     
-    
-    
-   
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -79,12 +73,11 @@ public class QuizAlternativesView extends javax.swing.JPanel implements QuizAlte
         jDialog4 = new javax.swing.JDialog();
         progressBar = new javax.swing.JProgressBar();
         label_activeWord = new javax.swing.JLabel();
-        label_correctAnswers = new javax.swing.JLabel();
         toggleBtn_wordOne = new javax.swing.JToggleButton();
         toggleBtn_wordTwo = new javax.swing.JToggleButton();
         toggleBtn_wordThree = new javax.swing.JToggleButton();
-        jButton1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        btn_nextWord = new javax.swing.JButton();
 
         javax.swing.GroupLayout jDialog4Layout = new javax.swing.GroupLayout(jDialog4.getContentPane());
         jDialog4.getContentPane().setLayout(jDialog4Layout);
@@ -97,6 +90,9 @@ public class QuizAlternativesView extends javax.swing.JPanel implements QuizAlte
             .addGap(0, 300, Short.MAX_VALUE)
         );
 
+        setMinimumSize(new java.awt.Dimension(400, 300));
+        setPreferredSize(new java.awt.Dimension(400, 300));
+
         progressBar.setMinimumSize(new java.awt.Dimension(300, 20));
         progressBar.setPreferredSize(new java.awt.Dimension(300, 20));
 
@@ -104,10 +100,10 @@ public class QuizAlternativesView extends javax.swing.JPanel implements QuizAlte
         label_activeWord.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         label_activeWord.setText("GLOSORD");
 
-        label_correctAnswers.setFont(new java.awt.Font("Myriad Pro", 0, 24)); // NOI18N
-        label_correctAnswers.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-
         toggleBtn_wordOne.setText("Ord1");
+        toggleBtn_wordOne.setMaximumSize(new java.awt.Dimension(100, 23));
+        toggleBtn_wordOne.setMinimumSize(new java.awt.Dimension(100, 23));
+        toggleBtn_wordOne.setPreferredSize(new java.awt.Dimension(100, 23));
         toggleBtn_wordOne.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 toggleBtn_wordOneActionPerformed(evt);
@@ -115,6 +111,9 @@ public class QuizAlternativesView extends javax.swing.JPanel implements QuizAlte
         });
 
         toggleBtn_wordTwo.setText("Ord2");
+        toggleBtn_wordTwo.setMaximumSize(new java.awt.Dimension(100, 23));
+        toggleBtn_wordTwo.setMinimumSize(new java.awt.Dimension(100, 23));
+        toggleBtn_wordTwo.setPreferredSize(new java.awt.Dimension(100, 23));
         toggleBtn_wordTwo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 toggleBtn_wordTwoActionPerformed(evt);
@@ -122,52 +121,52 @@ public class QuizAlternativesView extends javax.swing.JPanel implements QuizAlte
         });
 
         toggleBtn_wordThree.setText("Ord3");
+        toggleBtn_wordThree.setMaximumSize(new java.awt.Dimension(100, 23));
+        toggleBtn_wordThree.setMinimumSize(new java.awt.Dimension(100, 23));
+        toggleBtn_wordThree.setPreferredSize(new java.awt.Dimension(100, 23));
         toggleBtn_wordThree.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 toggleBtn_wordThreeActionPerformed(evt);
             }
         });
 
-        jButton1.setText("Nästa ");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        jLabel1.setText("Time");
+
+        btn_nextWord.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        btn_nextWord.setText("Nästa ");
+        btn_nextWord.setEnabled(false);
+        btn_nextWord.setMaximumSize(new java.awt.Dimension(100, 34));
+        btn_nextWord.setMinimumSize(new java.awt.Dimension(100, 34));
+        btn_nextWord.setPreferredSize(new java.awt.Dimension(100, 34));
+        btn_nextWord.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btn_nextWordActionPerformed(evt);
             }
         });
-
-        jLabel1.setText("Time");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(20, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(toggleBtn_wordTwo)
-                        .addGap(30, 30, 30)
-                        .addComponent(toggleBtn_wordThree)
-                        .addGap(63, 63, 63))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(progressBar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jButton1)
-                                .addGap(122, 122, 122)))
-                        .addGap(28, 28, 28))))
+            .addComponent(label_activeWord, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
-                .addGap(84, 84, 84)
-                .addComponent(label_correctAnswers, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(progressBar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(label_activeWord, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(48, 48, 48)
-                            .addComponent(toggleBtn_wordOne))))
+                .addContainerGap(40, Short.MAX_VALUE)
+                .addComponent(toggleBtn_wordOne, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(10, 10, 10)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btn_nextWord, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(toggleBtn_wordTwo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(10, 10, 10)
+                        .addComponent(toggleBtn_wordThree, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(40, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel1)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -177,45 +176,70 @@ public class QuizAlternativesView extends javax.swing.JPanel implements QuizAlte
                 .addComponent(progressBar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(39, 39, 39)
                 .addComponent(label_activeWord)
-                .addGap(35, 35, 35)
+                .addGap(33, 33, 33)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(toggleBtn_wordOne)
-                    .addComponent(toggleBtn_wordTwo)
-                    .addComponent(toggleBtn_wordThree))
-                .addGap(14, 14, 14)
-                .addComponent(label_correctAnswers, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(toggleBtn_wordOne, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(toggleBtn_wordTwo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(toggleBtn_wordThree, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(jButton1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 7, Short.MAX_VALUE)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(30, 30, 30))
+                .addComponent(btn_nextWord, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel1)
+                .addContainerGap(41, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btn_nextWordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_nextWordActionPerformed
         listener.nextWord();
-        label_correctAnswers.setText("");
-    }//GEN-LAST:event_jButton1ActionPerformed
+
+        btn_nextWord.setEnabled(false);
+        toggleBtn_wordOne.setSelected(false);
+        toggleBtn_wordOne.setEnabled(true);  
+        toggleBtn_wordTwo.setSelected(false);
+        toggleBtn_wordTwo.setEnabled(true);  
+        toggleBtn_wordThree.setSelected(false);
+        toggleBtn_wordThree.setEnabled(true);  
+        //label_correctAnswers.setText("");
+    }//GEN-LAST:event_btn_nextWordActionPerformed
 
     private void toggleBtn_wordOneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_toggleBtn_wordOneActionPerformed
         listener.wordOneBtnPressed(toggleBtn_wordOne.getText());
+        
+        lockWordBtns();
+        btn_nextWord.setEnabled(true);
+        toggleBtn_wordTwo.setSelected(false);
+        toggleBtn_wordThree.setSelected(false);
     }//GEN-LAST:event_toggleBtn_wordOneActionPerformed
 
     private void toggleBtn_wordTwoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_toggleBtn_wordTwoActionPerformed
-         listener.wordTwoBtnPressed(toggleBtn_wordTwo.getText());
+        listener.wordTwoBtnPressed(toggleBtn_wordTwo.getText());
+        
+        lockWordBtns();
+        btn_nextWord.setEnabled(true);
+        toggleBtn_wordOne.setSelected(false);
+        toggleBtn_wordThree.setSelected(false);
     }//GEN-LAST:event_toggleBtn_wordTwoActionPerformed
 
     private void toggleBtn_wordThreeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_toggleBtn_wordThreeActionPerformed
-         listener.wordThreeBtnPressed(toggleBtn_wordThree.getText());
+        listener.wordThreeBtnPressed(toggleBtn_wordThree.getText());
+
+        lockWordBtns();
+        btn_nextWord.setEnabled(true);
+        toggleBtn_wordOne.setSelected(false);
+        toggleBtn_wordTwo.setSelected(false);
     }//GEN-LAST:event_toggleBtn_wordThreeActionPerformed
 
+    private void lockWordBtns(){
+        toggleBtn_wordOne.setEnabled(false);
+        toggleBtn_wordTwo.setEnabled(false);
+        toggleBtn_wordThree.setEnabled(false);
+    }
     private javax.swing.JOptionPane statsDialog;
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton btn_nextWord;
     private javax.swing.JDialog jDialog4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel label_activeWord;
-    private javax.swing.JLabel label_correctAnswers;
     private javax.swing.JProgressBar progressBar;
     private javax.swing.JToggleButton toggleBtn_wordOne;
     private javax.swing.JToggleButton toggleBtn_wordThree;

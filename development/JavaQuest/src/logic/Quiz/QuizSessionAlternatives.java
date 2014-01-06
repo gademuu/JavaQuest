@@ -45,14 +45,13 @@ public class QuizSessionAlternatives extends QuizSession implements QuizAlternat
   */  
     
     public void wordOneBtnPressed(String answer){
-        isCorrect(answer);
-        
-        }
-       
-       
+        isCorrect(answer);    
+    }
+          
     public void wordTwoBtnPressed(String answer){
         isCorrect(answer);
     }
+    
     public void wordThreeBtnPressed(String answer){
         isCorrect(answer);
     }

@@ -50,7 +50,7 @@ public class NewUserFrame extends javax.swing.JFrame implements NewUserFrameSett
 
         txtfield_newUsername = new javax.swing.JTextField();
         txtfield_newPassword = new javax.swing.JTextField();
-        txtField_repeatPassword = new javax.swing.JTextField();
+        txtfield_repeatPassword = new javax.swing.JTextField();
         btn_registerUser = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -60,14 +60,29 @@ public class NewUserFrame extends javax.swing.JFrame implements NewUserFrameSett
         txtfield_newUsername.setFont(new java.awt.Font("Myriad Pro", 0, 11)); // NOI18N
         txtfield_newUsername.setForeground(new java.awt.Color(153, 153, 153));
         txtfield_newUsername.setText("Skriv ett användarnamn...");
+        txtfield_newUsername.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                txtfield_newUsernameMouseClicked(evt);
+            }
+        });
 
         txtfield_newPassword.setFont(new java.awt.Font("Myriad Pro", 0, 11)); // NOI18N
         txtfield_newPassword.setForeground(new java.awt.Color(153, 153, 153));
         txtfield_newPassword.setText("Skriv in ett lösenord...");
+        txtfield_newPassword.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                txtfield_newPasswordMouseClicked(evt);
+            }
+        });
 
-        txtField_repeatPassword.setFont(new java.awt.Font("Myriad Pro", 0, 11)); // NOI18N
-        txtField_repeatPassword.setForeground(new java.awt.Color(153, 153, 153));
-        txtField_repeatPassword.setText("Repetera lösenordet...");
+        txtfield_repeatPassword.setFont(new java.awt.Font("Myriad Pro", 0, 11)); // NOI18N
+        txtfield_repeatPassword.setForeground(new java.awt.Color(153, 153, 153));
+        txtfield_repeatPassword.setText("Repetera lösenordet...");
+        txtfield_repeatPassword.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                txtfield_repeatPasswordMouseClicked(evt);
+            }
+        });
 
         btn_registerUser.setText("Registrera");
         btn_registerUser.addActionListener(new java.awt.event.ActionListener() {
@@ -84,7 +99,7 @@ public class NewUserFrame extends javax.swing.JFrame implements NewUserFrameSett
                 .addContainerGap(60, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(txtfield_newPassword)
-                    .addComponent(txtField_repeatPassword)
+                    .addComponent(txtfield_repeatPassword)
                     .addComponent(btn_registerUser, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(txtfield_newUsername, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE))
                 .addContainerGap(60, Short.MAX_VALUE))
@@ -97,7 +112,7 @@ public class NewUserFrame extends javax.swing.JFrame implements NewUserFrameSett
                 .addGap(18, 18, 18)
                 .addComponent(txtfield_newPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(txtField_repeatPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtfield_repeatPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(btn_registerUser)
                 .addContainerGap(54, Short.MAX_VALUE))
@@ -113,6 +128,18 @@ public class NewUserFrame extends javax.swing.JFrame implements NewUserFrameSett
         setVisible(false);
         //TODO if password != repeate password, show dialog else{listener.newUser(.getText(), getText())
     }//GEN-LAST:event_btn_registerUserActionPerformed
+
+    private void txtfield_newUsernameMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtfield_newUsernameMouseClicked
+        txtfield_newUsername.setText("");
+    }//GEN-LAST:event_txtfield_newUsernameMouseClicked
+
+    private void txtfield_newPasswordMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtfield_newPasswordMouseClicked
+        txtfield_newPassword.setText("");
+    }//GEN-LAST:event_txtfield_newPasswordMouseClicked
+
+    private void txtfield_repeatPasswordMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtfield_repeatPasswordMouseClicked
+        txtfield_repeatPassword.setText("");
+    }//GEN-LAST:event_txtfield_repeatPasswordMouseClicked
 
     
     public void initialize() {
@@ -149,8 +176,8 @@ public class NewUserFrame extends javax.swing.JFrame implements NewUserFrameSett
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_registerUser;
-    private javax.swing.JTextField txtField_repeatPassword;
     private javax.swing.JTextField txtfield_newPassword;
     private javax.swing.JTextField txtfield_newUsername;
+    private javax.swing.JTextField txtfield_repeatPassword;
     // End of variables declaration//GEN-END:variables
 }
