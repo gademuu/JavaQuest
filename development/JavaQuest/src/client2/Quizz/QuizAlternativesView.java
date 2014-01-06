@@ -6,8 +6,8 @@
 
 package client2.Quizz;
 
+import java.awt.Color;
 import javax.swing.JOptionPane;
-
 /**
  *
  * @author pierrezarebski
@@ -34,11 +34,11 @@ public class QuizAlternativesView extends javax.swing.JPanel implements QuizAlte
         
         progressBar.setValue(progressBar.getValue() + 10);
         
-        //label_correctAnswers.setText("Correct!"); 
+        label_activeWord.setForeground(new java.awt.Color(0, 200, 0)); 
     }
     
     public void setIsInCorrect(){
-        //label_correctAnswers.setText("Incorrect");   
+        label_activeWord.setForeground(Color.RED);    
     }
     
     public void setWord(String word){
@@ -212,8 +212,9 @@ public class QuizAlternativesView extends javax.swing.JPanel implements QuizAlte
         toggleBtn_wordTwo.setSelected(false);
         toggleBtn_wordTwo.setEnabled(true);  
         toggleBtn_wordThree.setSelected(false);
-        toggleBtn_wordThree.setEnabled(true);  
-        //label_correctAnswers.setText("");
+        toggleBtn_wordThree.setEnabled(true);
+        
+        label_activeWord.setForeground(Color.BLACK);    
     }//GEN-LAST:event_btn_nextWordActionPerformed
 
     private void toggleBtn_wordOneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_toggleBtn_wordOneActionPerformed
