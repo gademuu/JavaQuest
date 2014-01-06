@@ -45,14 +45,13 @@ public class QuizSessionAlternatives extends QuizSession implements QuizAlternat
   */  
     
     public void wordOneBtnPressed(String answer){
-        isCorrect(answer);
-        
-        }
-       
-       
+        isCorrect(answer);    
+    }
+          
     public void wordTwoBtnPressed(String answer){
         isCorrect(answer);
     }
+    
     public void wordThreeBtnPressed(String answer){
         isCorrect(answer);
     }
@@ -80,7 +79,7 @@ public class QuizSessionAlternatives extends QuizSession implements QuizAlternat
             
             ((QuizAlternativesViewSetter)ui).setWord(wa.getOrginal());
             
-             String []ord =  wa.getAlternativesInRandomOrder();
+            String []ord =  wa.getAlternativesInRandomOrder();
    
             ((QuizAlternativesViewSetter)ui).setAlt1(ord[0]);
     

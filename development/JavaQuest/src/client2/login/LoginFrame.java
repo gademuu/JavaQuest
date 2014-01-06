@@ -11,7 +11,7 @@ import client2.student.NewUserFrame;
 public class LoginFrame extends javax.swing.JFrame implements LoginFrameSetter {
     
     LoginListener listener;
-     MainFrameListener mfListener;
+    MainFrameListener mfListener;
 
     /**
      * Creates new form LoginFrame
@@ -21,22 +21,21 @@ public class LoginFrame extends javax.swing.JFrame implements LoginFrameSetter {
     }
     
     public void setLoginOk(){
-          mfListener.mainFrameCreate();
+         mfListener.mainFrameCreate();
          setVisible(false);
-         
         // TODO skicka mainframe till game via setter
     }
     
-        public void wrongUser(String message){
-               javax.swing.JOptionPane.showMessageDialog(this, message);
-        
-          }
-            public void setLoginListener(LoginListener listener){
-                this.listener = listener;
-            }
+    public void wrongUser(String message){
+        javax.swing.JOptionPane.showMessageDialog(this, message);
+    }
+    
+    public void setLoginListener(LoginListener listener){
+        this.listener = listener;
+    }
             
-            public void setMainFrameListener(MainFrameListener mfListener) {
-                    this.mfListener = mfListener;
+    public void setMainFrameListener(MainFrameListener mfListener) {
+        this.mfListener = mfListener;
     }
             
             
@@ -63,18 +62,18 @@ public class LoginFrame extends javax.swing.JFrame implements LoginFrameSetter {
         txtfield_username.setForeground(new java.awt.Color(153, 153, 153));
         txtfield_username.setText("Username...");
         txtfield_username.setPreferredSize(new java.awt.Dimension(200, 28));
-        txtfield_username.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtfield_usernameActionPerformed(evt);
+        txtfield_username.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                txtfield_usernameMouseClicked(evt);
             }
         });
 
         txtfield_password.setForeground(new java.awt.Color(153, 153, 153));
         txtfield_password.setText("Password...");
         txtfield_password.setPreferredSize(new java.awt.Dimension(200, 28));
-        txtfield_password.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtfield_passwordActionPerformed(evt);
+        txtfield_password.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                txtfield_passwordMouseClicked(evt);
             }
         });
 
@@ -87,10 +86,18 @@ public class LoginFrame extends javax.swing.JFrame implements LoginFrameSetter {
 
         btn_newUser.setFont(new java.awt.Font("Myriad Pro", 0, 10)); // NOI18N
         btn_newUser.setForeground(new java.awt.Color(0, 0, 255));
-        btn_newUser.setText("Registrera dig");
+        btn_newUser.setText("<HTML>Registrera dig</HTML>");
         btn_newUser.setBorder(null);
         btn_newUser.setBorderPainted(false);
         btn_newUser.setContentAreaFilled(false);
+        btn_newUser.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btn_newUserMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btn_newUserMouseExited(evt);
+            }
+        });
         btn_newUser.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_newUserActionPerformed(evt);
@@ -109,7 +116,7 @@ public class LoginFrame extends javax.swing.JFrame implements LoginFrameSetter {
                         .addComponent(txtfield_username, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(10, 10, 10)
-                        .addComponent(btn_newUser)
+                        .addComponent(btn_newUser, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btn_login)))
                 .addContainerGap(60, Short.MAX_VALUE))
@@ -124,7 +131,7 @@ public class LoginFrame extends javax.swing.JFrame implements LoginFrameSetter {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btn_login)
-                    .addComponent(btn_newUser))
+                    .addComponent(btn_newUser, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(70, 70, 70))
         );
 
@@ -132,25 +139,32 @@ public class LoginFrame extends javax.swing.JFrame implements LoginFrameSetter {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btn_loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_loginActionPerformed
-      
-        listener.loginBtnPressed(txtfield_username.getText(),txtfield_password.getText());
-               
-        setVisible(false);
-    }//GEN-LAST:event_btn_loginActionPerformed
-
     private void btn_newUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_newUserActionPerformed
        mfListener.newUserFrameCreate();
        setVisible(false);
     }//GEN-LAST:event_btn_newUserActionPerformed
 
-    private void txtfield_usernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtfield_usernameActionPerformed
-        
-    }//GEN-LAST:event_txtfield_usernameActionPerformed
+    private void btn_loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_loginActionPerformed
+        listener.loginBtnPressed(txtfield_username.getText(),txtfield_password.getText());
 
-    private void txtfield_passwordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtfield_passwordActionPerformed
-       
-    }//GEN-LAST:event_txtfield_passwordActionPerformed
+        setVisible(false);
+    }//GEN-LAST:event_btn_loginActionPerformed
+
+    private void txtfield_usernameMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtfield_usernameMouseClicked
+        txtfield_username.setText(null);
+    }//GEN-LAST:event_txtfield_usernameMouseClicked
+
+    private void txtfield_passwordMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtfield_passwordMouseClicked
+        txtfield_password.setText(null);
+    }//GEN-LAST:event_txtfield_passwordMouseClicked
+
+    private void btn_newUserMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_newUserMouseEntered
+        btn_newUser.setText("<HTML><U>Registrera dig</U></HTML>");
+    }//GEN-LAST:event_btn_newUserMouseEntered
+
+    private void btn_newUserMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_newUserMouseExited
+        btn_newUser.setText("<HTML>Registrera dig</HTML>");
+    }//GEN-LAST:event_btn_newUserMouseExited
 
     /**
      * @param args the command line arguments
