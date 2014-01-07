@@ -65,10 +65,19 @@ public class LoginFrame extends javax.swing.JFrame implements LoginFrameSetter{
         txtfield_username.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         txtfield_username.setForeground(new java.awt.Color(153, 153, 153));
         txtfield_username.setText("Username...");
+        txtfield_username.setFocusable(false);
         txtfield_username.setMaximumSize(new java.awt.Dimension(200, 30));
         txtfield_username.setMinimumSize(new java.awt.Dimension(200, 30));
         txtfield_username.setPreferredSize(new java.awt.Dimension(200, 30));
-        txtfield_username.setRequestFocusEnabled(false);
+        txtfield_username.setSelectionStart(0);
+        txtfield_username.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                txtfield_usernameMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                txtfield_usernameMouseEntered(evt);
+            }
+        });
         txtfield_username.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 txtfield_usernameFocusGained(evt);
@@ -78,13 +87,23 @@ public class LoginFrame extends javax.swing.JFrame implements LoginFrameSetter{
         txtfield_password.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         txtfield_password.setForeground(new java.awt.Color(153, 153, 153));
         txtfield_password.setText("Password...");
+        txtfield_password.setFocusable(false);
         txtfield_password.setMaximumSize(new java.awt.Dimension(200, 30));
         txtfield_password.setMinimumSize(new java.awt.Dimension(200, 30));
         txtfield_password.setPreferredSize(new java.awt.Dimension(200, 30));
-        txtfield_password.setRequestFocusEnabled(false);
+        txtfield_password.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                txtfield_passwordMouseClicked(evt);
+            }
+        });
         txtfield_password.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 txtfield_passwordFocusGained(evt);
+            }
+        });
+        txtfield_password.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtfield_passwordKeyPressed(evt);
             }
         });
 
@@ -151,6 +170,7 @@ public class LoginFrame extends javax.swing.JFrame implements LoginFrameSetter{
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn_loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_loginActionPerformed
@@ -179,6 +199,27 @@ public class LoginFrame extends javax.swing.JFrame implements LoginFrameSetter{
     private void txtfield_passwordFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtfield_passwordFocusGained
         txtfield_password.setText("");
     }//GEN-LAST:event_txtfield_passwordFocusGained
+
+    private void txtfield_usernameMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtfield_usernameMouseClicked
+        txtfield_username.setText("");
+    }//GEN-LAST:event_txtfield_usernameMouseClicked
+
+    private void txtfield_passwordMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtfield_passwordMouseClicked
+        txtfield_password.setText("");
+    }//GEN-LAST:event_txtfield_passwordMouseClicked
+
+    private void txtfield_usernameMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtfield_usernameMouseEntered
+        txtfield_username.setFocusable(true);
+        txtfield_password.setFocusable(true);
+    }//GEN-LAST:event_txtfield_usernameMouseEntered
+
+    private void txtfield_passwordKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtfield_passwordKeyPressed
+        if(evt.getKeyCode() == 10 || evt.getKeyCode() == 13){
+            String pw = new String(txtfield_password.getPassword());
+            listener.loginBtnPressed(txtfield_username.getText(),pw);
+            setVisible(false);
+        }
+    }//GEN-LAST:event_txtfield_passwordKeyPressed
 
     /**
      * @param args the command line arguments
