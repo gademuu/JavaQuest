@@ -71,69 +71,6 @@ public class Game implements MainFrameListener {
         ui.initialize();
     }
       
-    
-    /*public void play() {
-        
-        boolean finished = false;
-        
-        while(!finished) {
-            
-            // TODO
-            // 1. Display view
-            // 2. receive command (start quiz, manage user, manage glossary)
-            String command = "";
-			
-			try {
-			
-				command = ui.getCommand();
-				processCommand(command);
-                                //hanterar alla olika commandon
-			
-			} catch (QuitException qe) {
-				finished = handleQuit();
-			
-			}
-            
-        }
-        
-        
-    }
-    
-    private boolean processCommand(String command) throws QuitException {
-        
-        boolean isHandled = false;
-        
-        
-        if(command.equals(CREATE_QUIZ)){
-            isHandled = handleQuiz();
-        }
-            
-        // TODO
-        // switch on command
-        // call appropriate handle methods
-        // isHandled = handleXXX();
-        
-        return isHandled;
-    }
-    
-    private boolean handleQuiz() throws QuitException {
-        
-        return true;
-        
-    }
-    
-    private boolean handleStudent() throws QuitException {
-        return studentManager.play();
-    }
-    
-     private boolean handleGlossary() throws QuitException {
-        return glossaryManager.play();
-    }
-    
-    private boolean handleQuit(){
-        return true;
-    }
-    */
     public static void main(String[]args){
         Game g = new Game();   
     }

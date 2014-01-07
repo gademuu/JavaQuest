@@ -18,8 +18,8 @@ import java.util.Date;
 public class GlossaryListAlternatives extends GlossaryList {
     
     @Override
-  public void initialize(String studentName, String language, int numberOfWords) {
-        super.initialize(studentName, language, numberOfWords);
+  public void initialize(String studentName, String language, int numberOfWords, boolean respondInSwedish) {
+        super.initialize(studentName, language, numberOfWords, respondInSwedish);
         
         Word alt1 = null;
         Word alt2 = null;

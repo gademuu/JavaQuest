@@ -300,9 +300,9 @@ public class QuizView extends javax.swing.JPanel implements QuizViewSetter {
     }//GEN-LAST:event_toggleBtn_3triesActionPerformed
 
     private void cBox_languageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cBox_languageActionPerformed
-        listener.languageMenu();
+        listener.languageMenu((String) cBox_language.getSelectedItem());
         toggleBtn_language2.setText((String) cBox_language.getSelectedItem());
-        System.out.println(cBox_language.getSelectedItem());
+     
     }//GEN-LAST:event_cBox_languageActionPerformed
 
     public void changePanel(javax.swing.JPanel panel) {

@@ -49,15 +49,24 @@ public class WordAlternative extends Word {
     public String[] getAlternativesInRandomOrder() {
         String[] alternativesInRandomOrder = new String[3];
         
-        // TODO
-        // Randomly place super.translation, incorrectAlternative1 and incorrectAlternative2 in a String[] and return
+       java.util.Random r = new java.util.Random();
+       int i1 = r.nextInt(3);
+       int i2 = r.nextInt(3);
+       
+       while(i1 == i2) {
+           i2 = r.nextInt(3);
+       }
+       int i3 = r.nextInt(3);
+       while(i3 == i1 || i3 == i2) {
+           i3 = r.nextInt(3);
+       }
    
-        alternativesInRandomOrder[0] = getTranslation();
-        alternativesInRandomOrder[1] = incorrectAlternative1;
-        alternativesInRandomOrder[2] = incorrectAlternative2;
+        alternativesInRandomOrder[i1] = getTranslation();
+        alternativesInRandomOrder[i2] = incorrectAlternative1;
+        alternativesInRandomOrder[i3] = incorrectAlternative2;
         
         return alternativesInRandomOrder;
     }
     
-    
+    //
 }

@@ -30,6 +30,7 @@ public abstract class QuizSession implements QuizTimerListener{
     protected int numberOfCorrectAnswers = 0;
     protected boolean finished = false;
     protected boolean attemptInProgress = false;
+    
     //End of variables
     
    
@@ -42,6 +43,7 @@ public abstract class QuizSession implements QuizTimerListener{
           this.threeAttemptsButton  = threeAttemptsButton ;
           this.ui = setter;
           timer = new QuizTimer();
+    
       
       }
       

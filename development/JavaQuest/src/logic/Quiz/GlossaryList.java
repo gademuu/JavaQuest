@@ -26,12 +26,27 @@ public abstract class GlossaryList {
     protected Word currentWord;
     protected StudentStats studentStats;
     protected ArrayList<Word> quizGlossary = new ArrayList<>();
+    protected boolean respondInSwedish = false;
     
     
-    public void initialize(String studentName, String language, int numberOfWords) {
+    public void initialize(String studentName, String language, int numberOfWords, boolean respondInSwedish) {
         this.numberOfWords = numberOfWords;
         WordDao wd = WordDaoFactory.create(true);
         Word[] words = wd.find(new Word("","",language));
+        
+        if(respondInSwedish) {
+            String o;
+            String t;
+            
+            for(Word w : words) {
+                o = w.getOrginal();
+                t = w.getTranslation();
+                w.setOrginal(t);
+                w.setTranslation(o);
+            }
+            
+        }
+        
         glossary = new ArrayList<Word>(Arrays.asList(words));
         Collections.shuffle(glossary);
         for(int i = 0 ; i < numberOfWords; i++) {
@@ -40,7 +55,7 @@ public abstract class GlossaryList {
             
         }
         
-        
+        this.respondInSwedish = respondInSwedish;
         
        // quizGlossary = (ArrayList<Word>) glossary.subList(0, numberOfWords);
         

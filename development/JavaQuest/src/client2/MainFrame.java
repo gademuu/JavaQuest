@@ -267,9 +267,6 @@ public class MainFrame extends javax.swing.JFrame implements StatisticsViewSette
         toggleBtn_menu1.setSelected(false);
         toggleBtn_menu3.setSelected(false);
         toggleBtn_menu4.setSelected(false);
-        
-         
-     
     }//GEN-LAST:event_toggleBtn_menu2ActionPerformed
 
     private void toggleBtn_menu1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_toggleBtn_menu1ActionPerformed
@@ -289,7 +286,7 @@ public class MainFrame extends javax.swing.JFrame implements StatisticsViewSette
         toggleBtn_menu2.setSelected(false);
         toggleBtn_menu4.setSelected(false);
         
-           svListener.studentNameListSelected();
+        svListener.studentNameListSelected();
     }//GEN-LAST:event_toggleBtn_menu3ActionPerformed
 
     private void toggleBtn_menu4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_toggleBtn_menu4ActionPerformed

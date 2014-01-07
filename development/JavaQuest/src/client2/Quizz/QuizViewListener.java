@@ -6,7 +6,7 @@ package client2.Quizz;
  */
 public interface QuizViewListener {
     
-    public void languageMenu();
+    public void languageMenu(String language);
     public void listMenu();
     public void language1(String language);
     public void language2(String language);
