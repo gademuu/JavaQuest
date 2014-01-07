@@ -79,6 +79,7 @@ public class MainFrame extends javax.swing.JFrame implements StatisticsViewSette
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        mainFramePanel = new javax.swing.JPanel();
         menuPanel = new javax.swing.JPanel();
         toggleBtn_menu1 = new javax.swing.JToggleButton();
         toggleBtn_menu2 = new javax.swing.JToggleButton();
@@ -91,47 +92,70 @@ public class MainFrame extends javax.swing.JFrame implements StatisticsViewSette
         quizTextPanel = new client2.Quizz.QuizTextView();
         glossaryPanel = new client2.glossary.GlossaryView();
         statisticsPanel = new client2.statistics.StatisticsView();
-        settingsPanel = new client2.SettingsView();
+        helpPanel = new client2.HelpView();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMinimumSize(new java.awt.Dimension(640, 362));
+        setMaximumSize(new java.awt.Dimension(800, 600));
+        setMinimumSize(new java.awt.Dimension(800, 600));
+
+        mainFramePanel.setMaximumSize(new java.awt.Dimension(800, 600));
+        mainFramePanel.setMinimumSize(new java.awt.Dimension(800, 600));
+        mainFramePanel.setPreferredSize(new java.awt.Dimension(800, 600));
 
         menuPanel.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        menuPanel.setMinimumSize(new java.awt.Dimension(800, 100));
+        menuPanel.setPreferredSize(new java.awt.Dimension(800, 100));
 
+        toggleBtn_menu1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        toggleBtn_menu1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/quiz.png"))); // NOI18N
         toggleBtn_menu1.setText("Quiz");
-        toggleBtn_menu1.setMaximumSize(new java.awt.Dimension(125, 29));
-        toggleBtn_menu1.setMinimumSize(new java.awt.Dimension(125, 29));
-        toggleBtn_menu1.setPreferredSize(new java.awt.Dimension(125, 29));
+        toggleBtn_menu1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        toggleBtn_menu1.setMaximumSize(new java.awt.Dimension(180, 29));
+        toggleBtn_menu1.setMinimumSize(new java.awt.Dimension(180, 29));
+        toggleBtn_menu1.setPreferredSize(new java.awt.Dimension(180, 80));
+        toggleBtn_menu1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         toggleBtn_menu1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 toggleBtn_menu1ActionPerformed(evt);
             }
         });
 
+        toggleBtn_menu2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        toggleBtn_menu2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/add.png"))); // NOI18N
         toggleBtn_menu2.setText("Ny Gloslista");
-        toggleBtn_menu2.setMaximumSize(new java.awt.Dimension(125, 29));
-        toggleBtn_menu2.setMinimumSize(new java.awt.Dimension(125, 29));
-        toggleBtn_menu2.setPreferredSize(new java.awt.Dimension(125, 29));
+        toggleBtn_menu2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        toggleBtn_menu2.setMaximumSize(new java.awt.Dimension(180, 29));
+        toggleBtn_menu2.setMinimumSize(new java.awt.Dimension(180, 29));
+        toggleBtn_menu2.setPreferredSize(new java.awt.Dimension(180, 80));
+        toggleBtn_menu2.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         toggleBtn_menu2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 toggleBtn_menu2ActionPerformed(evt);
             }
         });
 
+        toggleBtn_menu3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        toggleBtn_menu3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/stat.png"))); // NOI18N
         toggleBtn_menu3.setText("Statistik");
-        toggleBtn_menu3.setMaximumSize(new java.awt.Dimension(125, 29));
-        toggleBtn_menu3.setMinimumSize(new java.awt.Dimension(125, 29));
-        toggleBtn_menu3.setPreferredSize(new java.awt.Dimension(125, 29));
+        toggleBtn_menu3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        toggleBtn_menu3.setMaximumSize(new java.awt.Dimension(180, 29));
+        toggleBtn_menu3.setMinimumSize(new java.awt.Dimension(180, 29));
+        toggleBtn_menu3.setPreferredSize(new java.awt.Dimension(180, 80));
+        toggleBtn_menu3.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         toggleBtn_menu3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 toggleBtn_menu3ActionPerformed(evt);
             }
         });
 
-        toggleBtn_menu4.setText("Inställningar");
-        toggleBtn_menu4.setMaximumSize(new java.awt.Dimension(125, 29));
-        toggleBtn_menu4.setMinimumSize(new java.awt.Dimension(125, 29));
-        toggleBtn_menu4.setPreferredSize(new java.awt.Dimension(125, 29));
+        toggleBtn_menu4.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        toggleBtn_menu4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/help.png"))); // NOI18N
+        toggleBtn_menu4.setText("Hjälp");
+        toggleBtn_menu4.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        toggleBtn_menu4.setMaximumSize(new java.awt.Dimension(180, 29));
+        toggleBtn_menu4.setMinimumSize(new java.awt.Dimension(180, 29));
+        toggleBtn_menu4.setPreferredSize(new java.awt.Dimension(180, 80));
+        toggleBtn_menu4.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         toggleBtn_menu4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 toggleBtn_menu4ActionPerformed(evt);
@@ -143,20 +167,20 @@ public class MainFrame extends javax.swing.JFrame implements StatisticsViewSette
         menuPanelLayout.setHorizontalGroup(
             menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(menuPanelLayout.createSequentialGroup()
-                .addContainerGap(117, Short.MAX_VALUE)
+                .addContainerGap()
                 .addComponent(toggleBtn_menu1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(20, 20, 20)
+                .addGap(18, 18, 18)
                 .addComponent(toggleBtn_menu2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(20, 20, 20)
                 .addComponent(toggleBtn_menu3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(20, 20, 20)
                 .addComponent(toggleBtn_menu4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(118, Short.MAX_VALUE))
+                .addContainerGap())
         );
         menuPanelLayout.setVerticalGroup(
             menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(menuPanelLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(8, 8, 8)
                 .addGroup(menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(toggleBtn_menu4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -166,36 +190,70 @@ public class MainFrame extends javax.swing.JFrame implements StatisticsViewSette
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        cardLayoutPanel.setAlignmentY(1.0F);
+        cardLayoutPanel.setMaximumSize(new java.awt.Dimension(800, 500));
         cardLayoutPanel.setLayout(new java.awt.CardLayout());
+
+        startPanel.setMinimumSize(new java.awt.Dimension(800, 500));
+        startPanel.setPreferredSize(new java.awt.Dimension(800, 500));
         cardLayoutPanel.add(startPanel, "card8");
         cardLayoutPanel.add(quizPanel, "card7");
         cardLayoutPanel.add(quizAlternativesPanel, "card7");
         cardLayoutPanel.add(quizTextPanel, "card8");
         cardLayoutPanel.add(glossaryPanel, "card7");
         cardLayoutPanel.add(statisticsPanel, "card7");
-        cardLayoutPanel.add(settingsPanel, "card8");
+        cardLayoutPanel.add(helpPanel, "card8");
+
+        javax.swing.GroupLayout mainFramePanelLayout = new javax.swing.GroupLayout(mainFramePanel);
+        mainFramePanel.setLayout(mainFramePanelLayout);
+        mainFramePanelLayout.setHorizontalGroup(
+            mainFramePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 800, Short.MAX_VALUE)
+            .addGroup(mainFramePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(mainFramePanelLayout.createSequentialGroup()
+                    .addGap(0, 0, 0)
+                    .addComponent(cardLayoutPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGap(0, 0, 0)))
+            .addGroup(mainFramePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(mainFramePanelLayout.createSequentialGroup()
+                    .addGap(0, 0, 0)
+                    .addComponent(menuPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGap(0, 0, 0)))
+        );
+        mainFramePanelLayout.setVerticalGroup(
+            mainFramePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 600, Short.MAX_VALUE)
+            .addGroup(mainFramePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(mainFramePanelLayout.createSequentialGroup()
+                    .addContainerGap(100, Short.MAX_VALUE)
+                    .addComponent(cardLayoutPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, 0)))
+            .addGroup(mainFramePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(mainFramePanelLayout.createSequentialGroup()
+                    .addGap(0, 0, 0)
+                    .addComponent(menuPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(500, Short.MAX_VALUE)))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 799, Short.MAX_VALUE)
+            .addGap(0, 800, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(menuPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(cardLayoutPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(mainFramePanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 362, Short.MAX_VALUE)
+            .addGap(0, 600, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
-                    .addComponent(menuPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 309, Short.MAX_VALUE)))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                    .addGap(54, 54, 54)
-                    .addComponent(cardLayoutPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 308, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(mainFramePanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
 
         pack();
@@ -234,7 +292,7 @@ public class MainFrame extends javax.swing.JFrame implements StatisticsViewSette
     }//GEN-LAST:event_toggleBtn_menu3ActionPerformed
 
     private void toggleBtn_menu4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_toggleBtn_menu4ActionPerformed
-        changePanel(settingsPanel);
+        changePanel(helpPanel);
         
         toggleBtn_menu1.setSelected(false);
         toggleBtn_menu2.setSelected(false);
@@ -284,11 +342,12 @@ public class MainFrame extends javax.swing.JFrame implements StatisticsViewSette
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel cardLayoutPanel;
     private client2.glossary.GlossaryView glossaryPanel;
+    private client2.HelpView helpPanel;
+    private javax.swing.JPanel mainFramePanel;
     private javax.swing.JPanel menuPanel;
     private client2.Quizz.QuizAlternativesView quizAlternativesPanel;
     private client2.Quizz.QuizView quizPanel;
     private client2.Quizz.QuizTextView quizTextPanel;
-    private client2.SettingsView settingsPanel;
     private client2.StartView startPanel;
     private client2.statistics.StatisticsView statisticsPanel;
     private javax.swing.JToggleButton toggleBtn_menu1;

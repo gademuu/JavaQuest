@@ -10,11 +10,11 @@ import client2.Quizz.QuizTextViewSetter;
  */
 public class QuizSessionTextfield extends QuizSession implements  QuizTextListener {
     
-    public QuizSessionTextfield(String studentName, String language1, String language2, int numberOfWordsSelected, boolean threeAtemptsButton, QuizTextViewSetter setter) {
-        super(studentName, language1, language2, numberOfWordsSelected,threeAtemptsButton,setter);
+    public QuizSessionTextfield(String studentName, String language1, String language2, int numberOfWordsSelected, boolean threeAtemptsButton, boolean respondInSwedish, QuizTextViewSetter setter) {
+        super(studentName, language1, language2, numberOfWordsSelected,threeAtemptsButton, setter);
         ((QuizTextViewSetter)setter).setQuizTextViewListener((QuizTextListener) this);
         glossaryList = new GlossaryListTextfield();
-        glossaryList.initialize(studentName, language2, numberOfWordsSelected);
+        glossaryList.initialize(studentName, language2, numberOfWordsSelected, respondInSwedish);
         nextWord();
     }
     

@@ -30,6 +30,7 @@ public class QuizManager implements QuizViewListener{
     private boolean threeAlternativesActive = false;
     private String startQuizButton;
     private  LoginManager lm;
+    private boolean respondInSwedish = false;
     //End of variables
     
     
@@ -46,13 +47,15 @@ public class QuizManager implements QuizViewListener{
     }
    private boolean handleRunQuiz() throws QuitException{
          if(threeAlternativesActive) {
-            quizSession = new QuizSessionAlternatives(lm.getStudentName(),language1, language2, NUMBER_OF_WORDS,false,ui.getQuizAlternativesViewSetter() );
+            quizSession = new QuizSessionAlternatives(lm.getStudentName(),language1, language2, NUMBER_OF_WORDS,false,respondInSwedish,ui.getQuizAlternativesViewSetter() );
              
          }else{
-             quizSession = new QuizSessionTextfield(lm.getStudentName(),language1, language2, NUMBER_OF_WORDS,false,ui.getQuizTextViewSetter() );
+            quizSession = new QuizSessionTextfield(lm.getStudentName(),language1, language2, NUMBER_OF_WORDS,false,respondInSwedish,ui.getQuizTextViewSetter() );
          }
           return true;
      }
+
+
      
    
    // Listener methods 
@@ -74,7 +77,9 @@ public class QuizManager implements QuizViewListener{
         
     }
     
-    public void languageMenu(){}
+    public void languageMenu(String language){
+        language2 = language;
+    }
     
     public void threeAttemptsBtnToggle(){
         threeAttemptsButton = !threeAttemptsButton;
@@ -89,10 +94,12 @@ public class QuizManager implements QuizViewListener{
     
      public void language2(String language){
          language2 = language;
+          respondInSwedish = false;
          System.out.println(language);
     }
     public void language1(String language){
          language1 = language;
+         respondInSwedish = true;
     }
    
     

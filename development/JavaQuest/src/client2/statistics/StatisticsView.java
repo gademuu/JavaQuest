@@ -66,37 +66,42 @@ public class StatisticsView extends javax.swing.JPanel implements StatisticsView
         jButton1 = new javax.swing.JButton();
         cBox_studentNames = new javax.swing.JComboBox();
 
-        setMinimumSize(new java.awt.Dimension(400, 300));
-        setPreferredSize(new java.awt.Dimension(400, 300));
+        setMaximumSize(new java.awt.Dimension(800, 500));
+        setMinimumSize(new java.awt.Dimension(800, 500));
+        setPreferredSize(new java.awt.Dimension(800, 500));
+
+        jScrollPane1.setMaximumSize(new java.awt.Dimension(400, 300));
+        jScrollPane1.setMinimumSize(new java.awt.Dimension(400, 300));
+        jScrollPane1.setPreferredSize(new java.awt.Dimension(400, 300));
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null},
-                {null, null},
-                {null, null},
                 {null, null}
             },
             new String [] {
                 "Datum", "Procent"
             }
         ));
-        jTable1.setMinimumSize(new java.awt.Dimension(300, 150));
-        jTable1.setPreferredSize(new java.awt.Dimension(300, 150));
+        jTable1.setMaximumSize(new java.awt.Dimension(400, 300));
+        jTable1.setMinimumSize(new java.awt.Dimension(400, 300));
+        jTable1.setPreferredSize(new java.awt.Dimension(400, 300));
         jScrollPane1.setViewportView(jTable1);
 
+        jButton1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButton1.setText("Hämta");
-        jButton1.setMaximumSize(new java.awt.Dimension(100, 29));
-        jButton1.setMinimumSize(new java.awt.Dimension(100, 29));
-        jButton1.setPreferredSize(new java.awt.Dimension(100, 29));
+        jButton1.setMaximumSize(new java.awt.Dimension(300, 50));
+        jButton1.setMinimumSize(new java.awt.Dimension(300, 50));
+        jButton1.setPreferredSize(new java.awt.Dimension(300, 50));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
 
-        cBox_studentNames.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        cBox_studentNames.setMinimumSize(new java.awt.Dimension(300, 27));
-        cBox_studentNames.setPreferredSize(new java.awt.Dimension(300, 27));
+        cBox_studentNames.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        cBox_studentNames.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Användare" }));
+        cBox_studentNames.setMinimumSize(new java.awt.Dimension(400, 40));
+        cBox_studentNames.setPreferredSize(new java.awt.Dimension(400, 40));
         cBox_studentNames.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cBox_studentNamesActionPerformed(evt);
@@ -110,32 +115,29 @@ public class StatisticsView extends javax.swing.JPanel implements StatisticsView
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(cBox_studentNames, javax.swing.GroupLayout.Alignment.TRAILING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap(150, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(252, Short.MAX_VALUE)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(150, Short.MAX_VALUE))
+                .addGap(248, 248, 248))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(45, 45, 45)
-                .addComponent(cBox_studentNames, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27))
+                .addGap(20, 20, 20)
+                .addComponent(cBox_studentNames, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(35, 35, 35)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(20, 20, 20))
         );
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         listener.statsButtonSelected((String) cBox_studentNames.getSelectedItem());
-       
-        
-        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void cBox_studentNamesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cBox_studentNamesActionPerformed

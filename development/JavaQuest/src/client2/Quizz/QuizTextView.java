@@ -75,17 +75,19 @@ public class QuizTextView extends javax.swing.JPanel implements QuizTextViewSett
 
         jLabel1.setText("Time");
 
-        setMinimumSize(new java.awt.Dimension(400, 300));
-        setPreferredSize(new java.awt.Dimension(400, 300));
+        setMaximumSize(new java.awt.Dimension(800, 500));
+        setMinimumSize(new java.awt.Dimension(800, 500));
+        setPreferredSize(new java.awt.Dimension(800, 500));
 
         progressBar.setMinimumSize(new java.awt.Dimension(300, 20));
         progressBar.setPreferredSize(new java.awt.Dimension(300, 20));
 
+        btn_nextWord.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         btn_nextWord.setText("Nästa");
         btn_nextWord.setEnabled(false);
-        btn_nextWord.setMaximumSize(new java.awt.Dimension(100, 29));
-        btn_nextWord.setMinimumSize(new java.awt.Dimension(100, 29));
-        btn_nextWord.setPreferredSize(new java.awt.Dimension(100, 29));
+        btn_nextWord.setMaximumSize(new java.awt.Dimension(200, 40));
+        btn_nextWord.setMinimumSize(new java.awt.Dimension(200, 40));
+        btn_nextWord.setPreferredSize(new java.awt.Dimension(200, 40));
         btn_nextWord.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_nextWordActionPerformed(evt);
@@ -95,10 +97,14 @@ public class QuizTextView extends javax.swing.JPanel implements QuizTextViewSett
         label_activeWord.setFont(new java.awt.Font("Myriad Pro", 0, 48)); // NOI18N
         label_activeWord.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         label_activeWord.setText("GLOSORD");
+        label_activeWord.setMaximumSize(new java.awt.Dimension(800, 50));
+        label_activeWord.setMinimumSize(new java.awt.Dimension(800, 50));
+        label_activeWord.setPreferredSize(new java.awt.Dimension(800, 50));
 
         txtfield_word.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txtfield_word.setMinimumSize(new java.awt.Dimension(200, 28));
-        txtfield_word.setPreferredSize(new java.awt.Dimension(200, 28));
+        txtfield_word.setMaximumSize(new java.awt.Dimension(300, 30));
+        txtfield_word.setMinimumSize(new java.awt.Dimension(300, 30));
+        txtfield_word.setPreferredSize(new java.awt.Dimension(300, 30));
         txtfield_word.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtfield_wordActionPerformed(evt);
@@ -110,20 +116,23 @@ public class QuizTextView extends javax.swing.JPanel implements QuizTextViewSett
             }
         });
 
+        btn_confirm.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         btn_confirm.setText("Ok");
-        btn_confirm.setMaximumSize(new java.awt.Dimension(100, 29));
-        btn_confirm.setMinimumSize(new java.awt.Dimension(100, 29));
-        btn_confirm.setPreferredSize(new java.awt.Dimension(100, 29));
+        btn_confirm.setMaximumSize(new java.awt.Dimension(200, 40));
+        btn_confirm.setMinimumSize(new java.awt.Dimension(200, 40));
+        btn_confirm.setPreferredSize(new java.awt.Dimension(200, 40));
         btn_confirm.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_confirmActionPerformed(evt);
             }
         });
 
+        progressBar1.setForeground(new java.awt.Color(0, 255, 255));
         progressBar1.setMaximum(200);
         progressBar1.setValue(200);
-        progressBar1.setMinimumSize(new java.awt.Dimension(300, 20));
-        progressBar1.setPreferredSize(new java.awt.Dimension(300, 20));
+        progressBar1.setMaximumSize(new java.awt.Dimension(400, 30));
+        progressBar1.setMinimumSize(new java.awt.Dimension(400, 30));
+        progressBar1.setPreferredSize(new java.awt.Dimension(400, 30));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -134,35 +143,35 @@ public class QuizTextView extends javax.swing.JPanel implements QuizTextViewSett
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(progressBar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(progressBar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtfield_word, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(150, Short.MAX_VALUE)
+                .addGap(200, 200, 200)
+                .addComponent(progressBar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(btn_nextWord, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btn_confirm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(150, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(txtfield_word, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(300, 300, 300))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(progressBar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(30, 30, 30)
-                .addComponent(label_activeWord)
-                .addGap(30, 30, 30)
-                .addComponent(txtfield_word, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btn_confirm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btn_nextWord, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
+                .addGap(20, 20, 20)
                 .addComponent(progressBar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addGap(75, 75, 75)
+                .addComponent(label_activeWord, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(75, 75, 75)
+                .addComponent(progressBar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(20, 20, 20)
+                .addComponent(txtfield_word, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(20, 20, 20)
+                .addComponent(btn_confirm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(20, 20, 20)
+                .addComponent(btn_nextWord, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(60, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 

@@ -120,74 +120,92 @@ public class QuizView extends javax.swing.JPanel implements QuizViewSetter {
         label_3tries = new javax.swing.JLabel();
         toggleBtn_3tries = new javax.swing.JToggleButton();
 
+        setMinimumSize(new java.awt.Dimension(800, 500));
+        setPreferredSize(new java.awt.Dimension(800, 500));
+
+        label_glossaryList.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         label_glossaryList.setText("Välj en gloslista");
 
+        label_responseLanguage.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         label_responseLanguage.setText("Vilket språk vill du svara i?");
 
+        label_difficulty.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         label_difficulty.setText("Hur vill du svara?");
 
+        cBox_language.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         cBox_language.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "-Lista-" }));
-        cBox_language.setMinimumSize(new java.awt.Dimension(150, 27));
-        cBox_language.setPreferredSize(new java.awt.Dimension(150, 27));
+        cBox_language.setMaximumSize(new java.awt.Dimension(300, 40));
+        cBox_language.setMinimumSize(new java.awt.Dimension(300, 40));
+        cBox_language.setPreferredSize(new java.awt.Dimension(300, 40));
         cBox_language.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cBox_languageActionPerformed(evt);
             }
         });
 
+        toggleBtn_language1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         toggleBtn_language1.setText("Svenska");
         toggleBtn_language1.setMaximumSize(new java.awt.Dimension(100, 29));
         toggleBtn_language1.setMinimumSize(new java.awt.Dimension(100, 29));
-        toggleBtn_language1.setPreferredSize(new java.awt.Dimension(100, 29));
+        toggleBtn_language1.setPreferredSize(new java.awt.Dimension(140, 40));
         toggleBtn_language1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 toggleBtn_language1ActionPerformed(evt);
             }
         });
 
+        toggleBtn_language2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         toggleBtn_language2.setText("Språk 2");
-        toggleBtn_language2.setMaximumSize(new java.awt.Dimension(100, 29));
-        toggleBtn_language2.setMinimumSize(new java.awt.Dimension(100, 29));
-        toggleBtn_language2.setPreferredSize(new java.awt.Dimension(100, 29));
+        toggleBtn_language2.setMaximumSize(new java.awt.Dimension(140, 40));
+        toggleBtn_language2.setMinimumSize(new java.awt.Dimension(140, 40));
+        toggleBtn_language2.setPreferredSize(new java.awt.Dimension(140, 40));
         toggleBtn_language2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 toggleBtn_language2ActionPerformed(evt);
             }
         });
 
+        toggleBtn_textQuiz.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         toggleBtn_textQuiz.setText("Fritext");
         toggleBtn_textQuiz.setMaximumSize(new java.awt.Dimension(100, 29));
         toggleBtn_textQuiz.setMinimumSize(new java.awt.Dimension(100, 29));
-        toggleBtn_textQuiz.setPreferredSize(new java.awt.Dimension(100, 29));
+        toggleBtn_textQuiz.setPreferredSize(new java.awt.Dimension(140, 40));
         toggleBtn_textQuiz.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 toggleBtn_textQuizActionPerformed(evt);
             }
         });
 
+        toggleBtn_alternativesQuiz.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         toggleBtn_alternativesQuiz.setText("3 Alternativ");
         toggleBtn_alternativesQuiz.setMaximumSize(new java.awt.Dimension(100, 29));
         toggleBtn_alternativesQuiz.setMinimumSize(new java.awt.Dimension(100, 29));
-        toggleBtn_alternativesQuiz.setPreferredSize(new java.awt.Dimension(100, 29));
+        toggleBtn_alternativesQuiz.setPreferredSize(new java.awt.Dimension(140, 40));
         toggleBtn_alternativesQuiz.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 toggleBtn_alternativesQuizActionPerformed(evt);
             }
         });
 
+        btn_startQuiz.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btn_startQuiz.setText("Starta Quizen!");
+        btn_startQuiz.setMaximumSize(new java.awt.Dimension(300, 50));
+        btn_startQuiz.setMinimumSize(new java.awt.Dimension(300, 50));
+        btn_startQuiz.setPreferredSize(new java.awt.Dimension(300, 50));
         btn_startQuiz.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_startQuizActionPerformed(evt);
             }
         });
 
+        label_3tries.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         label_3tries.setText("Vill du ha 3 försök på varje glosa?");
 
+        toggleBtn_3tries.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         toggleBtn_3tries.setText("Ja");
-        toggleBtn_3tries.setMaximumSize(new java.awt.Dimension(100, 29));
-        toggleBtn_3tries.setMinimumSize(new java.awt.Dimension(100, 29));
-        toggleBtn_3tries.setPreferredSize(new java.awt.Dimension(100, 29));
+        toggleBtn_3tries.setMaximumSize(new java.awt.Dimension(140, 40));
+        toggleBtn_3tries.setMinimumSize(new java.awt.Dimension(140, 40));
+        toggleBtn_3tries.setPreferredSize(new java.awt.Dimension(140, 40));
         toggleBtn_3tries.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 toggleBtn_3triesActionPerformed(evt);
@@ -199,51 +217,51 @@ public class QuizView extends javax.swing.JPanel implements QuizViewSetter {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(40, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addContainerGap(250, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(label_glossaryList)
                     .addComponent(toggleBtn_3tries, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(label_3tries)
                     .addComponent(label_difficulty)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(toggleBtn_language1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGap(20, 20, 20)
                         .addComponent(toggleBtn_language2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(label_responseLanguage)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(toggleBtn_alternativesQuiz, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGap(20, 20, 20)
                         .addComponent(toggleBtn_textQuiz, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(btn_startQuiz, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(cBox_language, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(40, Short.MAX_VALUE))
+                    .addComponent(btn_startQuiz, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(cBox_language, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(250, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(label_glossaryList)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(cBox_language, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(40, 40, 40)
                 .addComponent(label_responseLanguage)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(toggleBtn_language1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(toggleBtn_language2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(40, 40, 40)
                 .addComponent(label_3tries)
                 .addGap(4, 4, 4)
                 .addComponent(toggleBtn_3tries, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(40, 40, 40)
                 .addComponent(label_difficulty)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(toggleBtn_alternativesQuiz, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(toggleBtn_textQuiz, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btn_startQuiz, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
-                .addContainerGap())
+                .addGap(40, 40, 40)
+                .addComponent(btn_startQuiz, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(14, 14, 14))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -282,9 +300,9 @@ public class QuizView extends javax.swing.JPanel implements QuizViewSetter {
     }//GEN-LAST:event_toggleBtn_3triesActionPerformed
 
     private void cBox_languageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cBox_languageActionPerformed
-        listener.languageMenu();
+        listener.languageMenu((String) cBox_language.getSelectedItem());
         toggleBtn_language2.setText((String) cBox_language.getSelectedItem());
-        System.out.println(cBox_language.getSelectedItem());
+     
     }//GEN-LAST:event_cBox_languageActionPerformed
 
     public void changePanel(javax.swing.JPanel panel) {

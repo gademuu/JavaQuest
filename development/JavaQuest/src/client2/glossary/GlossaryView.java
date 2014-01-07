@@ -64,27 +64,17 @@ public class GlossaryView extends javax.swing.JPanel implements  GlossaryViewSet
         cBox_languageTwo = new javax.swing.JComboBox();
         cBox_languageOne = new javax.swing.JComboBox();
 
+        setMaximumSize(new java.awt.Dimension(800, 500));
+        setMinimumSize(new java.awt.Dimension(800, 500));
+        setPreferredSize(new java.awt.Dimension(800, 500));
+
+        scrollPane.setMaximumSize(new java.awt.Dimension(500, 200));
+        scrollPane.setMinimumSize(new java.awt.Dimension(500, 200));
+        scrollPane.setPreferredSize(new java.awt.Dimension(500, 200));
+
+        table_glossaryList.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         table_glossaryList.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
                 {null, null}
             },
             new String [] {
@@ -92,93 +82,131 @@ public class GlossaryView extends javax.swing.JPanel implements  GlossaryViewSet
             }
         ));
         table_glossaryList.setColumnSelectionAllowed(true);
+        table_glossaryList.setMaximumSize(new java.awt.Dimension(500, 400));
+        table_glossaryList.setMinimumSize(new java.awt.Dimension(500, 400));
+        table_glossaryList.setPreferredSize(new java.awt.Dimension(500, 400));
         table_glossaryList.getTableHeader().setReorderingAllowed(false);
         scrollPane.setViewportView(table_glossaryList);
         table_glossaryList.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
 
+        btn_cancel.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btn_cancel.setText("Avbryt");
+        btn_cancel.setMaximumSize(new java.awt.Dimension(100, 40));
+        btn_cancel.setMinimumSize(new java.awt.Dimension(100, 40));
+        btn_cancel.setPreferredSize(new java.awt.Dimension(100, 40));
+        btn_cancel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_cancelActionPerformed(evt);
+            }
+        });
 
+        btn_done.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btn_done.setText("Klar");
+        btn_done.setMaximumSize(new java.awt.Dimension(100, 40));
+        btn_done.setMinimumSize(new java.awt.Dimension(100, 40));
+        btn_done.setPreferredSize(new java.awt.Dimension(100, 40));
 
+        btn_addWord.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         btn_addWord.setText("Lägg till");
-        btn_addWord.setMaximumSize(new java.awt.Dimension(100, 29));
-        btn_addWord.setMinimumSize(new java.awt.Dimension(100, 29));
-        btn_addWord.setPreferredSize(new java.awt.Dimension(100, 29));
+        btn_addWord.setMaximumSize(new java.awt.Dimension(100, 30));
+        btn_addWord.setMinimumSize(new java.awt.Dimension(100, 30));
+        btn_addWord.setPreferredSize(new java.awt.Dimension(100, 30));
         btn_addWord.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_addWordActionPerformed(evt);
             }
         });
 
+        btn_addLang.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         btn_addLang.setText("Lägg till");
-        btn_addLang.setMaximumSize(new java.awt.Dimension(100, 29));
-        btn_addLang.setMinimumSize(new java.awt.Dimension(100, 29));
-        btn_addLang.setPreferredSize(new java.awt.Dimension(100, 29));
+        btn_addLang.setMaximumSize(new java.awt.Dimension(100, 30));
+        btn_addLang.setMinimumSize(new java.awt.Dimension(100, 30));
+        btn_addLang.setPreferredSize(new java.awt.Dimension(100, 30));
         btn_addLang.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_addLangActionPerformed(evt);
             }
         });
 
+        txtfield_word2.setMaximumSize(new java.awt.Dimension(150, 30));
+        txtfield_word2.setMinimumSize(new java.awt.Dimension(150, 30));
+        txtfield_word2.setPreferredSize(new java.awt.Dimension(150, 30));
+
+        txtfield_word1.setMaximumSize(new java.awt.Dimension(150, 30));
+        txtfield_word1.setMinimumSize(new java.awt.Dimension(150, 30));
+        txtfield_word1.setPreferredSize(new java.awt.Dimension(150, 30));
+
+        txtfield_listname.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         txtfield_listname.setForeground(new java.awt.Color(153, 153, 153));
         txtfield_listname.setText("Vad ska gloslistan heta?");
+        txtfield_listname.setMaximumSize(new java.awt.Dimension(350, 30));
+        txtfield_listname.setMinimumSize(new java.awt.Dimension(350, 30));
+        txtfield_listname.setPreferredSize(new java.awt.Dimension(350, 30));
         txtfield_listname.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 txtfield_listnameMouseClicked(evt);
             }
         });
 
+        cBox_languageTwo.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         cBox_languageTwo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "-Språk 2-" }));
-        cBox_languageTwo.setMinimumSize(new java.awt.Dimension(150, 27));
-        cBox_languageTwo.setPreferredSize(new java.awt.Dimension(150, 27));
+        cBox_languageTwo.setMaximumSize(new java.awt.Dimension(150, 40));
+        cBox_languageTwo.setMinimumSize(new java.awt.Dimension(150, 40));
+        cBox_languageTwo.setPreferredSize(new java.awt.Dimension(150, 40));
         cBox_languageTwo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cBox_languageTwoActionPerformed(evt);
             }
         });
 
+        cBox_languageOne.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         cBox_languageOne.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Svenska" }));
-        cBox_languageOne.setMinimumSize(new java.awt.Dimension(150, 27));
-        cBox_languageOne.setPreferredSize(new java.awt.Dimension(150, 27));
+        cBox_languageOne.setMaximumSize(new java.awt.Dimension(150, 40));
+        cBox_languageOne.setMinimumSize(new java.awt.Dimension(150, 40));
+        cBox_languageOne.setPreferredSize(new java.awt.Dimension(150, 40));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(150, 150, 150)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(scrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 351, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(scrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txtfield_word1)
+                            .addComponent(txtfield_word1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(cBox_languageOne, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(51, 51, 51)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(cBox_languageTwo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(btn_done)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(btn_cancel))
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(txtfield_word2, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(18, 18, 18)
-                                    .addComponent(btn_addWord, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(114, 114, 114)
+                                .addComponent(btn_done, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(36, 36, 36)
+                                .addComponent(btn_cancel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                        .addComponent(txtfield_word2, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(btn_addWord, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                        .addComponent(cBox_languageTwo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(149, 149, 149))))))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(txtfield_listname, javax.swing.GroupLayout.PREFERRED_SIZE, 351, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
+                        .addGap(43, 43, 43)
                         .addComponent(btn_addLang, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(150, 150, 150))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(9, 9, 9)
+                .addGap(20, 20, 20)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtfield_listname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btn_addLang, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addGap(37, 37, 37)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(cBox_languageOne, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(cBox_languageTwo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -187,18 +215,21 @@ public class GlossaryView extends javax.swing.JPanel implements  GlossaryViewSet
                     .addComponent(txtfield_word2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtfield_word1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btn_addWord, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(scrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
+                .addComponent(scrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btn_cancel)
-                    .addComponent(btn_done))
-                .addContainerGap())
+                    .addComponent(btn_cancel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_done, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(20, 20, 20))
         );
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn_addWordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_addWordActionPerformed
         listener.newWord(txtfield_word1.getText(), txtfield_word2.getText(), (String) cBox_languageTwo.getSelectedItem());
+        
+        txtfield_word1.setText("");
+        txtfield_word2.setText("");
     }//GEN-LAST:event_btn_addWordActionPerformed
 
     private void btn_addLangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_addLangActionPerformed
@@ -216,6 +247,10 @@ public class GlossaryView extends javax.swing.JPanel implements  GlossaryViewSet
     private void cBox_languageTwoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cBox_languageTwoActionPerformed
         listener.langSelected((String) cBox_languageTwo.getSelectedItem());
     }//GEN-LAST:event_cBox_languageTwoActionPerformed
+
+    private void btn_cancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cancelActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_cancelActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

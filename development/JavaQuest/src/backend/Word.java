@@ -8,6 +8,8 @@ package backend;
  public class Word {
     
     private String orginal;
+
+   
     private String translation;
     private String language;
     
@@ -17,6 +19,14 @@ package backend;
         this.translation = translation;
         this.language = language;
     
+    }
+    
+     public void setOrginal(String orginal) {
+        this.orginal = orginal;
+    }
+
+    public void setTranslation(String translation) {
+        this.translation = translation;
     }
     
     public String getOrginal(){
