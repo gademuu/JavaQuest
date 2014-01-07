@@ -73,12 +73,12 @@ public class QuizAlternativesView extends javax.swing.JPanel implements QuizAlte
     private void initComponents() {
 
         jDialog4 = new javax.swing.JDialog();
+        jLabel1 = new javax.swing.JLabel();
         progressBar = new javax.swing.JProgressBar();
         label_activeWord = new javax.swing.JLabel();
         toggleBtn_wordOne = new javax.swing.JToggleButton();
         toggleBtn_wordTwo = new javax.swing.JToggleButton();
         toggleBtn_wordThree = new javax.swing.JToggleButton();
-        jLabel1 = new javax.swing.JLabel();
         btn_nextWord = new javax.swing.JButton();
         progressBar1 = new javax.swing.JProgressBar();
 
@@ -93,8 +93,11 @@ public class QuizAlternativesView extends javax.swing.JPanel implements QuizAlte
             .addGap(0, 300, Short.MAX_VALUE)
         );
 
-        setMinimumSize(new java.awt.Dimension(400, 300));
-        setPreferredSize(new java.awt.Dimension(400, 300));
+        jLabel1.setText("Time");
+
+        setMaximumSize(new java.awt.Dimension(800, 500));
+        setMinimumSize(new java.awt.Dimension(800, 500));
+        setPreferredSize(new java.awt.Dimension(800, 500));
 
         progressBar.setMinimumSize(new java.awt.Dimension(300, 20));
         progressBar.setPreferredSize(new java.awt.Dimension(300, 20));
@@ -103,44 +106,45 @@ public class QuizAlternativesView extends javax.swing.JPanel implements QuizAlte
         label_activeWord.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         label_activeWord.setText("GLOSORD");
 
+        toggleBtn_wordOne.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         toggleBtn_wordOne.setText("Ord1");
-        toggleBtn_wordOne.setMaximumSize(new java.awt.Dimension(100, 23));
-        toggleBtn_wordOne.setMinimumSize(new java.awt.Dimension(100, 23));
-        toggleBtn_wordOne.setPreferredSize(new java.awt.Dimension(100, 23));
+        toggleBtn_wordOne.setMaximumSize(new java.awt.Dimension(120, 40));
+        toggleBtn_wordOne.setMinimumSize(new java.awt.Dimension(120, 40));
+        toggleBtn_wordOne.setPreferredSize(new java.awt.Dimension(120, 40));
         toggleBtn_wordOne.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 toggleBtn_wordOneActionPerformed(evt);
             }
         });
 
+        toggleBtn_wordTwo.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         toggleBtn_wordTwo.setText("Ord2");
-        toggleBtn_wordTwo.setMaximumSize(new java.awt.Dimension(100, 23));
-        toggleBtn_wordTwo.setMinimumSize(new java.awt.Dimension(100, 23));
-        toggleBtn_wordTwo.setPreferredSize(new java.awt.Dimension(100, 23));
+        toggleBtn_wordTwo.setMaximumSize(new java.awt.Dimension(120, 40));
+        toggleBtn_wordTwo.setMinimumSize(new java.awt.Dimension(120, 40));
+        toggleBtn_wordTwo.setPreferredSize(new java.awt.Dimension(120, 40));
         toggleBtn_wordTwo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 toggleBtn_wordTwoActionPerformed(evt);
             }
         });
 
+        toggleBtn_wordThree.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         toggleBtn_wordThree.setText("Ord3");
-        toggleBtn_wordThree.setMaximumSize(new java.awt.Dimension(100, 23));
-        toggleBtn_wordThree.setMinimumSize(new java.awt.Dimension(100, 23));
-        toggleBtn_wordThree.setPreferredSize(new java.awt.Dimension(100, 23));
+        toggleBtn_wordThree.setMaximumSize(new java.awt.Dimension(120, 40));
+        toggleBtn_wordThree.setMinimumSize(new java.awt.Dimension(120, 40));
+        toggleBtn_wordThree.setPreferredSize(new java.awt.Dimension(120, 40));
         toggleBtn_wordThree.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 toggleBtn_wordThreeActionPerformed(evt);
             }
         });
 
-        jLabel1.setText("Time");
-
         btn_nextWord.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         btn_nextWord.setText("Nästa ");
         btn_nextWord.setEnabled(false);
-        btn_nextWord.setMaximumSize(new java.awt.Dimension(100, 34));
-        btn_nextWord.setMinimumSize(new java.awt.Dimension(100, 34));
-        btn_nextWord.setPreferredSize(new java.awt.Dimension(100, 34));
+        btn_nextWord.setMaximumSize(new java.awt.Dimension(200, 40));
+        btn_nextWord.setMinimumSize(new java.awt.Dimension(200, 40));
+        btn_nextWord.setPreferredSize(new java.awt.Dimension(200, 40));
         btn_nextWord.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_nextWordActionPerformed(evt);
@@ -150,8 +154,9 @@ public class QuizAlternativesView extends javax.swing.JPanel implements QuizAlte
         progressBar1.setMaximum(200);
         progressBar1.setToolTipText("");
         progressBar1.setValue(200);
-        progressBar1.setMinimumSize(new java.awt.Dimension(300, 20));
-        progressBar1.setPreferredSize(new java.awt.Dimension(300, 20));
+        progressBar1.setMaximumSize(new java.awt.Dimension(400, 30));
+        progressBar1.setMinimumSize(new java.awt.Dimension(400, 30));
+        progressBar1.setPreferredSize(new java.awt.Dimension(400, 30));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -160,43 +165,42 @@ public class QuizAlternativesView extends javax.swing.JPanel implements QuizAlte
             .addComponent(label_activeWord, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(progressBar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addComponent(progressBar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(toggleBtn_wordOne, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(10, 10, 10)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btn_nextWord, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(toggleBtn_wordTwo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(10, 10, 10)
-                                .addComponent(toggleBtn_wordThree, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addComponent(jLabel1)
-                    .addComponent(progressBar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(249, 249, 249)
+                .addComponent(progressBar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(200, 200, 200)
+                .addComponent(toggleBtn_wordOne, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(20, 20, 20)
+                .addComponent(toggleBtn_wordTwo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(20, 20, 20)
+                .addComponent(toggleBtn_wordThree, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(200, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(300, 300, 300)
+                .addComponent(btn_nextWord, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(progressBar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(30, 30, 30)
+                .addGap(20, 20, 20)
+                .addComponent(progressBar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(75, 75, 75)
                 .addComponent(label_activeWord)
+                .addGap(75, 75, 75)
+                .addComponent(progressBar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(30, 30, 30)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(toggleBtn_wordOne, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(toggleBtn_wordTwo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(toggleBtn_wordThree, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addGap(30, 30, 30)
                 .addComponent(btn_nextWord, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(progressBar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(91, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
