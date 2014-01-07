@@ -95,6 +95,7 @@ public class MainFrame extends javax.swing.JFrame implements StatisticsViewSette
         helpPanel = new client2.HelpView();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Word Pear");
         setMaximumSize(new java.awt.Dimension(800, 600));
         setMinimumSize(new java.awt.Dimension(800, 600));
 

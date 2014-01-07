@@ -13,6 +13,7 @@ import logic.Glossary.GlossaryManager;
 import logic.Quiz.QuizSession;
 import client2.*;
 import client2.Quizz.QuizView;
+import client2.login.LoginFrameOld;
 import client2.login.LoginFrame;
 import client2.student.NewUserFrame;
 import logic.Login.LoginManager;
@@ -59,16 +60,16 @@ public class Game implements MainFrameListener {
         GlossaryManager gm = new GlossaryManager( ui.getGlossaryView());
         statisticsManager = new StatisticsManager(lm, ui.getStatisticsView());
         ui.setStatisticsViewListener(statisticsManager);
-         ui.setQuizViewListener(qm);
+        ui.setQuizViewListener(qm);
         
-}
+    }
     public void newUserFrameCreate(){
         nuf.initialize();
     }
     
-      public void mainFrameCreate(){
-          ui.initialize();
-      }
+    public void mainFrameCreate(){
+        ui.initialize();
+    }
       
     
     /*public void play() {
@@ -134,7 +135,6 @@ public class Game implements MainFrameListener {
     }
     */
     public static void main(String[]args){
-        Game g = new Game();
-        
+        Game g = new Game();   
     }
 }
