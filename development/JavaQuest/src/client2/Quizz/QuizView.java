@@ -108,11 +108,9 @@ public class QuizView extends javax.swing.JPanel implements QuizViewSetter {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        label_language = new javax.swing.JLabel();
         label_glossaryList = new javax.swing.JLabel();
         label_responseLanguage = new javax.swing.JLabel();
         label_difficulty = new javax.swing.JLabel();
-        cBox_userLists = new javax.swing.JComboBox();
         cBox_language = new javax.swing.JComboBox();
         toggleBtn_language1 = new javax.swing.JToggleButton();
         toggleBtn_language2 = new javax.swing.JToggleButton();
@@ -122,25 +120,13 @@ public class QuizView extends javax.swing.JPanel implements QuizViewSetter {
         label_3tries = new javax.swing.JLabel();
         toggleBtn_3tries = new javax.swing.JToggleButton();
 
-        label_language.setText("Välj det språk du vill öva på");
-
         label_glossaryList.setText("Välj en gloslista");
 
         label_responseLanguage.setText("Vilket språk vill du svara i?");
 
         label_difficulty.setText("Hur vill du svara?");
 
-        cBox_userLists.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "-Gloslistor-", "Lista1", "Lista2" }));
-        cBox_userLists.setToolTipText("");
-        cBox_userLists.setMinimumSize(new java.awt.Dimension(150, 27));
-        cBox_userLists.setPreferredSize(new java.awt.Dimension(150, 27));
-        cBox_userLists.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cBox_userListsActionPerformed(evt);
-            }
-        });
-
-        cBox_language.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "-Språk-" }));
+        cBox_language.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "-Lista-" }));
         cBox_language.setMinimumSize(new java.awt.Dimension(150, 27));
         cBox_language.setPreferredSize(new java.awt.Dimension(150, 27));
         cBox_language.addActionListener(new java.awt.event.ActionListener() {
@@ -215,6 +201,7 @@ public class QuizView extends javax.swing.JPanel implements QuizViewSetter {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap(40, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(label_glossaryList)
                     .addComponent(toggleBtn_3tries, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(label_3tries)
                     .addComponent(label_difficulty)
@@ -228,27 +215,16 @@ public class QuizView extends javax.swing.JPanel implements QuizViewSetter {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(toggleBtn_textQuiz, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(btn_startQuiz, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(cBox_language, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(label_language))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(label_glossaryList)
-                            .addComponent(cBox_userLists, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addComponent(cBox_language, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(40, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(label_language)
-                    .addComponent(label_glossaryList))
+                .addComponent(label_glossaryList)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(cBox_language, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(cBox_userLists, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(cBox_language, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(label_responseLanguage)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -305,10 +281,6 @@ public class QuizView extends javax.swing.JPanel implements QuizViewSetter {
         listener.threeAttemptsBtnToggle();
     }//GEN-LAST:event_toggleBtn_3triesActionPerformed
 
-    private void cBox_userListsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cBox_userListsActionPerformed
-        listener.listMenu();
-    }//GEN-LAST:event_cBox_userListsActionPerformed
-
     private void cBox_languageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cBox_languageActionPerformed
         listener.languageMenu();
         toggleBtn_language2.setText((String) cBox_language.getSelectedItem());
@@ -324,11 +296,9 @@ public class QuizView extends javax.swing.JPanel implements QuizViewSetter {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_startQuiz;
     private javax.swing.JComboBox cBox_language;
-    private javax.swing.JComboBox cBox_userLists;
     private javax.swing.JLabel label_3tries;
     private javax.swing.JLabel label_difficulty;
     private javax.swing.JLabel label_glossaryList;
-    private javax.swing.JLabel label_language;
     private javax.swing.JLabel label_responseLanguage;
     private javax.swing.JToggleButton toggleBtn_3tries;
     private javax.swing.JToggleButton toggleBtn_alternativesQuiz;

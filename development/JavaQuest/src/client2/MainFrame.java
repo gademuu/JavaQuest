@@ -8,6 +8,10 @@ import client2.statistics.StatisticsView;
 import client2.Quizz.QuizTextView;
 import client2.Quizz.QuizView;
 import client2.Quizz.QuizAlternativesView;
+import client2.Quizz.QuizAlternativesViewSetter;
+import client2.Quizz.QuizTextViewSetter;
+import client2.Quizz.QuizViewListener;
+import client2.Quizz.QuizViewSetter;
 import client2.glossary.GlossaryView;
 import client2.statistics.StatisticsViewListener;
 import client2.statistics.StatisticsViewSetter;
@@ -17,16 +21,30 @@ import javax.swing.JPanel;
  *
  * @author pierrezarebski
  */
-public class MainFrame extends javax.swing.JFrame implements StatisticsViewSetter {
+public class MainFrame extends javax.swing.JFrame implements StatisticsViewSetter, QuizViewSetter{
 
     private StatisticsViewListener svListener;
+    private QuizViewListener qvListener;
+    
+    
+    //Should never be called
+    public void setLanguages(String[] languages){}
+    public void setGlossaryLists(String[] lists){}
+    public QuizAlternativesViewSetter getQuizAlternativesViewSetter(){return null;}     
+    public QuizTextViewSetter getQuizTextViewSetter(){return null;}    
+    public void setStatisticsList(StudentStats[] ss) {}
+    public void setStudentNames(Student[] students) {}
+    //End
     
     public void setStatisticsViewListener(StatisticsViewListener svListener) {
         this.svListener = svListener;
     }
     
-     public void setStatisticsList(StudentStats[] ss) {}
-    public void setStudentNames(Student[] students) {}
+     public void setQuizViewListener(QuizViewListener qvListener) {
+        this.qvListener = qvListener;
+    }
+    
+     
     
     /**
      * Creates new form MainFrame
@@ -201,6 +219,8 @@ public class MainFrame extends javax.swing.JFrame implements StatisticsViewSette
         toggleBtn_menu2.setSelected(false);
         toggleBtn_menu3.setSelected(false);
         toggleBtn_menu4.setSelected(false);
+        qvListener.listMenu();
+        
     }//GEN-LAST:event_toggleBtn_menu1ActionPerformed
 
     private void toggleBtn_menu3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_toggleBtn_menu3ActionPerformed

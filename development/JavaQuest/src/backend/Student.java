@@ -2,13 +2,15 @@
 package backend;
 
 /**
- *
+ * The Student class represents a user with the persisitent data, name and password.
  * @author herman
  */
 public class Student {
     
+    //Variables
     private String name;
     private String password;
+    //End of variables
     
     public Student(String name, String password){
     

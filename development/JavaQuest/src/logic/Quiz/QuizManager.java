@@ -2,6 +2,8 @@
 package logic.Quiz;
 
 
+import backend.Word;
+import backend.WordDaoFactory;
 import client2.Quizz.QuizViewListener;
 import client2.*;
 import client2.Quizz.QuizViewSetter;
@@ -17,6 +19,7 @@ public class QuizManager implements QuizViewListener{
     //Constants
     private static final String RUN_QUIZ = "run_quiz";
     private static final int NUMBER_OF_WORDS= 10;
+    //End of constants
     //variables
     private QuizViewSetter ui;
     private QuizSession quizSession;
@@ -27,14 +30,13 @@ public class QuizManager implements QuizViewListener{
     private boolean threeAlternativesActive = false;
     private String startQuizButton;
     private  LoginManager lm;
+    //End of variables
     
     
     
     public QuizManager(QuizViewSetter ui, LoginManager lm){
         this.lm = lm;
         this.ui = ui;  
-        String []lang ={"english","german","french"};
-        ui.setLanguages(lang);
         ui.setQuizViewListener(this);
     }
      
@@ -63,6 +65,13 @@ public class QuizManager implements QuizViewListener{
     }
     
     public void listMenu(){
+        Word[]glossaries = WordDaoFactory.create(true).find(new Word("","",""));
+        String[] languages = new String[glossaries.length];
+        for (int i = 0 ; i < glossaries.length; i++) {
+            languages[i] = glossaries[i].getLanguage();
+        }
+        ui.setLanguages(languages);
+        
     }
     
     public void languageMenu(){}

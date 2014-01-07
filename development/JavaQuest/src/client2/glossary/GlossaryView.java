@@ -26,6 +26,7 @@ public class GlossaryView extends javax.swing.JPanel implements  GlossaryViewSet
     }
     
     public void  setGlossaryList(Word[] list){
+        if(list.length == 0) return;
         String[][] tableData = new String[list.length][2];
         for(int i = 0 ; i < list.length; i++) {
 
@@ -130,6 +131,11 @@ public class GlossaryView extends javax.swing.JPanel implements  GlossaryViewSet
         cBox_languageTwo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "-Språk 2-" }));
         cBox_languageTwo.setMinimumSize(new java.awt.Dimension(150, 27));
         cBox_languageTwo.setPreferredSize(new java.awt.Dimension(150, 27));
+        cBox_languageTwo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cBox_languageTwoActionPerformed(evt);
+            }
+        });
 
         cBox_languageOne.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Svenska" }));
         cBox_languageOne.setMinimumSize(new java.awt.Dimension(150, 27));
@@ -149,10 +155,7 @@ public class GlossaryView extends javax.swing.JPanel implements  GlossaryViewSet
                             .addComponent(cBox_languageOne, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(51, 51, 51)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(cBox_languageTwo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(btn_addLang, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(cBox_languageTwo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                 .addGroup(layout.createSequentialGroup()
                                     .addComponent(btn_done)
@@ -162,19 +165,23 @@ public class GlossaryView extends javax.swing.JPanel implements  GlossaryViewSet
                                     .addComponent(txtfield_word2, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGap(18, 18, 18)
                                     .addComponent(btn_addWord, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                    .addComponent(txtfield_listname, javax.swing.GroupLayout.PREFERRED_SIZE, 351, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(txtfield_listname, javax.swing.GroupLayout.PREFERRED_SIZE, 351, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(btn_addLang, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(13, 13, 13)
-                .addComponent(txtfield_listname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(9, 9, 9)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtfield_listname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_addLang, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(cBox_languageOne, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(cBox_languageTwo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btn_addLang, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cBox_languageTwo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtfield_word2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -182,7 +189,7 @@ public class GlossaryView extends javax.swing.JPanel implements  GlossaryViewSet
                     .addComponent(btn_addWord, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(scrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 13, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btn_cancel)
                     .addComponent(btn_done))
@@ -195,12 +202,20 @@ public class GlossaryView extends javax.swing.JPanel implements  GlossaryViewSet
     }//GEN-LAST:event_btn_addWordActionPerformed
 
     private void btn_addLangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_addLangActionPerformed
-        listener.langSelected((String) cBox_languageTwo.getSelectedItem());
+       String language =  txtfield_listname.getText();
+       
+       cBox_languageTwo.addItem(language);
+       cBox_languageTwo.setSelectedItem(language);
+       
     }//GEN-LAST:event_btn_addLangActionPerformed
 
     private void txtfield_listnameMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtfield_listnameMouseClicked
         txtfield_listname.setText("");
     }//GEN-LAST:event_txtfield_listnameMouseClicked
+
+    private void cBox_languageTwoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cBox_languageTwoActionPerformed
+        listener.langSelected((String) cBox_languageTwo.getSelectedItem());
+    }//GEN-LAST:event_cBox_languageTwoActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

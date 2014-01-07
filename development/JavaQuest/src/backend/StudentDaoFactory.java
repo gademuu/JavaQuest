@@ -3,13 +3,11 @@
 package backend;
 
 /**
- *
+ * StudentDaoFactory uses it's create method to enable the StudentDao to be instanced outside the backend package.
  * @author herman
  */
 public class StudentDaoFactory {
     
-    
-
     
     private static StudentDao theStudentDao = null;
     

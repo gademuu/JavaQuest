@@ -3,7 +3,7 @@
 package backend;
 
 /**
- *
+ * StudentDao is an interface for the class ProStudentDaoImpl.
  * @author herman
  */
 public interface StudentDao {

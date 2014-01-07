@@ -39,7 +39,6 @@ public class Game implements MainFrameListener {
     private LoginManager lm;
     private NewUserFrame nuf;
     private StatisticsManager statisticsManager;
-    
     //end of variables
     
     public Game(){
@@ -60,6 +59,7 @@ public class Game implements MainFrameListener {
         GlossaryManager gm = new GlossaryManager( ui.getGlossaryView());
         statisticsManager = new StatisticsManager(lm, ui.getStatisticsView());
         ui.setStatisticsViewListener(statisticsManager);
+         ui.setQuizViewListener(qm);
         
 }
     public void newUserFrameCreate(){
