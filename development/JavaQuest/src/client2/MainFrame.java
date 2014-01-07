@@ -98,6 +98,7 @@ public class MainFrame extends javax.swing.JFrame implements StatisticsViewSette
         setTitle("Word Pear");
         setMaximumSize(new java.awt.Dimension(800, 600));
         setMinimumSize(new java.awt.Dimension(800, 600));
+        setResizable(false);
 
         mainFramePanel.setMaximumSize(new java.awt.Dimension(800, 600));
         mainFramePanel.setMinimumSize(new java.awt.Dimension(800, 600));

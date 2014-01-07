@@ -121,14 +121,14 @@ public class LoginFrame extends javax.swing.JFrame implements LoginFrameSetter{
         label_register.setForeground(new java.awt.Color(51, 51, 255));
         label_register.setText("Registrera dig");
         label_register.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                label_registerMouseClicked(evt);
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                label_registerMouseExited(evt);
             }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 label_registerMouseEntered(evt);
             }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                label_registerMouseExited(evt);
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                label_registerMouseClicked(evt);
             }
         });
 

@@ -93,6 +93,11 @@ public class QuizTextView extends javax.swing.JPanel implements QuizTextViewSett
                 btn_nextWordActionPerformed(evt);
             }
         });
+        btn_nextWord.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                btn_nextWordKeyPressed(evt);
+            }
+        });
 
         label_activeWord.setFont(new java.awt.Font("Myriad Pro", 0, 48)); // NOI18N
         label_activeWord.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -105,11 +110,6 @@ public class QuizTextView extends javax.swing.JPanel implements QuizTextViewSett
         txtfield_word.setMaximumSize(new java.awt.Dimension(300, 30));
         txtfield_word.setMinimumSize(new java.awt.Dimension(300, 30));
         txtfield_word.setPreferredSize(new java.awt.Dimension(300, 30));
-        txtfield_word.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtfield_wordActionPerformed(evt);
-            }
-        });
         txtfield_word.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 txtfield_wordKeyPressed(evt);
@@ -159,7 +159,7 @@ public class QuizTextView extends javax.swing.JPanel implements QuizTextViewSett
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(20, 20, 20)
+                .addGap(30, 30, 30)
                 .addComponent(progressBar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(75, 75, 75)
                 .addComponent(label_activeWord, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -171,28 +171,15 @@ public class QuizTextView extends javax.swing.JPanel implements QuizTextViewSett
                 .addComponent(btn_confirm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(20, 20, 20)
                 .addComponent(btn_nextWord, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(60, Short.MAX_VALUE))
+                .addContainerGap(50, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
-
-    private void txtfield_wordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtfield_wordActionPerformed
-      
-    }//GEN-LAST:event_txtfield_wordActionPerformed
-
-    private void btn_nextWordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_nextWordActionPerformed
-        listener.nextWord();
-        
-        progressBar1.setValue(190);
-        btn_nextWord.setEnabled(false);
-        txtfield_word.setText("");
-        txtfield_word.setEnabled(true);
-        label_activeWord.setForeground(Color.BLACK); 
-    }//GEN-LAST:event_btn_nextWordActionPerformed
 
     private void btn_confirmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_confirmActionPerformed
         listener.okButton(txtfield_word.getText());
         
         txtfield_word.setEnabled(false);
+        btn_confirm.setEnabled(false);
         btn_nextWord.setEnabled(true);
     }//GEN-LAST:event_btn_confirmActionPerformed
 
@@ -200,11 +187,32 @@ public class QuizTextView extends javax.swing.JPanel implements QuizTextViewSett
         if(evt.getKeyCode() == 10 || evt.getKeyCode() == 13){
             listener.okButton(txtfield_word.getText());
             txtfield_word.setEnabled(false);
+            btn_confirm.setEnabled(false);
             btn_nextWord.setEnabled(true);
         }
     }//GEN-LAST:event_txtfield_wordKeyPressed
 
+    private void btn_nextWordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_nextWordActionPerformed
+        nextWord();
+    }//GEN-LAST:event_btn_nextWordActionPerformed
 
+    private void btn_nextWordKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btn_nextWordKeyPressed
+        if(evt.getKeyCode() == 10 || evt.getKeyCode() == 13){
+            nextWord();
+        }
+    }//GEN-LAST:event_btn_nextWordKeyPressed
+
+    private void nextWord(){
+        listener.nextWord();
+        
+        progressBar1.setValue(190);
+        btn_nextWord.setEnabled(false);
+        btn_confirm.setEnabled(true);
+        txtfield_word.setText("");
+        txtfield_word.setEnabled(true);
+        txtfield_word.requestFocus();
+        label_activeWord.setForeground(Color.BLACK);  
+    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_confirm;
     private javax.swing.JButton btn_nextWord;
