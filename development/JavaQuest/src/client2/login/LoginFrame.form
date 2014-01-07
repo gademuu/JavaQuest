@@ -111,6 +111,9 @@
         </Property>
         <Property name="requestFocusEnabled" type="boolean" value="false"/>
       </Properties>
+      <Events>
+        <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="txtfield_passwordFocusGained"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btn_login">
       <Properties>

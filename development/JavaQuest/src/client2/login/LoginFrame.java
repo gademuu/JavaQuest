@@ -82,6 +82,11 @@ public class LoginFrame extends javax.swing.JFrame implements LoginFrameSetter{
         txtfield_password.setMinimumSize(new java.awt.Dimension(200, 30));
         txtfield_password.setPreferredSize(new java.awt.Dimension(200, 30));
         txtfield_password.setRequestFocusEnabled(false);
+        txtfield_password.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txtfield_passwordFocusGained(evt);
+            }
+        });
 
         btn_login.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         btn_login.setText("Login");
@@ -170,6 +175,10 @@ public class LoginFrame extends javax.swing.JFrame implements LoginFrameSetter{
     private void txtfield_usernameFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtfield_usernameFocusGained
         txtfield_username.setText("");
     }//GEN-LAST:event_txtfield_usernameFocusGained
+
+    private void txtfield_passwordFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtfield_passwordFocusGained
+        txtfield_password.setText("");
+    }//GEN-LAST:event_txtfield_passwordFocusGained
 
     /**
      * @param args the command line arguments
