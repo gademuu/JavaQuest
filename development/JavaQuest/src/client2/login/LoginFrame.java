@@ -1,15 +1,18 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
 package client2.login;
 
-import client2.MainFrame;
 import client2.MainFrameListener;
-import client2.student.NewUserFrame;
-
 /**
  *
- * @author pierrezarebski
+ * @author Pierre
  */
-public class LoginFrame extends javax.swing.JFrame implements LoginFrameSetter {
-    
+public class LoginFrame extends javax.swing.JFrame implements LoginFrameSetter{
+
     LoginListener listener;
     MainFrameListener mfListener;
 
@@ -37,10 +40,6 @@ public class LoginFrame extends javax.swing.JFrame implements LoginFrameSetter {
     public void setMainFrameListener(MainFrameListener mfListener) {
         this.mfListener = mfListener;
     }
-            
-            
-        //TODO handle duplicate user, Show message dialog
-        
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -52,124 +51,139 @@ public class LoginFrame extends javax.swing.JFrame implements LoginFrameSetter {
     private void initComponents() {
 
         txtfield_username = new javax.swing.JTextField();
-        txtfield_password = new javax.swing.JTextField();
+        txtfield_password = new javax.swing.JPasswordField();
         btn_login = new javax.swing.JButton();
-        btn_newUser = new javax.swing.JButton();
+        label_register = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMinimumSize(new java.awt.Dimension(320, 240));
+        setTitle("Word Pear - Login");
+        setMaximumSize(new java.awt.Dimension(400, 300));
+        setMinimumSize(new java.awt.Dimension(400, 300));
+        setResizable(false);
 
+        txtfield_username.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         txtfield_username.setForeground(new java.awt.Color(153, 153, 153));
         txtfield_username.setText("Username...");
-        txtfield_username.setPreferredSize(new java.awt.Dimension(200, 28));
-        txtfield_username.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                txtfield_usernameMouseClicked(evt);
+        txtfield_username.setMaximumSize(new java.awt.Dimension(200, 30));
+        txtfield_username.setMinimumSize(new java.awt.Dimension(200, 30));
+        txtfield_username.setPreferredSize(new java.awt.Dimension(200, 30));
+        txtfield_username.setRequestFocusEnabled(false);
+        txtfield_username.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txtfield_usernameFocusGained(evt);
             }
         });
 
+        txtfield_password.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         txtfield_password.setForeground(new java.awt.Color(153, 153, 153));
         txtfield_password.setText("Password...");
-        txtfield_password.setPreferredSize(new java.awt.Dimension(200, 28));
-        txtfield_password.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                txtfield_passwordMouseClicked(evt);
+        txtfield_password.setMaximumSize(new java.awt.Dimension(200, 30));
+        txtfield_password.setMinimumSize(new java.awt.Dimension(200, 30));
+        txtfield_password.setPreferredSize(new java.awt.Dimension(200, 30));
+        txtfield_password.setRequestFocusEnabled(false);
+        txtfield_password.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txtfield_passwordFocusGained(evt);
             }
         });
 
+        btn_login.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         btn_login.setText("Login");
+        btn_login.setMaximumSize(new java.awt.Dimension(100, 30));
+        btn_login.setMinimumSize(new java.awt.Dimension(100, 30));
+        btn_login.setPreferredSize(new java.awt.Dimension(100, 30));
         btn_login.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_loginActionPerformed(evt);
             }
         });
 
-        btn_newUser.setFont(new java.awt.Font("Myriad Pro", 0, 10)); // NOI18N
-        btn_newUser.setForeground(new java.awt.Color(0, 0, 255));
-        btn_newUser.setText("<HTML>Registrera dig</HTML>");
-        btn_newUser.setBorder(null);
-        btn_newUser.setBorderPainted(false);
-        btn_newUser.setContentAreaFilled(false);
-        btn_newUser.addMouseListener(new java.awt.event.MouseAdapter() {
+        label_register.setForeground(new java.awt.Color(51, 51, 255));
+        label_register.setText("Registrera dig");
+        label_register.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                label_registerMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                btn_newUserMouseEntered(evt);
+                label_registerMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                btn_newUserMouseExited(evt);
+                label_registerMouseExited(evt);
             }
         });
-        btn_newUser.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_newUserActionPerformed(evt);
-            }
-        });
+
+        jLabel1.setFont(new java.awt.Font("Tekton Pro Cond", 0, 60)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 102, 0));
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("Word Pear");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(60, Short.MAX_VALUE)
+                .addContainerGap(100, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(txtfield_password, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(txtfield_username, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addComponent(btn_newUser, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btn_login)))
-                .addContainerGap(60, Short.MAX_VALUE))
+                        .addComponent(label_register, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(18, 18, 18)
+                        .addComponent(btn_login, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtfield_password, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(txtfield_username, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(100, 100, 100))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(73, Short.MAX_VALUE)
+                .addGap(20, 20, 20)
+                .addComponent(jLabel1)
+                .addGap(30, 30, 30)
                 .addComponent(txtfield_username, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(20, 20, 20)
                 .addComponent(txtfield_password, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(10, 10, 10)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btn_login)
-                    .addComponent(btn_newUser, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(70, 70, 70))
+                    .addComponent(btn_login, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(label_register))
+                .addContainerGap(69, Short.MAX_VALUE))
         );
 
         pack();
-        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btn_newUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_newUserActionPerformed
-       mfListener.newUserFrameCreate();
-       setVisible(false);
-    }//GEN-LAST:event_btn_newUserActionPerformed
-
     private void btn_loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_loginActionPerformed
-        listener.loginBtnPressed(txtfield_username.getText(),txtfield_password.getText());
-
+        String pw = new String(txtfield_password.getPassword());
+        listener.loginBtnPressed(txtfield_username.getText(),pw);
         setVisible(false);
     }//GEN-LAST:event_btn_loginActionPerformed
 
-    private void txtfield_usernameMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtfield_usernameMouseClicked
-        txtfield_username.setText(null);
-    }//GEN-LAST:event_txtfield_usernameMouseClicked
+    private void label_registerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_label_registerMouseClicked
+       mfListener.newUserFrameCreate();
+       setVisible(false);
+    }//GEN-LAST:event_label_registerMouseClicked
 
-    private void txtfield_passwordMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtfield_passwordMouseClicked
-        txtfield_password.setText(null);
-    }//GEN-LAST:event_txtfield_passwordMouseClicked
+    private void label_registerMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_label_registerMouseEntered
+        label_register.setText("<HTML><U>Registrera dig</U></HTML>");
+    }//GEN-LAST:event_label_registerMouseEntered
 
-    private void btn_newUserMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_newUserMouseEntered
-        btn_newUser.setText("<HTML><U>Registrera dig</U></HTML>");
-    }//GEN-LAST:event_btn_newUserMouseEntered
+    private void label_registerMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_label_registerMouseExited
+        label_register.setText("<HTML>Registrera dig</HTML>");
+    }//GEN-LAST:event_label_registerMouseExited
 
-    private void btn_newUserMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_newUserMouseExited
-        btn_newUser.setText("<HTML>Registrera dig</HTML>");
-    }//GEN-LAST:event_btn_newUserMouseExited
+    private void txtfield_usernameFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtfield_usernameFocusGained
+        txtfield_username.setText("");
+    }//GEN-LAST:event_txtfield_usernameFocusGained
+
+    private void txtfield_passwordFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtfield_passwordFocusGained
+        txtfield_password.setText("");
+    }//GEN-LAST:event_txtfield_passwordFocusGained
 
     /**
      * @param args the command line arguments
      */
-    public  void initialize() {
+    public void initialize() {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -203,8 +217,9 @@ public class LoginFrame extends javax.swing.JFrame implements LoginFrameSetter {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_login;
-    private javax.swing.JButton btn_newUser;
-    private javax.swing.JTextField txtfield_password;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel label_register;
+    private javax.swing.JPasswordField txtfield_password;
     private javax.swing.JTextField txtfield_username;
     // End of variables declaration//GEN-END:variables
 }
