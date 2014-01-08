@@ -67,6 +67,7 @@ public class QuizSessionAlternatives extends QuizSession implements QuizAlternat
     public void nextWord(){
         if(attemptInProgress)
             return;
+         if(finished) return;
         WordAlternative wa = ((GlossaryListAlternatives)glossaryList).nextWordAlternative();
       
         numberOfattemptsCounter = 0;

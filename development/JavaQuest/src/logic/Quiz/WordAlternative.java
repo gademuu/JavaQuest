@@ -68,5 +68,5 @@ public class WordAlternative extends Word {
         return alternativesInRandomOrder;
     }
     
-    //
+    
 }

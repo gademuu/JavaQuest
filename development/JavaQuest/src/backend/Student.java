@@ -28,9 +28,14 @@ public class Student {
     }
     
     public boolean isCorrect(String password){
-       return this.password.equals(password);
+       if(this.password != null) {
+           return this.password.equals(password);
+       }
+       
+       return false;
         
     }
+
     
     public String getPassword(){
         return password;

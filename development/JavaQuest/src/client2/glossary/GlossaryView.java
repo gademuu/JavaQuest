@@ -26,7 +26,10 @@ public class GlossaryView extends javax.swing.JPanel implements  GlossaryViewSet
     }
     
     public void  setGlossaryList(Word[] list){
-        if(list.length == 0) return;
+        if(list.length == 0)  {
+            table_glossaryList.setModel(new javax.swing.table.DefaultTableModel(new String[][]{{"",""}}, new String[]{"Svenska", (String)cBox_languageTwo.getSelectedItem()}));
+            return;
+        }
         String[][] tableData = new String[list.length][2];
         for(int i = 0 ; i < list.length; i++) {
 

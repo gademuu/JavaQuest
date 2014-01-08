@@ -51,7 +51,7 @@ public class Game implements MainFrameListener {
         ui = new MainFrame();
         nuf = new NewUserFrame();
         nuf.setMainFrameListener(this);
-        StudentManager sm = new StudentManager(nuf);
+        StudentManager sm = new StudentManager(nuf, lm);
         QuizView qv =  ui.getQuizView();
         qv.setMainFrame(ui);
         qv.setAlternativesSetter(ui.getQuizAlternativesPanel());
