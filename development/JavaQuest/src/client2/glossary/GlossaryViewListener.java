@@ -9,6 +9,7 @@ public interface GlossaryViewListener {
     
     public void langSelected(String lang);
     public void newWord(String original, String translation, String language);
+    public void listMenu();
    
     
 }

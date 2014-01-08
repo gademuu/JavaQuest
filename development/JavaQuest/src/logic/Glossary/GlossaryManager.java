@@ -24,7 +24,15 @@ public class GlossaryManager implements GlossaryViewListener  {
     }
     
    
-    
+     public void listMenu(){
+        Word[]glossaries = WordDaoFactory.create(true).find(new Word("","",""));
+        String[] languages = new String[glossaries.length];
+        for (int i = 0 ; i < glossaries.length; i++) {
+            languages[i] = glossaries[i].getLanguage();
+        }
+        ui.setLanguages(languages);
+        
+    }
     
     public void langSelected(String lang){
         WordDao wd = WordDaoFactory.create(true); 

@@ -21,8 +21,19 @@ public class GlossaryView extends javax.swing.JPanel implements  GlossaryViewSet
      */
     public GlossaryView() {
         initComponents();
-        cBox_languageTwo.addItem("english");
-        cBox_languageTwo.addItem("german");
+        
+    }
+    
+    /*
+       Fills the cBox_languageTwo with aviable glossary lists
+    */
+    public void setLanguages(String[] languages){
+        cBox_languageTwo.removeAllItems();
+        if(languages != null) {
+            for(String s : languages){
+                cBox_languageTwo.addItem(s);    
+            }          
+        }
     }
     
     public void  setGlossaryList(Word[] list){

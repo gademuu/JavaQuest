@@ -52,8 +52,11 @@ public class QuizView extends javax.swing.JPanel implements QuizViewSetter {
          this.listener = qvl;
 }
     
-    
+    /*
+       Fills the cBox_language with aviable Glossary lists
+    */
     public void setLanguages(String[] languages){
+        cBox_language.removeAllItems();
         if(languages != null) {
             for(String s : languages){
                 cBox_language.addItem(s);    

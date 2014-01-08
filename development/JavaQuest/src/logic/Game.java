@@ -61,6 +61,7 @@ public class Game implements MainFrameListener {
         statisticsManager = new StatisticsManager(lm, ui.getStatisticsView());
         ui.setStatisticsViewListener(statisticsManager);
         ui.setQuizViewListener(qm);
+        ui.setGlossaryViewListener(gm);
         
     }
     public void newUserFrameCreate(){

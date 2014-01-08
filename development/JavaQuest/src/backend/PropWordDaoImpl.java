@@ -55,11 +55,12 @@ class PropWordDaoImpl extends PropDaoImpl implements WordDao {
     public Word[] find(Word criteria) {
         
         Word[] matches = new Word[0];
-        
-        if(!criteria.getLanguage().equals("")) {
-            matches = findWordsForLanguage(criteria.getLanguage());
-        } else if(criteria.getLanguage().equals("")) {
+        if(criteria.getLanguage() != null) {
+            if(!criteria.getLanguage().equals("")) {
+                matches = findWordsForLanguage(criteria.getLanguage());
+            } else if(criteria.getLanguage().equals("")) {
             matches = findAllGlossaries();
+            }
         }
         
        return matches;

@@ -61,6 +61,7 @@ public abstract class QuizSession implements QuizTimerListener{
            }
                  
                  if(glossaryList.isCorrect(answer)) {
+                     timer.cancel();
                      ui.setIsCorrect(numberOfCorrectAnswers);
                      numberOfCorrectAnswers++;
                      attemptInProgress = false;

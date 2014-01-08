@@ -16,5 +16,6 @@ public interface GlossaryViewSetter {
     
     public void  setGlossaryList(Word[] list);
     public void setGlossaryViewListener(GlossaryViewListener listener);
+    public void setLanguages(String[] languages);
     
 }

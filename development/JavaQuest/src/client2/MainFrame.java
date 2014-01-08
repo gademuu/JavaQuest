@@ -4,6 +4,7 @@ package client2;
 
 import backend.Student;
 import backend.StudentStats;
+import backend.Word;
 import client2.statistics.StatisticsView;
 import client2.Quizz.QuizTextView;
 import client2.Quizz.QuizView;
@@ -13,6 +14,8 @@ import client2.Quizz.QuizTextViewSetter;
 import client2.Quizz.QuizViewListener;
 import client2.Quizz.QuizViewSetter;
 import client2.glossary.GlossaryView;
+import client2.glossary.GlossaryViewListener;
+import client2.glossary.GlossaryViewSetter;
 import client2.statistics.StatisticsViewListener;
 import client2.statistics.StatisticsViewSetter;
 import javax.swing.JPanel;
@@ -21,10 +24,11 @@ import javax.swing.JPanel;
  *
  * @author pierrezarebski
  */
-public class MainFrame extends javax.swing.JFrame implements StatisticsViewSetter, QuizViewSetter{
+public class MainFrame extends javax.swing.JFrame implements StatisticsViewSetter, QuizViewSetter, GlossaryViewSetter{
 
     private StatisticsViewListener svListener;
     private QuizViewListener qvListener;
+    GlossaryViewListener glListener;
     
     
     //Should never be called
@@ -34,6 +38,7 @@ public class MainFrame extends javax.swing.JFrame implements StatisticsViewSette
     public QuizTextViewSetter getQuizTextViewSetter(){return null;}    
     public void setStatisticsList(StudentStats[] ss) {}
     public void setStudentNames(Student[] students) {}
+    public void  setGlossaryList(Word[] list){}
     //End
     
     public void setStatisticsViewListener(StatisticsViewListener svListener) {
@@ -43,6 +48,10 @@ public class MainFrame extends javax.swing.JFrame implements StatisticsViewSette
      public void setQuizViewListener(QuizViewListener qvListener) {
         this.qvListener = qvListener;
     }
+     
+     public void setGlossaryViewListener(GlossaryViewListener glListener){
+         this.glListener = glListener;
+     }
     
      
     
@@ -268,6 +277,7 @@ public class MainFrame extends javax.swing.JFrame implements StatisticsViewSette
         toggleBtn_menu1.setSelected(false);
         toggleBtn_menu3.setSelected(false);
         toggleBtn_menu4.setSelected(false);
+        glListener.listMenu();
     }//GEN-LAST:event_toggleBtn_menu2ActionPerformed
 
     private void toggleBtn_menu1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_toggleBtn_menu1ActionPerformed
