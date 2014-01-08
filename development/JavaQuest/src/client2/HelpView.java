@@ -29,6 +29,7 @@ public class HelpView extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         jEditorPane1 = new javax.swing.JEditorPane();
 
+        setBackground(new java.awt.Color(255, 255, 255));
         setMaximumSize(new java.awt.Dimension(800, 500));
         setMinimumSize(new java.awt.Dimension(800, 500));
         setPreferredSize(new java.awt.Dimension(800, 500));

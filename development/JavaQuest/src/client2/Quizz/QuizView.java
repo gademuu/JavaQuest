@@ -122,6 +122,7 @@ public class QuizView extends javax.swing.JPanel implements QuizViewSetter {
         label_3tries = new javax.swing.JLabel();
         toggleBtn_3tries = new javax.swing.JToggleButton();
 
+        setBackground(new java.awt.Color(255, 255, 255));
         setMinimumSize(new java.awt.Dimension(800, 500));
         setPreferredSize(new java.awt.Dimension(800, 500));
 

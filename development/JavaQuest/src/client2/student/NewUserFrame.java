@@ -180,10 +180,15 @@ public class NewUserFrame extends javax.swing.JFrame implements NewUserFrameSett
 
     private void btn_registerUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_registerUserActionPerformed
         String pw = new String(txtfield_newPassword.getPassword());
-        newListener.newUser(txtfield_newUsername.getText(), pw);
+        String pw2 = new String(txtfield_repeatPassword.getPassword());
         
-        setVisible(false);
-        dispose();
+        if (pw != pw2){ 
+            javax.swing.JOptionPane.showMessageDialog(this, "Passwords do not match");
+        } else {
+            newListener.newUser(txtfield_newUsername.getText(), pw);
+            setVisible(false);
+            dispose();     
+        }
         //TODO if password != repeate password, show dialog else{listener.newUser(.getText(), getText())
     }//GEN-LAST:event_btn_registerUserActionPerformed
 

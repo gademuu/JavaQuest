@@ -112,10 +112,12 @@ public class MainFrame extends javax.swing.JFrame implements StatisticsViewSette
         mainFramePanel.setMinimumSize(new java.awt.Dimension(800, 600));
         mainFramePanel.setPreferredSize(new java.awt.Dimension(800, 600));
 
+        menuPanel.setBackground(new java.awt.Color(255, 255, 255));
         menuPanel.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         menuPanel.setMinimumSize(new java.awt.Dimension(800, 100));
         menuPanel.setPreferredSize(new java.awt.Dimension(800, 100));
 
+        toggleBtn_menu1.setBackground(new java.awt.Color(51, 153, 255));
         toggleBtn_menu1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         toggleBtn_menu1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/quiz.png"))); // NOI18N
         toggleBtn_menu1.setText("Quiz");
@@ -130,6 +132,7 @@ public class MainFrame extends javax.swing.JFrame implements StatisticsViewSette
             }
         });
 
+        toggleBtn_menu2.setBackground(new java.awt.Color(51, 153, 255));
         toggleBtn_menu2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         toggleBtn_menu2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/add.png"))); // NOI18N
         toggleBtn_menu2.setText("Ny Gloslista");
@@ -144,6 +147,7 @@ public class MainFrame extends javax.swing.JFrame implements StatisticsViewSette
             }
         });
 
+        toggleBtn_menu3.setBackground(new java.awt.Color(51, 153, 255));
         toggleBtn_menu3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         toggleBtn_menu3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/stat.png"))); // NOI18N
         toggleBtn_menu3.setText("Statistik");
@@ -158,6 +162,7 @@ public class MainFrame extends javax.swing.JFrame implements StatisticsViewSette
             }
         });
 
+        toggleBtn_menu4.setBackground(new java.awt.Color(51, 153, 255));
         toggleBtn_menu4.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         toggleBtn_menu4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/help.png"))); // NOI18N
         toggleBtn_menu4.setText("Hjälp");
@@ -204,6 +209,7 @@ public class MainFrame extends javax.swing.JFrame implements StatisticsViewSette
         cardLayoutPanel.setMaximumSize(new java.awt.Dimension(800, 500));
         cardLayoutPanel.setLayout(new java.awt.CardLayout());
 
+        startPanel.setBackground(new java.awt.Color(255, 255, 255));
         startPanel.setMinimumSize(new java.awt.Dimension(800, 500));
         startPanel.setPreferredSize(new java.awt.Dimension(800, 500));
         cardLayoutPanel.add(startPanel, "card8");

@@ -58,6 +58,7 @@ public class LoginFrame extends javax.swing.JFrame implements LoginFrameSetter{
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Word Pear - Login");
+        setBackground(new java.awt.Color(255, 255, 255));
         setMaximumSize(new java.awt.Dimension(400, 300));
         setMinimumSize(new java.awt.Dimension(400, 300));
         setResizable(false);

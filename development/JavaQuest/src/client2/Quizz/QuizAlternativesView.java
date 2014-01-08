@@ -95,6 +95,7 @@ public class QuizAlternativesView extends javax.swing.JPanel implements QuizAlte
 
         jLabel1.setText("Time");
 
+        setBackground(new java.awt.Color(255, 255, 255));
         setMaximumSize(new java.awt.Dimension(800, 500));
         setMinimumSize(new java.awt.Dimension(800, 500));
         setPreferredSize(new java.awt.Dimension(800, 500));
