@@ -176,7 +176,6 @@ public class LoginFrame extends javax.swing.JFrame implements LoginFrameSetter{
     private void btn_loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_loginActionPerformed
         String pw = new String(txtfield_password.getPassword());
         listener.loginBtnPressed(txtfield_username.getText(),pw);
-        setVisible(false);
     }//GEN-LAST:event_btn_loginActionPerformed
 
     private void label_registerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_label_registerMouseClicked
@@ -217,7 +216,6 @@ public class LoginFrame extends javax.swing.JFrame implements LoginFrameSetter{
         if(evt.getKeyCode() == 10 || evt.getKeyCode() == 13){
             String pw = new String(txtfield_password.getPassword());
             listener.loginBtnPressed(txtfield_username.getText(),pw);
-            setVisible(false);
         }
     }//GEN-LAST:event_txtfield_passwordKeyPressed
 

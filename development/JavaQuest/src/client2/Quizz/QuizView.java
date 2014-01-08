@@ -13,7 +13,7 @@ public class QuizView extends javax.swing.JPanel implements QuizViewSetter {
     private QuizViewListener listener;
     private QuizAlternativesViewSetter alternativesSetter;
     private MainFrame mf;
-
+            
     public MainFrame getMainFrame() {
         return mf;
     }
@@ -24,7 +24,6 @@ public class QuizView extends javax.swing.JPanel implements QuizViewSetter {
 
      public QuizView() {
         initComponents();
-        
     }
     
     public void setAlternativesSetter(QuizAlternativesViewSetter alternativesSetter) {
@@ -192,6 +191,7 @@ public class QuizView extends javax.swing.JPanel implements QuizViewSetter {
 
         btn_startQuiz.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btn_startQuiz.setText("Starta Quizen!");
+        btn_startQuiz.setEnabled(false);
         btn_startQuiz.setMaximumSize(new java.awt.Dimension(300, 50));
         btn_startQuiz.setMinimumSize(new java.awt.Dimension(300, 50));
         btn_startQuiz.setPreferredSize(new java.awt.Dimension(300, 50));
@@ -270,32 +270,37 @@ public class QuizView extends javax.swing.JPanel implements QuizViewSetter {
 
   
     private void toggleBtn_language1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_toggleBtn_language1ActionPerformed
-        toggleBtn_language2.setSelected(false);
         listener.language1("");
+        toggleBtn_language2.setSelected(false);
+        toggleStateCheck();
     }//GEN-LAST:event_toggleBtn_language1ActionPerformed
 
     private void toggleBtn_language2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_toggleBtn_language2ActionPerformed
         listener.language2((String) cBox_language.getSelectedItem());
         toggleBtn_language1.setSelected(false);
+        toggleStateCheck();
     }//GEN-LAST:event_toggleBtn_language2ActionPerformed
 
     private void toggleBtn_textQuizActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_toggleBtn_textQuizActionPerformed
-        toggleBtn_alternativesQuiz.setSelected(false);
         listener.textQuizToggled();
+        toggleBtn_alternativesQuiz.setSelected(false);
+        toggleStateCheck();
     }//GEN-LAST:event_toggleBtn_textQuizActionPerformed
 
     private void toggleBtn_alternativesQuizActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_toggleBtn_alternativesQuizActionPerformed
-        toggleBtn_textQuiz.setSelected(false);
         listener.alternativesQuizToggled();
+        toggleBtn_textQuiz.setSelected(false);
+        toggleStateCheck();
     }//GEN-LAST:event_toggleBtn_alternativesQuizActionPerformed
 
     private void btn_startQuizActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_startQuizActionPerformed
-       if(toggleBtn_alternativesQuiz.isSelected()) {
+        listener.startQuizButton();
+        
+        if(toggleBtn_alternativesQuiz.isSelected()) {
             changePanel(mf.getQuizAlternativesPanel());
         } else if (toggleBtn_textQuiz.isSelected()){
             changePanel(mf.getQuizTextPanel());
         }
-        listener.startQuizButton();
     }//GEN-LAST:event_btn_startQuizActionPerformed
 
     private void toggleBtn_3triesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_toggleBtn_3triesActionPerformed
@@ -305,7 +310,6 @@ public class QuizView extends javax.swing.JPanel implements QuizViewSetter {
     private void cBox_languageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cBox_languageActionPerformed
         listener.languageMenu((String) cBox_language.getSelectedItem());
         toggleBtn_language2.setText((String) cBox_language.getSelectedItem());
-     
     }//GEN-LAST:event_cBox_languageActionPerformed
 
     public void changePanel(javax.swing.JPanel panel) {
@@ -313,6 +317,19 @@ public class QuizView extends javax.swing.JPanel implements QuizViewSetter {
         mf.getCardLayoutPanel().add(panel);
         mf.getCardLayoutPanel().repaint();
         mf.getCardLayoutPanel().revalidate();
+    }
+    
+    public void toggleStateCheck(){
+        boolean lang1 = toggleBtn_language1.isSelected();
+        boolean lang2 = toggleBtn_language2.isSelected();
+        boolean quiz1 = toggleBtn_alternativesQuiz.isSelected();
+        boolean quiz2 = toggleBtn_textQuiz.isSelected();
+        
+        if (lang1 ^ lang2 && quiz1 ^ quiz2){
+            btn_startQuiz.setEnabled(true);
+        } else {
+            btn_startQuiz.setEnabled(false);
+        }
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_startQuiz;

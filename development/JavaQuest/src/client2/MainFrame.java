@@ -5,6 +5,7 @@ package client2;
 import backend.Student;
 import backend.StudentStats;
 import backend.Word;
+import client2.login.LoginFrame;
 import client2.statistics.StatisticsView;
 import client2.Quizz.QuizTextView;
 import client2.Quizz.QuizView;
@@ -52,9 +53,7 @@ public class MainFrame extends javax.swing.JFrame implements StatisticsViewSette
      public void setGlossaryViewListener(GlossaryViewListener glListener){
          this.glListener = glListener;
      }
-    
-     
-    
+ 
     /**
      * Creates new form MainFrame
      */

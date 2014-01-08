@@ -27,7 +27,7 @@ public class LoginManager implements LoginListener {
         
         if(s.isCorrect(password)){
             student = s;
-                    ui.setLoginOk();
+            ui.setLoginOk();
         }else{
             student = null;
             ui.wrongUser("Wrong username or password");
@@ -35,7 +35,7 @@ public class LoginManager implements LoginListener {
         
     }
     
-      public void setStudent(Student student) {
+    public void setStudent(Student student) {
         this.student = student;
     }
     public void registerBtnPressed(){}
