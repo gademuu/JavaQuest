@@ -33,6 +33,7 @@ public class QuizSessionTextfield extends QuizSession implements  QuizTextListen
     public void nextWord(){
         if(attemptInProgress)
     return;
+        if(finished) return;
         numberOfattemptsCounter = 0;
         String w = glossaryList.nextWord();    
         if(!w.equals("")){
