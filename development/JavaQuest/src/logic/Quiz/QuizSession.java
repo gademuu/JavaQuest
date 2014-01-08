@@ -26,7 +26,7 @@ public abstract class QuizSession implements QuizTimerListener{
     protected String studentName;
     protected int numberOfWordsSelected;
     protected boolean threeAttemptsButton =false;
-    protected int numberOfattemptsCounter = 0; 
+    protected int numberOfattemptsCounter = 1; 
     protected int numberOfCorrectAnswers = 0;
     protected boolean finished = false;
     protected boolean attemptInProgress = false;

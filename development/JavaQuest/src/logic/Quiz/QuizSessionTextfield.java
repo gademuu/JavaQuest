@@ -34,7 +34,7 @@ public class QuizSessionTextfield extends QuizSession implements  QuizTextListen
         if(attemptInProgress)
     return;
         if(finished) return;
-        numberOfattemptsCounter = 0;
+        numberOfattemptsCounter = 1;
         String w = glossaryList.nextWord();    
         if(!w.equals("")){
             timer.cancel();

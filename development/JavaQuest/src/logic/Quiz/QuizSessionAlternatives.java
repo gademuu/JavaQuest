@@ -70,7 +70,7 @@ public class QuizSessionAlternatives extends QuizSession implements QuizAlternat
          if(finished) return;
         WordAlternative wa = ((GlossaryListAlternatives)glossaryList).nextWordAlternative();
       
-        numberOfattemptsCounter = 0;
+        numberOfattemptsCounter = 1;
         
         if(wa!=null){
             timer.cancel();

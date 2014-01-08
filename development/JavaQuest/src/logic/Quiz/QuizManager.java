@@ -47,10 +47,10 @@ public class QuizManager implements QuizViewListener{
     }
    private boolean handleRunQuiz() throws QuitException{
          if(threeAlternativesActive) {
-            quizSession = new QuizSessionAlternatives(lm.getStudentName(),language1, language2, NUMBER_OF_WORDS,false,respondInSwedish,ui.getQuizAlternativesViewSetter() );
+            quizSession = new QuizSessionAlternatives(lm.getStudentName(),language1, language2, NUMBER_OF_WORDS,threeAttemptsButton,respondInSwedish,ui.getQuizAlternativesViewSetter() );
              
          }else{
-            quizSession = new QuizSessionTextfield(lm.getStudentName(),language1, language2, NUMBER_OF_WORDS,false,respondInSwedish,ui.getQuizTextViewSetter() );
+            quizSession = new QuizSessionTextfield(lm.getStudentName(),language1, language2, NUMBER_OF_WORDS,threeAttemptsButton,respondInSwedish,ui.getQuizTextViewSetter() );
          }
           return true;
      }
