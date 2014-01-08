@@ -150,6 +150,11 @@ public class QuizAlternativesView extends javax.swing.JPanel implements QuizAlte
                 btn_nextWordActionPerformed(evt);
             }
         });
+        btn_nextWord.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                btn_nextWordKeyPressed(evt);
+            }
+        });
 
         progressBar1.setMaximum(200);
         progressBar1.setToolTipText("");
@@ -205,18 +210,7 @@ public class QuizAlternativesView extends javax.swing.JPanel implements QuizAlte
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn_nextWordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_nextWordActionPerformed
-        listener.nextWord();
-
-        progressBar1.setValue(190);
-        btn_nextWord.setEnabled(false);
-        toggleBtn_wordOne.setSelected(false);
-        toggleBtn_wordOne.setEnabled(true);  
-        toggleBtn_wordTwo.setSelected(false);
-        toggleBtn_wordTwo.setEnabled(true);  
-        toggleBtn_wordThree.setSelected(false);
-        toggleBtn_wordThree.setEnabled(true);
-        
-        label_activeWord.setForeground(Color.BLACK);    
+        nextWord();    
     }//GEN-LAST:event_btn_nextWordActionPerformed
 
     private void toggleBtn_wordOneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_toggleBtn_wordOneActionPerformed
@@ -246,11 +240,33 @@ public class QuizAlternativesView extends javax.swing.JPanel implements QuizAlte
         toggleBtn_wordTwo.setSelected(false);
     }//GEN-LAST:event_toggleBtn_wordThreeActionPerformed
 
+    private void btn_nextWordKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btn_nextWordKeyPressed
+        if(evt.getKeyCode() == 10 || evt.getKeyCode() == 13){
+            nextWord();
+        }
+    }//GEN-LAST:event_btn_nextWordKeyPressed
+    
+    private void nextWord(){
+        listener.nextWord();
+
+        progressBar1.setValue(190);
+        btn_nextWord.setEnabled(false);
+        toggleBtn_wordOne.setSelected(false);
+        toggleBtn_wordOne.setEnabled(true);  
+        toggleBtn_wordTwo.setSelected(false);
+        toggleBtn_wordTwo.setEnabled(true);  
+        toggleBtn_wordThree.setSelected(false);
+        toggleBtn_wordThree.setEnabled(true);
+        
+        label_activeWord.setForeground(Color.BLACK);  
+    }
+    
     private void lockWordBtns(){
         toggleBtn_wordOne.setEnabled(false);
         toggleBtn_wordTwo.setEnabled(false);
         toggleBtn_wordThree.setEnabled(false);
     }
+    
     private javax.swing.JOptionPane statsDialog;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_nextWord;

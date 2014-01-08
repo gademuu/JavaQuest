@@ -49,73 +49,129 @@ public class NewUserFrame extends javax.swing.JFrame implements NewUserFrameSett
     private void initComponents() {
 
         txtfield_newUsername = new javax.swing.JTextField();
-        txtfield_newPassword = new javax.swing.JTextField();
-        txtfield_repeatPassword = new javax.swing.JTextField();
         btn_registerUser = new javax.swing.JButton();
+        txtfield_newPassword = new javax.swing.JPasswordField();
+        txtfield_repeatPassword = new javax.swing.JPasswordField();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMinimumSize(new java.awt.Dimension(320, 240));
+        setMaximumSize(new java.awt.Dimension(400, 300));
+        setMinimumSize(new java.awt.Dimension(400, 300));
+        setPreferredSize(new java.awt.Dimension(400, 300));
         setResizable(false);
 
         txtfield_newUsername.setFont(new java.awt.Font("Myriad Pro", 0, 11)); // NOI18N
         txtfield_newUsername.setForeground(new java.awt.Color(153, 153, 153));
-        txtfield_newUsername.setText("Skriv ett användarnamn...");
+        txtfield_newUsername.setText("Username...");
+        txtfield_newUsername.setFocusable(false);
+        txtfield_newUsername.setMinimumSize(new java.awt.Dimension(200, 30));
+        txtfield_newUsername.setPreferredSize(new java.awt.Dimension(200, 30));
         txtfield_newUsername.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 txtfield_newUsernameMouseClicked(evt);
             }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                txtfield_newUsernameMouseEntered(evt);
+            }
         });
-
-        txtfield_newPassword.setFont(new java.awt.Font("Myriad Pro", 0, 11)); // NOI18N
-        txtfield_newPassword.setForeground(new java.awt.Color(153, 153, 153));
-        txtfield_newPassword.setText("Skriv in ett lösenord...");
-        txtfield_newPassword.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                txtfield_newPasswordMouseClicked(evt);
+        txtfield_newUsername.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txtfield_newUsernameFocusGained(evt);
             }
         });
 
-        txtfield_repeatPassword.setFont(new java.awt.Font("Myriad Pro", 0, 11)); // NOI18N
-        txtfield_repeatPassword.setForeground(new java.awt.Color(153, 153, 153));
-        txtfield_repeatPassword.setText("Repetera lösenordet...");
-        txtfield_repeatPassword.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                txtfield_repeatPasswordMouseClicked(evt);
-            }
-        });
-
+        btn_registerUser.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         btn_registerUser.setText("Registrera");
+        btn_registerUser.setMaximumSize(new java.awt.Dimension(200, 40));
+        btn_registerUser.setMinimumSize(new java.awt.Dimension(200, 40));
+        btn_registerUser.setPreferredSize(new java.awt.Dimension(200, 40));
         btn_registerUser.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_registerUserActionPerformed(evt);
             }
         });
 
+        txtfield_newPassword.setText("password");
+        txtfield_newPassword.setFocusable(false);
+        txtfield_newPassword.setMinimumSize(new java.awt.Dimension(200, 30));
+        txtfield_newPassword.setPreferredSize(new java.awt.Dimension(200, 30));
+        txtfield_newPassword.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                txtfield_newPasswordMouseClicked(evt);
+            }
+        });
+        txtfield_newPassword.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txtfield_newPasswordFocusGained(evt);
+            }
+        });
+
+        txtfield_repeatPassword.setText("password");
+        txtfield_repeatPassword.setFocusable(false);
+        txtfield_repeatPassword.setMinimumSize(new java.awt.Dimension(200, 30));
+        txtfield_repeatPassword.setPreferredSize(new java.awt.Dimension(200, 30));
+        txtfield_repeatPassword.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                txtfield_repeatPasswordMouseClicked(evt);
+            }
+        });
+        txtfield_repeatPassword.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txtfield_repeatPasswordFocusGained(evt);
+            }
+        });
+        txtfield_repeatPassword.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtfield_repeatPasswordKeyPressed(evt);
+            }
+        });
+
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel1.setText("Lösenord");
+
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel2.setText("Repetera Lösenord");
+
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel3.setText("Användarnamn");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(60, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(txtfield_newPassword)
-                    .addComponent(txtfield_repeatPassword)
-                    .addComponent(btn_registerUser, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(txtfield_newUsername, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE))
-                .addContainerGap(60, Short.MAX_VALUE))
+                .addContainerGap(100, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel3)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(btn_registerUser, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(txtfield_repeatPassword, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(txtfield_newPassword, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(txtfield_newUsername, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addContainerGap(100, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(55, Short.MAX_VALUE)
+                .addContainerGap(33, Short.MAX_VALUE)
+                .addComponent(jLabel3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtfield_newUsername, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(10, 10, 10)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtfield_newPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(10, 10, 10)
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtfield_repeatPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(btn_registerUser)
-                .addContainerGap(54, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btn_registerUser, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(33, Short.MAX_VALUE))
         );
 
         pack();
@@ -123,9 +179,11 @@ public class NewUserFrame extends javax.swing.JFrame implements NewUserFrameSett
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn_registerUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_registerUserActionPerformed
-        newListener.newUser(txtfield_newUsername.getText(), txtfield_newPassword.getText());
+        String pw = new String(txtfield_newPassword.getPassword());
+        newListener.newUser(txtfield_newUsername.getText(), pw);
         
         setVisible(false);
+        dispose();
         //TODO if password != repeate password, show dialog else{listener.newUser(.getText(), getText())
     }//GEN-LAST:event_btn_registerUserActionPerformed
 
@@ -140,6 +198,34 @@ public class NewUserFrame extends javax.swing.JFrame implements NewUserFrameSett
     private void txtfield_repeatPasswordMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtfield_repeatPasswordMouseClicked
         txtfield_repeatPassword.setText("");
     }//GEN-LAST:event_txtfield_repeatPasswordMouseClicked
+
+    private void txtfield_newUsernameFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtfield_newUsernameFocusGained
+        txtfield_newUsername.setText("");
+    }//GEN-LAST:event_txtfield_newUsernameFocusGained
+
+    private void txtfield_newPasswordFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtfield_newPasswordFocusGained
+        txtfield_newPassword.setText("");
+    }//GEN-LAST:event_txtfield_newPasswordFocusGained
+
+    private void txtfield_repeatPasswordFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtfield_repeatPasswordFocusGained
+        txtfield_repeatPassword.setText("");
+    }//GEN-LAST:event_txtfield_repeatPasswordFocusGained
+
+    private void txtfield_newUsernameMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtfield_newUsernameMouseEntered
+        txtfield_newUsername.setFocusable(true);
+        txtfield_newPassword.setFocusable(true);
+        txtfield_repeatPassword.setFocusable(true);
+    }//GEN-LAST:event_txtfield_newUsernameMouseEntered
+
+    private void txtfield_repeatPasswordKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtfield_repeatPasswordKeyPressed
+        if(evt.getKeyCode() == 10 || evt.getKeyCode() == 13){
+            String pw = new String(txtfield_newPassword.getPassword());
+            newListener.newUser(txtfield_newUsername.getText(), pw);
+
+            setVisible(false);
+            dispose();
+        }
+    }//GEN-LAST:event_txtfield_repeatPasswordKeyPressed
 
     
     public void initialize() {
@@ -176,8 +262,11 @@ public class NewUserFrame extends javax.swing.JFrame implements NewUserFrameSett
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_registerUser;
-    private javax.swing.JTextField txtfield_newPassword;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JPasswordField txtfield_newPassword;
     private javax.swing.JTextField txtfield_newUsername;
-    private javax.swing.JTextField txtfield_repeatPassword;
+    private javax.swing.JPasswordField txtfield_repeatPassword;
     // End of variables declaration//GEN-END:variables
 }
