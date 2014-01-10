@@ -11,7 +11,7 @@ import logic.Common.QuitException;
 import logic.Login.LoginManager;
 
 /**
- * 
+ * Handles the parameters by the user when starting up a new quiz. 
  * @author herman
  */
 public class QuizManager implements QuizViewListener{
@@ -32,19 +32,26 @@ public class QuizManager implements QuizViewListener{
     private  LoginManager lm;
     private boolean respondInSwedish = false;
     //End of variables
-    
-    
-    
+
+    /**
+     * Constructor for the QuizManager.
+     * @param ui
+     * @param lm
+     */
     public QuizManager(QuizViewSetter ui, LoginManager lm){
         this.lm = lm;
         this.ui = ui;  
         ui.setQuizViewListener(this);
     }
-     
-    
+
+    /**
+     *
+     * @param studentName
+     */
     public void initialize( String studentName){
         //this.studentName = studentName;
     }
+    
    private boolean handleRunQuiz() throws QuitException{
          if(threeAlternativesActive) {
             quizSession = new QuizSessionAlternatives(lm.getStudentName(),language1, language2, NUMBER_OF_WORDS,threeAttemptsButton,respondInSwedish,ui.getQuizAlternativesViewSetter() );
@@ -55,11 +62,7 @@ public class QuizManager implements QuizViewListener{
           return true;
      }
 
-
-     
-   
-   // Listener methods 
-    public void startQuizButton(){
+        public void startQuizButton(){
           try {
         handleRunQuiz();
     } catch(QuitException qe) {
@@ -67,6 +70,9 @@ public class QuizManager implements QuizViewListener{
         }
     }
     
+    /**
+     * Fills the list menu.
+     */
     public void listMenu(){
         Word[]glossaries = WordDaoFactory.create(true).find(new Word("","",""));
         String[] languages = new String[glossaries.length];
@@ -77,59 +83,48 @@ public class QuizManager implements QuizViewListener{
         
     }
     
+    /**
+     *  Checks what language is toggled.
+     * @param language
+     */
     public void languageMenu(String language){
         language2 = language;
     }
     
+    /**
+     * Checks if the three attempts button is toggled.
+     */
     public void threeAttemptsBtnToggle(){
         threeAttemptsButton = !threeAttemptsButton;
         
     }
+
+    /**
+     * Checks if the alternatives button is toggled.
+     */
     public void alternativesQuizToggled(){
         threeAlternativesActive  = !threeAlternativesActive ;
-        System.out.println("threeAlternativesActive [" + threeAlternativesActive + "]");
     }
-    public void textQuizToggled(){
-    }
-    
-     public void language2(String language){
+
+    //Not in use
+    public void textQuizToggled(){}
+
+    /**
+     * Checks if the answer in language button is toggled.
+     * @param language
+     */
+    public void language2(String language){
          language2 = language;
           respondInSwedish = false;
-         System.out.println(language);
     }
+
+    /**
+     * Checks if the answer in sweden button is toggled.
+     * @param language
+     */
     public void language1(String language){
          language1 = language;
          respondInSwedish = true;
     }
    
-    
-    /* public void threeAlternativesButtonToggled() {
-    threeAlternativesButtonActive = !threeAlternativesButtonActive;
-    System.out.println("threeAlternativesButtonToggled [" + threeAlternativesButtonActive + "]");
-        }
-    
-   
-    public void studentName(String name){
-        
-        studentName = name;
-    
-    }
-    public void numberOfWordsSelected(int numberOfWords){
-        numberOfWordsSelected = numberOfWords;
-    }
-   */
-    
-    public static void main(String[] args){
-        
-      
-        
-        
-      //  QuizSessionAlternatives qsa = new QuizSessionAlternatives("Herman","swedish","english",5);
-        
-        
-        //qm.startQuizButton();
-      
-      
-    
-    }
 }

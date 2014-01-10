@@ -6,7 +6,7 @@
 
 package client2;
 /**
- *
+ * The panel for all the help information.
  * @author pierrezarebski
  */
 public class HelpView extends javax.swing.JPanel {

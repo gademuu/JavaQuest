@@ -8,7 +8,7 @@ package client2.login;
 
 import client2.MainFrameListener;
 /**
- *
+ * Panel for the login frame.
  * @author Pierre
  */
 public class LoginFrame extends javax.swing.JFrame implements LoginFrameSetter{
@@ -23,20 +23,34 @@ public class LoginFrame extends javax.swing.JFrame implements LoginFrameSetter{
         initComponents();
     }
     
+    /**
+     * Creates the main frame after the user presses the ok button.
+     */ 
     public void setLoginOk(){
          mfListener.mainFrameCreate();
          setVisible(false);
-        // TODO skicka mainframe till game via setter
     }
     
+    /**
+     * Shows a message dialog. That says wrong user.
+     * @param message
+     */
     public void wrongUser(String message){
         javax.swing.JOptionPane.showMessageDialog(this, message);
     }
     
+    /**
+     *
+     * @param listener
+     */
     public void setLoginListener(LoginListener listener){
         this.listener = listener;
     }
             
+    /**
+     *
+     * @param mfListener
+     */
     public void setMainFrameListener(MainFrameListener mfListener) {
         this.mfListener = mfListener;
     }
@@ -221,7 +235,7 @@ public class LoginFrame extends javax.swing.JFrame implements LoginFrameSetter{
     }//GEN-LAST:event_txtfield_passwordKeyPressed
 
     /**
-     * @param args the command line arguments
+     * Initializes the login frame.
      */
     public void initialize() {
         /* Set the Nimbus look and feel */

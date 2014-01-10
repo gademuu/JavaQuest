@@ -5,55 +5,86 @@ import client2.MainFrame;
 
 
 /**
- *
+ * The panel for the QuizView.
  * @author pierrezarebski
  */
 public class QuizView extends javax.swing.JPanel implements QuizViewSetter {
 
+    //Varibales
     private QuizViewListener listener;
     private QuizAlternativesViewSetter alternativesSetter;
     private MainFrame mf;
+    private QuizTextViewSetter  textSetter;     
+    //End of variables.
             
+    /**
+     *
+     * @returns the MainFrame.
+     */
     public MainFrame getMainFrame() {
         return mf;
     }
 
+    /**
+     *
+     * @param mf
+     */
     public void setMainFrame(MainFrame mf) {
         this.mf = mf;
     }
 
-     public QuizView() {
+    
+    public QuizView() {
         initComponents();
     }
     
+    /**
+     *
+     * @param alternativesSetter
+     */
     public void setAlternativesSetter(QuizAlternativesViewSetter alternativesSetter) {
         this.alternativesSetter = alternativesSetter;
     }
 
+    /**
+     *
+     * @param textSetter
+     */
     public void setTextSetter(QuizTextViewSetter textSetter) {
         this.textSetter = textSetter;
     }
-    private QuizTextViewSetter  textSetter;       
+     
+   
     /**
      * Creates new form QuizView
+     * @return alternativesSetter
      */
-   
-    
     public QuizAlternativesViewSetter getQuizAlternativesViewSetter(){
         return alternativesSetter;
     }
             
+    /**
+     *
+     * @return textSetter
+     */
     public QuizTextViewSetter getQuizTextViewSetter(){
         return textSetter;
-    }    
-    
+    }
+
+    /**
+     *
+     * @param qvl
+     */
     public void setQuizViewListener(QuizViewListener qvl){
          this.listener = qvl;
 }
     
-    /*
-       Fills the cBox_language with aviable Glossary lists
-    */
+   
+    /**
+     *  Fills the cBox_language with available glossaries.
+     * @param languages
+     */
+    
     public void setLanguages(String[] languages){
         cBox_language.removeAllItems();
         if(languages != null) {
@@ -62,12 +93,14 @@ public class QuizView extends javax.swing.JPanel implements QuizViewSetter {
             }          
         } 
     }
-    
-    
-    
+
+    //Not in use.
     public void setGlossaryLists(String[] lists){}
-        
-         public  void initialize(){
+
+    /**
+     * Initializes the QuizView.
+     */
+    public  void initialize(){
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -313,6 +346,10 @@ public class QuizView extends javax.swing.JPanel implements QuizViewSetter {
         toggleBtn_language2.setText((String) cBox_language.getSelectedItem());
     }//GEN-LAST:event_cBox_languageActionPerformed
 
+    /**
+     * Changes the panels.
+     * @param panel
+     */
     public void changePanel(javax.swing.JPanel panel) {
         mf.getCardLayoutPanel().removeAll();
         mf.getCardLayoutPanel().add(panel);
@@ -320,6 +357,9 @@ public class QuizView extends javax.swing.JPanel implements QuizViewSetter {
         mf.getCardLayoutPanel().revalidate();
     }
     
+    /**
+     * Checks if the user has picked a language to answer in and which type of quiz that should be activated.
+     */
     public void toggleStateCheck(){
         boolean lang1 = toggleBtn_language1.isSelected();
         boolean lang2 = toggleBtn_language2.isSelected();

@@ -10,7 +10,7 @@ import backend.Student;
 import backend.StudentStats;
 
 /**
- *
+ * Panel for the StatisticsView.
  * @author pierrezarebski
  */
 public class StatisticsView extends javax.swing.JPanel implements StatisticsViewSetter {
@@ -18,16 +18,27 @@ public class StatisticsView extends javax.swing.JPanel implements StatisticsView
     
     private StatisticsViewListener listener;
     
+    /**
+     *
+     */
     public StatisticsView() {
         initComponents();
     }
     
+    /**
+     *
+     * @param listener
+     */
     public void setStatisticsViewListener(StatisticsViewListener listener){
         this.listener = listener;
     
     }
-    
-     public void setStatisticsList(StudentStats[] list){
+
+    /**
+     * Sets the list of statistics for all the registered users with a saved statistic.
+     * @param list
+     */
+    public void setStatisticsList(StudentStats[] list){
          String[][] tableData = new String[list.length][2];
         for(int i = 0 ; i < list.length; i++) {
 
@@ -39,9 +50,12 @@ public class StatisticsView extends javax.swing.JPanel implements StatisticsView
         }
         jTable1.setModel(new javax.swing.table.DefaultTableModel(tableData, new String[]{"datum", "procent"}));
      }
-     
-      
-      public void setStudentNames(Student[] students) {
+
+    /**
+     * Sets all the student names with statistics.
+     * @param students
+     */
+    public void setStudentNames(Student[] students) {
           
           String[] studentName = new String[students.length];
           

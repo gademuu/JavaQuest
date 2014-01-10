@@ -22,35 +22,48 @@ import client2.statistics.StatisticsViewSetter;
 import javax.swing.JPanel;
 
 /**
- *
+ * The panel for the main frame.
  * @author pierrezarebski
  */
 public class MainFrame extends javax.swing.JFrame implements StatisticsViewSetter, QuizViewSetter, GlossaryViewSetter{
 
+    //Variabless
     private StatisticsViewListener svListener;
     private QuizViewListener qvListener;
     GlossaryViewListener glListener;
-    
+    //End of variables
     
     //Should never be called
     public void setLanguages(String[] languages){}
     public void setGlossaryLists(String[] lists){}
     public QuizAlternativesViewSetter getQuizAlternativesViewSetter(){return null;}     
-    public QuizTextViewSetter getQuizTextViewSetter(){return null;}    
+    public QuizTextViewSetter getQuizTextViewSetter(){return null;}   
     public void setStatisticsList(StudentStats[] ss) {}
     public void setStudentNames(Student[] students) {}
     public void  setGlossaryList(Word[] list){}
-    //End
     
+    
+    /**
+     *
+     * @param svListener
+     */
     public void setStatisticsViewListener(StatisticsViewListener svListener) {
         this.svListener = svListener;
     }
-    
-     public void setQuizViewListener(QuizViewListener qvListener) {
+
+    /**
+     *
+     * @param qvListener
+     */
+    public void setQuizViewListener(QuizViewListener qvListener) {
         this.qvListener = qvListener;
     }
-     
-     public void setGlossaryViewListener(GlossaryViewListener glListener){
+
+    /**
+     *
+     * @param glListener
+     */
+    public void setGlossaryViewListener(GlossaryViewListener glListener){
          this.glListener = glListener;
      }
  
@@ -61,23 +74,30 @@ public class MainFrame extends javax.swing.JFrame implements StatisticsViewSette
         initComponents();
     }
     
+    /**
+     *
+     * @return quizPanel
+     */
     public QuizView getQuizView(){
         return quizPanel;
     }
     
+    /**
+     *
+     * @return glossaryPanel
+     */
     public GlossaryView getGlossaryView(){
          return glossaryPanel;
     }
     
+    /**
+     *
+     * @return statisticsPanel
+     */
     public StatisticsView getStatisticsView(){
         return statisticsPanel;
     }
     
-    /*public MainFrame(MainFrameListener listener){
-        initComponents();
-        this.listener = listener;
-    }*/
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -313,6 +333,10 @@ public class MainFrame extends javax.swing.JFrame implements StatisticsViewSette
         toggleBtn_menu3.setSelected(false);
     }//GEN-LAST:event_toggleBtn_menu4ActionPerformed
 
+    /**
+     * Changes the panels
+     * @param panel
+     */
     public void changePanel(javax.swing.JPanel panel) {
         cardLayoutPanel.removeAll();
         cardLayoutPanel.add(panel);
@@ -320,6 +344,9 @@ public class MainFrame extends javax.swing.JFrame implements StatisticsViewSette
         cardLayoutPanel.revalidate();
     }
     
+    /**
+     *
+     */
     public void initialize() {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -370,14 +397,26 @@ public class MainFrame extends javax.swing.JFrame implements StatisticsViewSette
     private javax.swing.JToggleButton toggleBtn_menu4;
     // End of variables declaration//GEN-END:variables
 
+    /**
+     *
+     * @return cardLayoutPanel
+     */
     public JPanel getCardLayoutPanel() {
         return cardLayoutPanel;
     }
 
+    /**
+     *
+     * @return quizAlternativesPanel
+     */
     public QuizAlternativesView getQuizAlternativesPanel() {
         return quizAlternativesPanel;
     }
 
+    /**
+     *
+     * @return quizTextPanel
+     */
     public QuizTextView getQuizTextPanel() {
         return quizTextPanel;
     }

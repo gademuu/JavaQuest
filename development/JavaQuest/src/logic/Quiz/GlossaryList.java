@@ -13,11 +13,13 @@ import java.util.Date;
 import java.util.ListIterator;
 
 /**
- * Hanterar ordlistan. 
+ * Super class to the two classes GlossaryListAlternatives and GLossaryListTextfield.
+ * Handles the glossary lists.
  * @author herman
  */
 public abstract class GlossaryList {
     
+    //Variables
     protected ArrayList<Word> glossary = new ArrayList<>();
     protected ListIterator iterator;
     protected int numberOfWords;
@@ -27,8 +29,15 @@ public abstract class GlossaryList {
     protected StudentStats studentStats;
     protected ArrayList<Word> quizGlossary = new ArrayList<>();
     protected boolean respondInSwedish = false;
-    
-    
+    //End of variables
+
+    /**
+     * Initializes a glossary.
+     * @param studentName
+     * @param language
+     * @param numberOfWords
+     * @param respondInSwedish
+     */
     public void initialize(String studentName, String language, int numberOfWords, boolean respondInSwedish) {
         this.numberOfWords = numberOfWords;
         WordDao wd = WordDaoFactory.create(true);
@@ -56,18 +65,14 @@ public abstract class GlossaryList {
         }
         
         this.respondInSwedish = respondInSwedish;
-        
-       // quizGlossary = (ArrayList<Word>) glossary.subList(0, numberOfWords);
-        
+       
         studentStats = new StudentStats(studentName, new Date().toString(), "");
         
-        
-        // 6. Subclass decides whether WordAlternative is to be used
-        
     }
-    
-   
-    
+
+    /**
+     * Adds a wrong answered word back in the list. 
+     */
     public void repeatWord(){
         int i;
         for(i = 0; iterator.hasNext(); i++) iterator.next();
@@ -76,6 +81,10 @@ public abstract class GlossaryList {
         numberOfWords++;
         }
     
+    /**
+     * Returns the next word in the glossary.
+     * @return theWord
+     */
     public String nextWord() {
         String theWord = "";
         
@@ -92,6 +101,11 @@ public abstract class GlossaryList {
         return theWord;
     }
     
+    /**
+     * Checks if the answer is correct.
+     * @param answer
+     * @return correct
+     */
     public boolean isCorrect(String answer) {
         boolean correct = false;
         numberOfQuestionsAnswered++;
@@ -113,6 +127,9 @@ public abstract class GlossaryList {
         
     }
     
+    /**
+     * Saves the percentage of the user.
+     */
     public void saveStats() {
        studentStats.setStats(getPercentage(numberOfCorrectAnswers, numberOfWords));
        StudentStatsDaoFactory.create(true);
@@ -121,8 +138,12 @@ public abstract class GlossaryList {
 
         ssDao.create(studentStats);
     }
-    
-     public String getStats() {
+
+    /**
+     *
+     * @returns getPercentage
+     */
+    public String getStats() {
       return getPercentage(numberOfCorrectAnswers, numberOfWords);
   }
      

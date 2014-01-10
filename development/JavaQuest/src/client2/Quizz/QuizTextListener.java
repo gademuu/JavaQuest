@@ -2,13 +2,20 @@
 package client2.Quizz;
 
 /**
- *
+ * Listener interface to the QuizTextView.
  * @author pierrezarebski
  */
 public interface QuizTextListener {
-    
-            
-            public void okButton(String word);
-            public void nextWord();
+
+    /**
+     *
+     * @param word
+     */
+    public void okButton(String word);
+
+    /**
+     *
+     */
+    public void nextWord();
     
 }

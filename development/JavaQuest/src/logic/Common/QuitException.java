@@ -3,13 +3,17 @@
 package logic.Common;
 
 /**
- *
+ * Handles how the application shall quit while running. 
  * @author herman
- * hantera hur programmet ska avbrytas väl inne i programmet. 
+ * 
  */
 public class QuitException extends Exception{
-    
-       public QuitException(String message){
+
+    /**
+     * Constructor of QuizException.
+     * @param message
+     */
+    public QuitException(String message){
            super(message);
        }
     

@@ -1,9 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package backend;
 
 import java.io.FileInputStream;
@@ -15,84 +9,83 @@ import java.util.Map;
 import java.util.Properties;
 import java.util.Set;
 
-
 /**
+ * Implementation of the StudentStatsDao interface Using properties files as
+ * storage.
  *
  * @author herman
  */
 public class PropStudentStatsDaoImpl extends PropDaoImpl implements StudentStatsDao {
- 
-     
-     private static final String FILE = ".properties";
-     
-    
-    public StudentStats create(StudentStats aStudentStats){
-        
-       
-        
+
+    private static final String FILE = ".properties";
+
+    /**
+     * Creates a new StudentStats object.
+     * @param aStudentStats
+     * @return aStudentStats
+     */
+    public StudentStats create(StudentStats aStudentStats) {
+
         Properties prop = new Properties();
-        prop = load(aStudentStats.getName()+FILE);
-       
- 
-        
+        prop = load(aStudentStats.getName() + FILE);
+
         prop.setProperty(aStudentStats.getQuizName(), aStudentStats.getStats());
-        store(aStudentStats.getName()+FILE, prop, true);
+        store(aStudentStats.getName() + FILE, prop, true);
 
-       
-           
-       
-        return aStudentStats ;
-    
+        return aStudentStats;
+
     }
 
-    public StudentStats read(StudentStats aStudentStats){
-    Properties prop = new Properties();
-        prop = load(aStudentStats.getName()+FILE);
+    /**
+     * Reads a new StudentsStats object
+     * @param aStudentStats
+     * @return s
+     */
+    public StudentStats read(StudentStats aStudentStats) {
+        Properties prop = new Properties();
+        prop = load(aStudentStats.getName() + FILE);
         StudentStats s = null;
-        
+
         s = new StudentStats(aStudentStats.getName(), aStudentStats.getQuizName(), prop.getProperty(aStudentStats.getQuizName()));
-    
-    return s;
+
+        return s;
     }
 
-    
- public void update(StudentStats aStudentStats) {
- // TODO
- }
-    
-    public void delete(StudentStats aStudentStats) {
-    // TODO
+    // Not in use
+    public void update(StudentStats aStudentStats) { 
     }
-    
+
+    public void delete(StudentStats aStudentStats) {
+    }
+    //
+
+    /**
+     * Finds a StudentStats object.
+     * @param criteria
+     * @return matchstats
+     */
     public StudentStats[] find(StudentStats criteria) {
-         ArrayList<StudentStats> matches = new ArrayList<>();
-        
+        ArrayList<StudentStats> matches = new ArrayList<>();
+
         Properties prop = load(criteria.getName() + FILE);
-        
+
         Set<Map.Entry<Object, Object>> statistics;
-         statistics = prop.entrySet();
-        Iterator iter =  statistics.iterator();
-        
-        while(iter.hasNext()) {
+        statistics = prop.entrySet();
+        Iterator iter = statistics.iterator();
+
+        while (iter.hasNext()) {
             Map.Entry<Object, Object> e = (Map.Entry<Object, Object>) iter.next();
-            StudentStats ss = new StudentStats(criteria.getName(), (String)e.getKey(),(String)e.getValue());
+            StudentStats ss = new StudentStats(criteria.getName(), (String) e.getKey(), (String) e.getValue());
             matches.add(ss);
         }
-        
+
         StudentStats[] matchstats = new StudentStats[matches.size()];
-        matchstats = matches.toArray(matchstats); 
+        matchstats = matches.toArray(matchstats);
         return matchstats;
-        
-       
-        
+
+    }
+
    
     }
-    
-    public static void main(String[] args){
-          StudentStats[] ss = new PropStudentStatsDaoImpl().find(new StudentStats("herman","",""));
-        for(StudentStats s : ss) {
-            System.out.println(s.toString());
-        }
-    }
-    
-}
+
+

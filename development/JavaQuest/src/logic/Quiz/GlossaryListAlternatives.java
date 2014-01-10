@@ -12,11 +12,18 @@ import java.util.Collections;
 import java.util.Date;
 
 /**
- *
+ * Handles the glossaries when the user runs the quiz with alternatives.
  * @author herman
  */
 public class GlossaryListAlternatives extends GlossaryList {
     
+    /**
+     * 
+     * @param studentName
+     * @param language
+     * @param numberOfWords
+     * @param respondInSwedish
+     */
     @Override
   public void initialize(String studentName, String language, int numberOfWords, boolean respondInSwedish) {
         super.initialize(studentName, language, numberOfWords, respondInSwedish);
@@ -66,8 +73,12 @@ public class GlossaryListAlternatives extends GlossaryList {
         }
              
    }
-  
-   public WordAlternative nextWordAlternative(){
+
+    /**
+     *  Returns the next word alternative.
+     * @return theWordAlternative
+     */
+    public WordAlternative nextWordAlternative(){
        WordAlternative theWordAlternative = null;
         if(iterator == null) {
             iterator = quizGlossary.listIterator();
@@ -80,18 +91,14 @@ public class GlossaryListAlternatives extends GlossaryList {
           return theWordAlternative;
    
    }
-   
-   
-       public static void main(String[] args){
+
+    /**
+     *
+     * @param args
+     */
+    public static void main(String[] args){
        GlossaryListAlternatives myGLA = new GlossaryListAlternatives();
-       /*myGLA.initialize("herman", "english",5);
-     
-       WordAlternative w = myGLA.nextWordAlternative();
-myGLA.repeatWord();
-        while(w != null) {
-            System.out.println(w.toString());
-             w = myGLA.nextWordAlternative();*/
-            
+      
              
         }
          

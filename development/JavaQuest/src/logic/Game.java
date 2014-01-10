@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 
 package logic;
 
@@ -13,7 +8,6 @@ import logic.Glossary.GlossaryManager;
 import logic.Quiz.QuizSession;
 import client2.*;
 import client2.Quizz.QuizView;
-import client2.login.LoginFrameOld;
 import client2.login.LoginFrame;
 import client2.student.NewUserFrame;
 import logic.Login.LoginManager;
@@ -21,7 +15,7 @@ import logic.Quiz.QuizManager;
 import logic.statistics.StatisticsManager;
 
 /**
- *
+ * The main class that starts the application. Instantiates all client and logic classes.
  * @author herman
  * 
  */
@@ -42,6 +36,9 @@ public class Game implements MainFrameListener {
     private StatisticsManager statisticsManager;
     //end of variables
     
+    /**
+     * Constructor of Game.
+     */
     public Game(){
         
         loginUi = new LoginFrame();
@@ -62,16 +59,26 @@ public class Game implements MainFrameListener {
         ui.setStatisticsViewListener(statisticsManager);
         ui.setQuizViewListener(qm);
         ui.setGlossaryViewListener(gm);
-        
     }
+
+    /**
+     * Initializes the new user frame.
+     */
     public void newUserFrameCreate(){
         nuf.initialize();
     }
     
+    /**
+     * Initializes the main frame.
+     */
     public void mainFrameCreate(){
         ui.initialize();
     }
       
+    /**
+     * Main method for the application.
+     * @param args
+     */
     public static void main(String[]args){
         Game g = new Game();   
     }

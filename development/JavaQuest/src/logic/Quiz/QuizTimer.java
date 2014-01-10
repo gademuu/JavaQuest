@@ -6,21 +6,23 @@ import java.util.TimerTask;
 import java.util.Date;
 
 /**
- * håller reda på hur länge spelet ska köras
+ *  Initializes the timer in the quiz session.
  * @author herman
  */
 public class QuizTimer extends Timer {
     
     //variables
     QuizTimerTask timerTask;
-    
-    // private QuizTimerTask timerTask;
     private long duration;
-   
-	public void initialize(QuizTimerListener listener, long interval, long duration) {
-		
-		 // TODO
-		// initialize timertask with listener, duration and intervals
+
+    /**
+     * Initializes the timer in the quiz session.
+     * @param listener
+     * @param interval
+     * @param duration
+     */
+    public void initialize(QuizTimerListener listener, long interval, long duration) {
+	
 		timerTask = new QuizTimerTask(listener, interval, duration, this);
 		Date firstTime = new Date();
 		scheduleAtFixedRate(timerTask, firstTime, interval);

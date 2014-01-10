@@ -11,7 +11,7 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 /**
- *
+ * Runs the timer in the quiz session.
  * @author herman
  */
 public class QuizTimerTask extends TimerTask {
@@ -21,6 +21,13 @@ public class QuizTimerTask extends TimerTask {
     private long timeRemaining;
     private Timer timer;
     
+    /**
+     * Constructor of the QuiztimerTask.
+     * @param listener
+     * @param interval
+     * @param duration
+     * @param timer
+     */
     public QuizTimerTask(QuizTimerListener listener, long interval, long duration, Timer timer) {
         
         this.listener = listener;

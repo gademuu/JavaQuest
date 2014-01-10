@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 
 package client2.glossary;
 
@@ -10,7 +5,7 @@ import backend.Word;
 import javax.swing.JTable;
 
 /**
- *
+ * Panel for the GlossaryView.
  * @author pierrezarebski
  */
 public class GlossaryView extends javax.swing.JPanel implements  GlossaryViewSetter {
@@ -23,10 +18,12 @@ public class GlossaryView extends javax.swing.JPanel implements  GlossaryViewSet
         initComponents();
         
     }
-    
-    /*
-       Fills the cBox_languageTwo with aviable glossary lists
-    */
+   
+
+    /**
+     * Fills the cBox_languageTwo with available glossaries.
+     * @param languages
+     */
     public void setLanguages(String[] languages){
         cBox_languageTwo.removeAllItems();
         if(languages != null) {
@@ -36,6 +33,10 @@ public class GlossaryView extends javax.swing.JPanel implements  GlossaryViewSet
         }
     }
     
+    /**
+     * Fills a glossary with words.
+     * @param list
+     */
     public void  setGlossaryList(Word[] list){
         if(list.length == 0)  {
             table_glossaryList.setModel(new javax.swing.table.DefaultTableModel(new String[][]{{"",""}}, new String[]{"Svenska", (String)cBox_languageTwo.getSelectedItem()}));
@@ -53,6 +54,10 @@ public class GlossaryView extends javax.swing.JPanel implements  GlossaryViewSet
         table_glossaryList.setModel(new javax.swing.table.DefaultTableModel(tableData, new String[]{"Svenska", lang}));
     }
     
+    /**
+     *
+     * @param listener
+     */
     public void setGlossaryViewListener(GlossaryViewListener listener){
         this.listener = listener;
     }

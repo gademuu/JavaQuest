@@ -1,5 +1,4 @@
 
-
 package logic.Glossary;
 
 import backend.Word;
@@ -10,21 +9,27 @@ import client2.glossary.GlossaryViewSetter;
 import logic.Common.QuitException;
 
 /**
- * Ska skapa nya ord och lägga in i propertiesfilen. Använd Create() från sitt DAO.
+ * Creates and manages glossaries. 
  * @author herman
  */
 public class GlossaryManager implements GlossaryViewListener  {
     
     private GlossaryViewSetter ui;
     
+    /**
+     * Constructor of GlossaryManager.
+     * @param setter
+     */
     public GlossaryManager(GlossaryViewSetter setter){
         this.ui = setter;
         ui.setGlossaryViewListener(this);
         
     }
-    
-   
-     public void listMenu(){
+
+    /**
+     * Fills the drop down menu that contains all the glossaries.
+     */
+    public void listMenu(){
         Word[]glossaries = WordDaoFactory.create(true).find(new Word("","",""));
         String[] languages = new String[glossaries.length];
         for (int i = 0 ; i < glossaries.length; i++) {
@@ -34,12 +39,22 @@ public class GlossaryManager implements GlossaryViewListener  {
         
     }
     
+    /**
+     * Uses the WordDao method find, to find a word in a glossary. 
+     * @param lang
+     */
     public void langSelected(String lang){
         WordDao wd = WordDaoFactory.create(true); 
         Word[] wlist = wd.find(new Word("","",lang));
         ui.setGlossaryList(wlist);
     }
     
+    /**
+     * Uses the WordDao method create, to create new words.
+     * @param original
+     * @param translation
+     * @param language
+     */
     public void newWord(String original, String translation, String language){
          WordDao wd = WordDaoFactory.create(true); 
          wd.create(new Word(original, translation, language));
@@ -47,11 +62,5 @@ public class GlossaryManager implements GlossaryViewListener  {
          ui.setGlossaryList(wlist2);
         
     }
-    
-    
-    
-    
-    
-    
     
 }

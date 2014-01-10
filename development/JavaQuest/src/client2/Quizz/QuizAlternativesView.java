@@ -1,15 +1,10 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 
 package client2.Quizz;
 
 import java.awt.Color;
 import javax.swing.JOptionPane;
 /**
- *
+ * Panel for the QuizAlternativesView.
  * @author pierrezarebski
  */
 public class QuizAlternativesView extends javax.swing.JPanel implements QuizAlternativesViewSetter {
@@ -21,40 +16,76 @@ public class QuizAlternativesView extends javax.swing.JPanel implements QuizAlte
     public QuizAlternativesView() {
         initComponents();
     }
-    
-     public void setStatsDialog(String message) {
+
+    /**
+     * Sets the statistics dialog message.
+     * @param message
+     */
+    public void setStatsDialog(String message) {
         javax.swing.JOptionPane.showMessageDialog(this, message);
     }
     
+    /**
+     *
+     * @param listener
+     */
     public void setQuizAlternativesViewListener(QuizAlternativesListener listener){
            this.listener = listener;
     }
     
+    /**
+     * Increases the progress bar if the answer is correct.
+     * And makes the active word shift color.
+     * @param numberOfCorrectAnswers
+     */
     public void setIsCorrect(int numberOfCorrectAnswers){    
         progressBar.setValue(progressBar.getValue() + 10);
         label_activeWord.setForeground(new java.awt.Color(0, 200, 0)); 
     }
     
+    /**
+     * Makes the active word shift color if the answer is in correct.
+     */
     public void setIsInCorrect(){
         label_activeWord.setForeground(Color.RED);    
     }
     
+    /**
+     * Sets the active word.
+     * @param word
+     */
     public void setWord(String word){
          label_activeWord.setText(word);
     }
     
+    /**
+     * Sets the world alternative one. 
+     * @param word
+     */
     public void setAlt1(String word){
         toggleBtn_wordOne.setText(word);
     }
     
+    /**
+     * Sets the world alternative two. 
+     * @param word
+     */
     public void setAlt2(String word){
         toggleBtn_wordTwo.setText(word);
     }
     
+    /**
+     * Sets the world alternative three. 
+     * @param word
+     */
     public void setAlt3(String word){
         toggleBtn_wordThree.setText(word);
     }
     
+    /**
+     * Sets the timer for each new word.
+     * @param time
+     */
     public void setTime(String time){
         jLabel1.setText(time);
         progressBar1.setValue(progressBar1.getValue() - 1);

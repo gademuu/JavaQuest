@@ -8,7 +8,7 @@ package client2.Quizz;
 
 import java.awt.Color;
 /**
- *
+ * The panel for the QuizTextView.
  * @author pierrezarebski
  */
 public class QuizTextView extends javax.swing.JPanel implements QuizTextViewSetter {
@@ -21,32 +21,60 @@ public class QuizTextView extends javax.swing.JPanel implements QuizTextViewSett
         initComponents();
     }
     
+    /**
+     *
+     * @param listener
+     */
     public QuizTextView(QuizTextListener listener) {
         initComponents();
         this.listener = listener;
     }
     
+    /**
+     * Sets the statistics dialog message.
+     * @param message
+     */
     public void setStatsDialog(String message) {
         javax.swing.JOptionPane.showMessageDialog(this, message);
     }
     
+    /**
+     * Increases the progress bar if the answer is correct.
+     * And makes the active word shift color.
+     * @param numberOfCorrectAnswers
+     */
     public void setIsCorrect(int numberOfCorrectAnswers){
         progressBar.setValue(progressBar.getValue() + 10);
         label_activeWord.setForeground(new java.awt.Color(0, 200, 0));       
     }
     
+    /**
+     * Makes the active word shift color if the answer is in correct.
+     */
     public void setIsInCorrect(){
         label_activeWord.setForeground(Color.RED);    
     }
     
+    /**
+     *
+     * @param listener
+     */
     public void setQuizTextViewListener(QuizTextListener listener){
         this.listener = listener;
     }
     
+    /**
+     * Sets the active word.
+     * @param word
+     */
     public void setWord(String word){
         label_activeWord.setText(word);
     }
     
+    /**
+     * Sets the timer for each new word.
+     * @param time
+     */
     public void setTime(String time){
         jLabel1.setText(time);
         progressBar1.setValue(progressBar1.getValue() - 1);

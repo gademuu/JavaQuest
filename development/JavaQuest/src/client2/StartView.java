@@ -1,13 +1,8 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 
 package client2;
 
 /**
- *
+ * Panel for the start view.
  * @author pierrezarebski
  */
 public class StartView extends javax.swing.JPanel {

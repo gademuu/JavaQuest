@@ -7,16 +7,19 @@ import client2.student.NewUserFrameSetter;
 import logic.Login.LoginManager;
 
 /**
- *  (ska använda studentdao, skapa en ny student. Ta imot password och namn.)
+ * Uses the StudentDao to create new students. 
  * @author herman
  */
 public class StudentManager implements NewUserFrameListener{
     
     NewUserFrameSetter ui;
     LoginManager lm;
-   
-    
-    
+
+    /**
+     * Constructor for the StudentManager.
+     * @param setter
+     * @param lm
+     */
     public StudentManager(NewUserFrameSetter setter, LoginManager lm){
        this.ui = setter;
        ui.setUserFrameListener(this);
@@ -24,6 +27,11 @@ public class StudentManager implements NewUserFrameListener{
        
     }
     
+    /**
+     * Creates a new Student with the StudentDao method create.
+     * @param name
+     * @param password
+     */
     public void newUser(String name, String password){
          Student s = new Student(name,password);
          StudentDao sd = StudentDaoFactory.create(true);

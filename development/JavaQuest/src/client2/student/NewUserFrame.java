@@ -10,7 +10,7 @@ import client2.MainFrame;
 import client2.MainFrameListener;
 
 /**
- *
+ * Panel for the NewUserFrame.
  * @author Pierre
  */
 public class NewUserFrame extends javax.swing.JFrame implements NewUserFrameSetter{
@@ -25,17 +25,28 @@ public class NewUserFrame extends javax.swing.JFrame implements NewUserFrameSett
         initComponents();
     }
     
+    /**
+     * Opens the main frame if the user presses the ok button in the new user frame.
+     */
     public void  setRegisterOk(){
         mfListener.mainFrameCreate();
         setVisible(false);
     }
-    
-     public void setMainFrameListener(MainFrameListener mfListener){
+
+    /**
+     *
+     * @param mfListener
+     */
+    public void setMainFrameListener(MainFrameListener mfListener){
          this.mfListener = mfListener;
          
      }
-     
-     public void setUserFrameListener(NewUserFrameListener newListener){
+
+    /**
+     *
+     * @param newListener
+     */
+    public void setUserFrameListener(NewUserFrameListener newListener){
          this.newListener = newListener;
      }
 
@@ -59,7 +70,6 @@ public class NewUserFrame extends javax.swing.JFrame implements NewUserFrameSett
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(400, 300));
         setMinimumSize(new java.awt.Dimension(400, 300));
-        setPreferredSize(new java.awt.Dimension(400, 300));
         setResizable(false);
 
         txtfield_newUsername.setFont(new java.awt.Font("Myriad Pro", 0, 11)); // NOI18N
@@ -232,7 +242,9 @@ public class NewUserFrame extends javax.swing.JFrame implements NewUserFrameSett
         }
     }//GEN-LAST:event_txtfield_repeatPasswordKeyPressed
 
-    
+    /**
+     * Initializes the new user frame.
+     */
     public void initialize() {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">

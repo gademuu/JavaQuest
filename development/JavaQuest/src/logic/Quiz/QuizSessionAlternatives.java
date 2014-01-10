@@ -8,7 +8,7 @@ import client2.*;
 import logic.Common.QuitException;
 
 /**
- *
+ * Handles a quiz session with three alternatives.
  * @author herman
  */
 public class QuizSessionAlternatives extends QuizSession implements QuizAlternativesListener{
@@ -16,8 +16,17 @@ public class QuizSessionAlternatives extends QuizSession implements QuizAlternat
         
       
        private QuizAlternativesViewSetter qavs;
-       
-        
+
+    /**
+     * Constructor for the QuizSessionAlternatives.
+     * @param studentName
+     * @param language1
+     * @param language2
+     * @param numberOfWordsSelected
+     * @param threeAttemptsButton
+     * @param respondInSwedish
+     * @param setter
+     */
     public QuizSessionAlternatives(String studentName, String language1, String language2, int numberOfWordsSelected, boolean threeAttemptsButton, boolean respondInSwedish, QuizSessionSetter setter ){
         super(studentName, language1, language2,  numberOfWordsSelected, threeAttemptsButton, setter);
         ((QuizAlternativesViewSetter)setter).setQuizAlternativesViewListener(this);
@@ -26,36 +35,35 @@ public class QuizSessionAlternatives extends QuizSession implements QuizAlternat
         nextWord();
     
     }
-    
-    /* @Override
-    public boolean play() throws QuitException {
-        
-        QuizAlternativesView ui = new QuizAlternativesView();
-        ui.initialize();
-        ui.setOriginalWord("Hej");
-        
-        GlossaryListAlternatives glossaryList = new GlossaryListAlternatives();
-        glossaryList.initialize("Herman", "english", 5);
-        
-        String word = glossaryList.nextWord();
-        ui.setOriginalWord(word);
-        
-        return true;
-    }
-  */  
-    
+ 
+    /**
+     * Checks if the word one button is pressed.
+     * @param answer
+     */
     public void wordOneBtnPressed(String answer){
         isCorrect(answer);    
     }
           
+    /**
+     * Checks if the word two button is pressed.
+     * @param answer
+     */
     public void wordTwoBtnPressed(String answer){
         isCorrect(answer);
     }
     
+    /**
+     * Checks if the word three button is pressed.
+     * @param answer
+     */
     public void wordThreeBtnPressed(String answer){
         isCorrect(answer);
     }
     
+    /**
+     *
+     * @param event
+     */
     @Override
       public void timerEvent(String event){
           super.timerEvent(event);
@@ -64,6 +72,9 @@ public class QuizSessionAlternatives extends QuizSession implements QuizAlternat
           }
       }
     
+    /**
+     * Gives the user the next word after pressing a word button.
+     */
     public void nextWord(){
         if(attemptInProgress)
             return;
@@ -93,20 +104,5 @@ public class QuizSessionAlternatives extends QuizSession implements QuizAlternat
             finished = true;
             ui.setStatsDialog("Du är nu klar med quizzen! Du klarade " + glossaryList.getStats());
         }
-     }
-    
-  /*  public static void main(String[] args){
-       
-        QuizSessionAlternatives qsa = new QuizSessionAlternatives("herman","swedish","english",11,true);
-        String []s ={"car","hello","smoke","girl","boy","floor"};
-        for(int i=0; i<=10;i++){
-            
-            qsa.nextWord();
-            qsa.wordOneBtnPressed(s[i]);
-              
-        }
-        
-    }*/
-    
-    
+     }  
 }
