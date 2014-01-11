@@ -100,9 +100,13 @@ public class QuizManager implements QuizViewListener{
     public void alternativesQuizToggled(){
         threeAlternativesActive  = !threeAlternativesActive ;
     }
-
-    //Not in use
-    public void textQuizToggled(){}
+    
+    /*
+     Checks if the text button is toggled.
+    */
+     public void textQuizToggled(){
+     threeAlternativesActive  = !threeAlternativesActive ;
+    }
 
     /**
      * Checks if the answer in language button is toggled.

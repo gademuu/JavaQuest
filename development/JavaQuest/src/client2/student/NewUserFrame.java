@@ -192,7 +192,7 @@ public class NewUserFrame extends javax.swing.JFrame implements NewUserFrameSett
         String pw = new String(txtfield_newPassword.getPassword());
         String pw2 = new String(txtfield_repeatPassword.getPassword());
         
-        if (pw != pw2){ 
+         if (!pw.equals(pw2)){
             javax.swing.JOptionPane.showMessageDialog(this, "Passwords do not match");
         } else {
             newListener.newUser(txtfield_newUsername.getText(), pw);
