@@ -5,7 +5,7 @@ import client2.Quizz.QuizAlternativesViewSetter;
 import client2.Quizz.QuizAlternativesListener;
 import client2.Quizz.QuizAlternativesView;
 import client2.*;
-import logic.Common.QuitException;
+
 
 /**
  * Handles a quiz session with three alternatives.
@@ -61,7 +61,7 @@ public class QuizSessionAlternatives extends QuizSession implements QuizAlternat
     }
     
     /**
-     *
+     * If the timer equals "0", the next word will appear. 
      * @param event
      */
     @Override

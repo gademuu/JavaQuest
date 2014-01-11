@@ -25,7 +25,7 @@ public class LoginManager implements LoginListener {
     }
     
     /**
-     * Uses the StudenDao method read to see if the user exists. 
+     * Uses the StudenDao method read to see if the user exists and verifies the password. 
      * @param name
      * @param password
      */
@@ -45,7 +45,7 @@ public class LoginManager implements LoginListener {
     }
     
     /**
-     *
+     * The student that has logged in. 
      * @param student
      */
     public void setStudent(Student student) {

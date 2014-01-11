@@ -8,7 +8,7 @@ package backend;
 /**
  * Interface for an application to store and load persistent StudentStats
  * objects.
- *
+ *This interface is based on the SCRUD methods.
  * @author herman
  */
 public interface StudentStatsDao {

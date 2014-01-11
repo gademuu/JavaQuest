@@ -37,6 +37,11 @@ public class QuizTimerTask extends TimerTask {
         
     }
     
+    /*
+    Decrements the remaining time by interval
+    sends a timer event to the listener in order to update the UI
+    cancels the timer if remaining time is 0.
+    */
     public void run() {
         timeRemaining -= interval; 
         if (timeRemaining <= 0) timer.cancel();

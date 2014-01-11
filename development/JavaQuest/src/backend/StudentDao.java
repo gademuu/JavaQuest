@@ -2,7 +2,7 @@ package backend;
 
 /**
  * Interface for an application to store and load persistent student objects.
- *
+ * This interface is based on the SCRUD methods.
  * @author herman
  */
 public interface StudentDao {

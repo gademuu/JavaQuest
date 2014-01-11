@@ -2,7 +2,7 @@
 package logic;
 
 
-import logic.Common.QuitException;
+
 import logic.Student.StudentManager;
 import logic.Glossary.GlossaryManager;
 import logic.Quiz.QuizSession;

@@ -1,7 +1,8 @@
 package backend;
 
 /*
- Interface for an application to store and load persistent word objects.
+ Interface for an application to store and load persistent word objects. 
+ This interface is based on the SCRUD methods. 
  */
 /**
  *

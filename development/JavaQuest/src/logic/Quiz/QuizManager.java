@@ -7,7 +7,6 @@ import backend.WordDaoFactory;
 import client2.Quizz.QuizViewListener;
 import client2.*;
 import client2.Quizz.QuizViewSetter;
-import logic.Common.QuitException;
 import logic.Login.LoginManager;
 
 /**
@@ -52,7 +51,7 @@ public class QuizManager implements QuizViewListener{
         //this.studentName = studentName;
     }
     
-   private boolean handleRunQuiz() throws QuitException{
+   private boolean handleRunQuiz(){
          if(threeAlternativesActive) {
             quizSession = new QuizSessionAlternatives(lm.getStudentName(),language1, language2, NUMBER_OF_WORDS,threeAttemptsButton,respondInSwedish,ui.getQuizAlternativesViewSetter() );
              
@@ -62,12 +61,8 @@ public class QuizManager implements QuizViewListener{
           return true;
      }
 
-        public void startQuizButton(){
-          try {
-        handleRunQuiz();
-    } catch(QuitException qe) {
-        qe.printStackTrace();
-        }
+        public void startQuizButton(){   
+            handleRunQuiz();
     }
     
     /**

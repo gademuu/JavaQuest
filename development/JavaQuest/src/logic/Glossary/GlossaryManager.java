@@ -6,7 +6,7 @@ import backend.WordDao;
 import backend.WordDaoFactory;
 import client2.glossary.GlossaryViewListener;
 import client2.glossary.GlossaryViewSetter;
-import logic.Common.QuitException;
+
 
 /**
  * Creates and manages glossaries. 
@@ -40,7 +40,8 @@ public class GlossaryManager implements GlossaryViewListener  {
     }
     
     /**
-     * Uses the WordDao method find, to find a word in a glossary. 
+     * Uses the WordDao method find, to find a glossary to read in as a language.
+     * 
      * @param lang
      */
     public void langSelected(String lang){
@@ -50,7 +51,8 @@ public class GlossaryManager implements GlossaryViewListener  {
     }
     
     /**
-     * Uses the WordDao method create, to create new words.
+     * Uses the WordDao method create, to create new words and updates the glossary in the UI.
+     * 
      * @param original
      * @param translation
      * @param language

@@ -4,7 +4,7 @@ package logic.Quiz;
 import client2.Quizz.QuizSessionSetter;
 import client2.Quizz.QuizTimerListener;
 import client2.Quizz.QuizView;
-import logic.Common.QuitException;
+
 
 /**
  * Super class to the the classes QuizSessionAlternatives and QuizSessionTextfield. 
@@ -70,7 +70,7 @@ public abstract class QuizSession implements QuizTimerListener{
       }
 
     /**
-     * Sets the timer. 
+     * Updates the timer in the UI. 
      * @param event
      */
     public void timerEvent(String event){

@@ -33,7 +33,7 @@ public class StatisticsManager implements  StatisticsViewListener{
  
 
     /**
-     * Checks if the statistics button is selected.
+     * Gets the statistics for a selected student.
      * @param studentName
      */
       public void statsButtonSelected(String studentName){

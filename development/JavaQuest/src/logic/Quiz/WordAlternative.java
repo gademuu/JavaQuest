@@ -4,7 +4,7 @@ package logic.Quiz;
 import backend.*;
 
 /**
- * Handles the quiz while running with three alternatives.
+ * WordAlternative represents a Word with one correct and two incorrect alternatives.
  * @author herman
  */
 public class WordAlternative extends Word {
